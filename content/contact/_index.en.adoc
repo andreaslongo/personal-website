@@ -1,0 +1,49 @@
+---
+title: Contact me on...
+date: 2020-12-20T11:30:03+00:00
+hidemeta: true
+disableShare: true
+draft: false
+---
+
+
+- https://www.linkedin.com/in/andreaslongo[Linkedin^]
+- https://twitter.com/andreas_longo[Twitter^]
+- https://github.com/andreaslongo[GitHub^] | https://gitlab.com/andreaslongo[GitLab^]
+
+Or send your **Email** to: contact@andreaslongo.com
+
+Emails that contain blocked attachments will not be delivered to my inbox.
+
+.List of blocked attachments
+[%collapsible]
+====
+
+- .bat
+- .btm
+- .cmd
+- .com
+- .cpl
+- .dll
+- .docm
+- .exe
+- .gz
+- .js
+- .lnk
+- .msi
+- .pif
+- .prf
+- .rar
+- .reg
+- .scr
+- .tar
+- .tar.gz
+- .tgz
+- .url
+- .vbs
+- .xlsm
+- .zip
+====
+
+.Photo by https://unsplash.com/@julianhochgesang[Julian Hochgesang^]
+image::macbook-on-black-desk-psGV5KhidlY.min.jpg[Apple MacBook Pro 15" with black screen on a black desk]

@@ -1,0 +1,108 @@
+baseURL: "https://www.andreaslongo.com"
+defaultContentLanguage: en 
+theme: papermod
+title: "Andreas Longo"
+
+enableInlineShortcodes: false
+enableRobotsTXT: true
+
+minify:
+  disableXML: true
+
+params:
+  author: Andreas Longo
+  env: production
+  ShowReadingTime: true
+  ShowShareButtons: true
+  defaultTheme: auto
+  disableThemeToggle: false
+  displayFullLangName: true
+
+  cover:
+    linkFullImages: false
+    responsiveImages: true
+
+  assets:
+    disableFingerprinting: false
+
+  socialIcons:
+    - name: linkedin
+      url: https://www.linkedin.com/in/andreaslongo
+    - name: twitter
+      url: https://twitter.com/andreas_longo
+    - name: github
+      url: https://github.com/andreaslongo
+    - name: gitlab
+      url: https://gitlab.com/andreaslongo
+
+languages:
+  en:
+    languageName: English
+    languageCode: en-us
+    weight: 1
+    description: Personal Website
+
+    profileMode:
+      enabled: true
+      title: I'm a Senior IT Systems Engineer
+      imageUrl: /images/brainstorming-over-paper-5fNmWej4tAA.min.jpg
+      imageTitle: Profile
+      imageWidth: 200
+      imageHeight: 200
+      buttons:
+        - name: Blog
+          url: blog 
+        - name: Contact me
+          url: contact 
+
+    menu:
+      main:
+        - name: Home
+          url: /
+          weight: 1
+        - name: Contact
+          url: contact
+        - name: Blog
+          url: blog
+        - name: Search
+          url: search
+
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+
+# Enable site search
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# Privacy Config
+# https://gohugo.io/about/hugo-and-gdpr/
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
+
+markup:
+  asciidocExt:
+    attributes:
+      showtitle: true
+      figure-caption!:
