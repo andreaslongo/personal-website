@@ -37,7 +37,7 @@ Most of the time, you should be fine using these automated processes.
 Imagine you are working from home and you need to download several huge boxes.
 You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality. To do that, you need to prevent Vagrant from eating up your entire internet bandwidth.
 
-== A Better Way to Control your Vagrant Downloads
+== A Better Way to Control your Vagrant Download
 
 Vagrant has no built-in option for controlling the download process, but fortunately, you can always use the tool of your choice to download a box.
 
