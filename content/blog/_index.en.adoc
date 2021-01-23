@@ -5,7 +5,10 @@ hidemeta: false
 disableShare: true
 ---
 
-link:{{< ref "/series" >}}[Series] |
-link:{{< ref "/archive" >}}[Archive] |
-link:{{< ref "/tags" >}}[Tags] |
+link:{{< ref "/series" >}}[Series]
+|
+link:{{< ref "/archive" >}}[Archive]
+|
 link:{{< ref "/categories" >}}[Categories]
+|
+link:{{< ref "/tags" >}}[Tags] 
