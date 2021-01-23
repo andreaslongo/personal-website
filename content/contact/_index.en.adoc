@@ -1,11 +1,6 @@
 ---
 title: Contact me on...
-date: 2020-12-20T11:30:03+00:00
-hidemeta: true
-disableShare: true
-draft: false
 ---
-
 
 - https://www.linkedin.com/in/andreaslongo[Linkedin^]
 - https://twitter.com/andreas_longo[Twitter^]
