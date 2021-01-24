@@ -1,5 +1,0 @@
-resources/
-.vagrant/
-Vagrantfile
-Makefile
-tmp/

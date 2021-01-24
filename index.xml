@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andreas Longo</title>
+    <link>https://www.andreaslongo.com/</link>
+    <description>Recent content on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Download and Import a Vagrant Box Manually</title>
+      <link>https://www.andreaslongo.com/blog/how-to-manually-download-and-import-a-vagrant-box/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/how-to-manually-download-and-import-a-vagrant-box/</guid>
+      <description>Today I learned how to download and import a Vagrant box manually.
+ To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
+ But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://www.andreaslongo.com/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/archive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://www.andreaslongo.com/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/search/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
