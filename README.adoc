@@ -37,7 +37,7 @@ To get a live preview of the website, launch a local Hugo server:
 $ hugo server
 ----
 
-It will build and serve the site via Hugo's webserver.
+It will build and serve the site with Hugo's webserver.
 The site gets automatically rebuild if you change a file.
 
 Useful options:
