@@ -1,0 +1,27 @@
+= Personal Website
+
+image::https://github.com/andreaslongo/personal-website/workflows/Deployment/badge.svg[Deployment]
+
+This repository contains the source code of my website https://www.andreaslongo.com[andreaslongo.com].
+
+It's built with https://gohugo.io[Hugo], a https://jamstack.org/generators[static site generator], and hosted on https://pages.github.com[GitHub Pages].
+
+== Editing
+
+The content gets written in https://asciidoctor.org[Asciidoc / Asciidoctor] format.
+
+To get a live preview of the website, launch a local Hugo server:
+
+`hugo server`
+
+It will build and serve the site via Hugo's webserver.
+The site gets automatically rebuild if you change a file.
+
+Useful options are
+`--buildDrafts` to include content marked as draft,
+`--buildFuture` to add content with publishdate in the future
+and `--debug` for debugging output.
+
+== Deployment
+
+Deployment to GitHub Pages happens automatically via https://github.com/features/actions[GitHub Actions] when a new tag gets pushed to the repository.
