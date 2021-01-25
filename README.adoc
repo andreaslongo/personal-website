@@ -18,7 +18,7 @@
 [link={url_workflow_deployment}]
 image::{url_workflow_deployment_batch}[Deployment]
 
-This repository contains the source code of my website {url_site}.
+This repository contains the source code for my website {url_site}.
 
 It's built with {url_hugo}, a {url_static_site_generator}, and hosted on {url_github_pages}.
 
