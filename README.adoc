@@ -1,5 +1,6 @@
 = Personal Website
 
+[link=https://github.com/andreaslongo/personal-website/actions?query=workflow%3ADeployment]
 image::https://github.com/andreaslongo/personal-website/workflows/Deployment/badge.svg[Deployment]
 
 This repository contains the source code of my website https://www.andreaslongo.com[andreaslongo.com].
