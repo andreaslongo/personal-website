@@ -2,6 +2,6 @@
 title: Today I Learned
 ---
 
-A blog format to record and share my acquisition of knowledge as I learn day-to-day.
+A blog format to record and share my day-to-day learning and knowledge building.
 
 I hope you enjoy learning along with me.
