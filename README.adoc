@@ -22,11 +22,13 @@ This repository contains the source code of my website {url_site}.
 
 It's built with {url_hugo}, a {url_static_site_generator}, and hosted on {url_github_pages}.
 
+== Requirements
+
+{url_hugo} needs to be installed along with {url_asciidoctor} to build the site.
+
 == Editing
 
 I write my content in {url_asciidoc} format.
-
-{url_asciidoctor} needs to be installed on your local machine to be able to build the site.
 
 To get a live preview of the website, launch a local Hugo server:
 
@@ -43,6 +45,7 @@ Useful options:
 - `--buildDrafts` to include content marked as draft
 - `--buildFuture` to add content with publishdate in the future
 - `--debug` for debugging output
+- `--verbose` for verbose output
 
 == Deployment
 
