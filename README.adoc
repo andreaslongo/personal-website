@@ -24,7 +24,7 @@ It's built with {url_hugo}, a {url_static_site_generator}, and hosted on {url_gi
 
 == Requirements
 
-{url_hugo} needs to be installed along with {url_asciidoctor} to build the site.
+{url_hugo} must be installed alongside {url_asciidoctor} to build the site.
 
 == Editing
 
