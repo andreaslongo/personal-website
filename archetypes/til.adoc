@@ -1,0 +1,33 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+
+cover:
+    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
+    alt: Field Notes and Pencil
+    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
+    relative: false
+
+showToc: false
+TocOpen: false
+hidemeta: false
+disableShare: false
+comments: false
+
+tags: 
+- Vagrant
+- curl
+
+categories:
+- DevOps
+
+series:
+- Today I Learned
+---
+
+:source-language: shell
+:url_til: link:{{< ref "/today-i-learned" >}}[Today I learned]
+
+
+{url_til} how to...
