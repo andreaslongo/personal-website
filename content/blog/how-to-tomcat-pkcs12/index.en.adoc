@@ -1,0 +1,82 @@
+---
+title: "How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL"
+date: 2021-01-27
+draft: true
+
+cover:
+    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
+    alt: Field Notes and Pencil
+    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
+    relative: false
+
+showToc: false
+TocOpen: false
+hidemeta: false
+disableShare: false
+comments: false
+
+tags: 
+- Apache Tomcat
+- HTTPS
+- Public Key Certificates
+- TLS
+
+categories:
+- IT Operations
+
+series:
+- Today I Learned
+---
+
+:source-language: shell
+:url_til: link:{{< ref "/today-i-learned" >}}[Today I learned]
+:url_tomcat: https://tomcat.apache.org/[Apache Tomcat]
+:url_pkcs12: https://en.wikipedia.org/wiki/PKCS_12[PKCS #12]
+:url_tls: https://en.wikipedia.org/wiki/Transport_Layer_Security[Transport Layer Security (TLS)]
+:url_https: https://en.wikipedia.org/wiki/HTTPS
+
+
+{url_til} how to use {url_pkcs12} archives with {url_tomcat} for {url_tls}.
+
+NOTE: TLS superseded Secure Sockets Layer (SSL) protocol.
+
+In the following example, we create a Tomcat connector that uses a PKCS #12 file as a key store.
+
+.Directory layout `../Tomcat/`
+----
+../Tomcat/
+| certificates/
+| | file.p12
+| conf/
+| | server.xml
+----
+
+*Make sure that only the Tomcat process can read your `file.p12` and `server.xml` files*. They contain private key and password for a certificate.
+
+.Tomcat config `../Tomcat/conf/server.xml`
+[source,xml,linenums]
+----
+<!-- TOMCAT TLS CONNECTOR -->
+<Connector
+    port="9090"
+        SSLEnabled="true"
+        URIEncoding="UTF-8"
+        clientAuth="false"
+        keystoreFile="certificates/<file>.p12" <1>
+        keystorePass="<pkcs12 password>" <2>
+        keystoreType="PKCS12"
+        maxHttpHeaderSize="8192"
+        maxThreads="200"
+        protocol="org.apache.coyote.http11.Http11NioProtocol"
+        sslProtocol="TLS"
+    >
+</Connector>
+----
+
+<1> Adapt `keystoreFile`
+<2> and `keystorePass` to your environment
+
+*The password for the certificate's private key must be the same as for the PKCS #12 file*.
+
+After restarting Tomcat, you can connect to TCP port 9090 via {url_https}[HTTP over TLS (HTTPS)], for example.
+
