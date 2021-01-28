@@ -1,7 +1,7 @@
 ---
 title: "How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL"
-date: 2021-01-27
-draft: true
+date: 2021-01-28
+draft: false
 
 cover:
     image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
@@ -40,7 +40,7 @@ series:
 
 NOTE: TLS superseded Secure Sockets Layer (SSL) protocol.
 
-In the following example, we create a Tomcat connector that uses a PKCS #12 file as a key store.
+In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
 
 .Directory layout `../Tomcat/`
 ----
@@ -51,32 +51,58 @@ In the following example, we create a Tomcat connector that uses a PKCS #12 file
 | | server.xml
 ----
 
-*Make sure that only the Tomcat process can read your `file.p12` and `server.xml` files*. They contain private key and password for a certificate.
+The files `file.p12` and `server.xml` contain the private key and password for a certificate.
+*Make sure that only the Tomcat process can access them*.
 
-.Tomcat config `../Tomcat/conf/server.xml`
-[source,xml,linenums]
+*The password for the certificate's private key must match that for the PKCS #12 file*.
+
+
+.`../Tomcat/conf/server.xml` for Tomcat version 10, 9, and 8
+[source,xml]
 ----
 <!-- TOMCAT TLS CONNECTOR -->
 <Connector
-    port="9090"
-        SSLEnabled="true"
-        URIEncoding="UTF-8"
-        clientAuth="false"
-        keystoreFile="certificates/<file>.p12" <1>
-        keystorePass="<pkcs12 password>" <2>
-        keystoreType="PKCS12"
-        maxHttpHeaderSize="8192"
-        maxThreads="200"
+    port="8443"
         protocol="org.apache.coyote.http11.Http11NioProtocol"
-        sslProtocol="TLS"
+        SSLEnabled="true"
+        scheme="https"
+	secure="true"
     >
+    <SSLHostConfig>
+        certificateVerification="optional"
+        <Certificate
+            certificateKeystoreType="PKCS12"
+            certificateKeystoreFile="certificates/<file>.p12" <1>
+            certificateKeystorePassword="<password>" <2>
+        />
+    </SSLHostConfig>
 </Connector>
 ----
 
-<1> Adapt `keystoreFile`
-<2> and `keystorePass` to your environment
+<1> Adapt `certificateKeystoreFile` and
+<2> `certificateKeystorePassword` to your environment
 
-*The password for the certificate's private key must be the same as for the PKCS #12 file*.
+*For Tomcat 7, we need a different config*.
 
-After restarting Tomcat, you can connect to TCP port 9090 via {url_https}[HTTP over TLS (HTTPS)], for example.
+.`../Tomcat/conf/server.xml` for Tomcat version 7
+[source,xml]
+----
+<!-- TOMCAT 7.x TLS CONNECTOR -->
+<Connector
+    port="8443"
+        protocol="org.apache.coyote.http11.Http11NioProtocol"
+        SSLEnabled="true"
+        scheme="https"
+        secure="true"
+        clientAuth="false"
+        keystoreType="PKCS12"
+        keystoreFile="certificates/<file>.p12" <1>
+        keystorePass="<password>" <2>
+/>
+----
 
+<1> Adapt `keystoreFile` and
+<2> `keystorePass` to your environment
+
+
+After restarting Tomcat, you can connect to TCP port 8443 via {url_https}[HTTP over TLS (HTTPS)], for example.
