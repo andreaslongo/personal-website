@@ -42,3 +42,5 @@ Emails that contain blocked attachments will not be delivered to my inbox.
 
 .Photo by https://unsplash.com/@julianhochgesang[Julian Hochgesang^]
 image::macbook-on-black-desk-psGV5KhidlY.min.jpg[Apple MacBook Pro 15" with black screen on a black desk]
+
+Title photo by https://unsplash.com/@homajob[Scott Graham]
