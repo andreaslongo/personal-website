@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software Development</title>
+      <link>https://www.andreaslongo.com/categories/software-development/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/categories/software-development/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>IT Operations</title>
       <link>https://www.andreaslongo.com/categories/it-operations/</link>
