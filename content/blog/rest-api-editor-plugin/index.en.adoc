@@ -28,6 +28,9 @@ categories:
 
 series:
 - Things I Learned
+
+topics:
+- Vim
 ---
 
 :source-language: console

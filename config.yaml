@@ -71,6 +71,7 @@ taxonomies:
   category: categories
   series: series
   tag: tags
+  topic: topics
 
 # Enable site search
 outputs:
