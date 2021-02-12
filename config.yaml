@@ -14,6 +14,8 @@ params:
   env: production
   ShowReadingTime: true
   ShowShareButtons: true
+  ShowBreadCrumbs: false
+  ShowPostNavLinks: false
   defaultTheme: auto
   disableThemeToggle: false
   displayFullLangName: true
