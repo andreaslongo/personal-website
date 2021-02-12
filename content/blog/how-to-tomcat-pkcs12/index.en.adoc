@@ -25,11 +25,11 @@ categories:
 - IT Operations
 
 series:
-- Today I Learned
+- Things I Learned
 ---
 
 :source-language: shell
-:url_til: link:{{< ref "/today-i-learned" >}}[Today I learned]
+:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 :url_tomcat: https://tomcat.apache.org/[Apache Tomcat]
 :url_pkcs12: https://en.wikipedia.org/wiki/PKCS_12[PKCS #12]
 :url_tls: https://en.wikipedia.org/wiki/Transport_Layer_Security[Transport Layer Security (TLS)]

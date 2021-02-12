@@ -1,7 +1,5 @@
 ---
-title: Today I Learned
+title: Things I Learned
 ---
 
 A blog format to record and share my day-to-day learning and knowledge building.
-
-I hope you enjoy learning along with me.

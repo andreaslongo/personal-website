@@ -23,12 +23,12 @@ categories:
 - DevOps
 
 series:
-- Today I Learned
+- Things I Learned
 ---
 
 :source-language: shell
 
-link:{{< ref "/today-i-learned" >}}[Today I learned] how to download and import a https://www.vagrantup.com/[Vagrant] box manually.
+link:{{< ref "/things-i-learned" >}}[Today I learned] how to download and import a https://www.vagrantup.com/[Vagrant] box manually.
 
 *To download or upgrade a Vagrant box*, you can use commands like `vagrant box add` and `vagrant box update`.
 Most of the time, you should be fine using these automated processes.

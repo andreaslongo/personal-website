@@ -1,7 +1,7 @@
 ---
 # https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-variables/
 title: "{{ replace .Name "-" " " | title }}"
-description: "Series: Today I Learned"
+description: "Series: Things I Learned"
 date: {{ .Date }}
 draft: true
 
@@ -25,11 +25,11 @@ categories:
 - DevOps
 
 series:
-- Today I Learned
+- Things I Learned
 ---
 
 :source-language: shell
-:url_til: link:{{< ref "/today-i-learned" >}}[Today I learned]
+:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 
 {url_til} how to...
