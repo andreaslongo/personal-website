@@ -1,0 +1,29 @@
+{{ if or (.Params.series) (.Params.categories) (.Params.topics) }}
+<div class="breadcrumbs">
+	{{ if and (.Params.series) (.Params.categories) (.Params.topics) }}
+		{{ range $series := ($.GetTerms "series") }}
+		{{ range $category := ($.GetTerms "categories") }}
+		{{ range $topic := ($.GetTerms "topics") }}
+			<a href="{{ $series.Permalink }}">{{ $series.Name }}</a>
+			{{ print "&nbsp;»&nbsp;" | safeHTML -}}
+			<a href="{{ $category.Permalink }}">{{ $category.Name }}</a>
+			{{ print "&nbsp;»&nbsp;" | safeHTML -}}
+			<a href="{{ $topic.Permalink }}">{{ $topic.Name }}</a>
+		{{ end }}
+		{{ end }}
+		{{ end }}
+	{{ else if .Params.series }}
+		{{ range $series := ($.GetTerms "series") }}
+		<a href="{{ $series.Permalink }}">{{ $series.Name }}</a>
+		{{ end }}
+	{{ else if .Params.categories }}
+		{{ range $category := ($.GetTerms "categories") }}
+		<a href="{{ $category.Permalink }}">{{ $category.Name }}</a>
+		{{ end }}
+	{{ else if .Params.topics }}
+		{{ range $topic := ($.GetTerms "topics") }}
+		<a href="{{ $topic.Permalink }}">{{ $topic.Name }}</a>
+		{{ end }}
+	{{ end }}
+</div>
+{{ end }}
