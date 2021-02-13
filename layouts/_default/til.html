@@ -15,7 +15,7 @@
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
   {{- range .Site.Taxonomies.topics }}
   <div class="archive-month">
-    <h3 class="archive-month-header">{{ .Page.Title }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
+	  <h3 class="archive-month-header"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
     <div class="archive-posts">
       {{- range .Pages  }}
       {{- if eq .Kind "page" }}
