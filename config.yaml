@@ -56,6 +56,8 @@ languages:
           url: blog 
         - name: Contact me
           url: contact 
+        - name: Things I Learned
+          url: series/things-i-learned
 
     menu:
       main:
