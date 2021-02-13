@@ -1,0 +1,38 @@
+{{- define "main" }}
+
+<header class="page-header">
+	<h1>{{ .Title }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+  {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden}}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{- range .Site.Taxonomies.topics }}
+  <div class="archive-month">
+    <h3 class="archive-month-header">{{ .Page.Title }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
+    <div class="archive-posts">
+      {{- range .Pages  }}
+      {{- if eq .Kind "page" }}
+      <div class="archive-entry">
+        <h3 class="archive-entry-title">
+          {{- .Title | markdownify }}
+        </h3>
+        <div class="archive-meta">
+          {{- partial "post_meta.html" . -}}
+        </div>
+        <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+      </div>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</div>
+{{- end }}
+
+{{- end  }}{{/* end main */}}

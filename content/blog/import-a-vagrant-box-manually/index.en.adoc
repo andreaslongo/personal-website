@@ -15,20 +15,24 @@ hidemeta: false
 disableShare: false
 comments: false
 
-tags: 
-- Vagrant
-- curl
+series:
+- Things I Learned
 
 categories:
 - DevOps
 
-series:
-- Things I Learned
+topics:
+- Vagrant
+
+tags: 
+- Vagrant
+- curl
 ---
 
-:source-language: shell
+:source-language: console
+:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
-link:{{< ref "/things-i-learned" >}}[Today I learned] how to download and import a https://www.vagrantup.com/[Vagrant] box manually.
+{url_til} how to download and import a https://www.vagrantup.com/[Vagrant] box manually.
 
 *To download or upgrade a Vagrant box*, you can use commands like `vagrant box add` and `vagrant box update`.
 Most of the time, you should be fine using these automated processes.
@@ -45,7 +49,7 @@ Vagrant has no built-in option for controlling the download process, but fortuna
 
 In the following example, we will download and import the https://app.vagrantup.com/debian/boxes/contrib-buster64[Debian Buster v10.7.0] box for https://www.virtualbox.org[Virtualbox].
 
-*Just follow six simple steps:*
+*Steps*
 
 . Get the direct download link for a box
 +

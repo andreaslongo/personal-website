@@ -3,34 +3,28 @@ title: Two Editor Plugins Every REST API Developer Should Know
 date: 2021-02-11
 draft: false
 
-cover:
-    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
-    alt: Field Notes and Pencil
-    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
-    relative: false
-
 showToc: false
 TocOpen: false
 hidemeta: false
 disableShare: false
 comments: false
 
-tags: 
-- curl
-- HTTP Client
-- Postman
-- REST API
-- Vim
-- Visual Studio Code
+series:
+- Things I Learned
 
 categories:
 - Software Development
 
-series:
-- Things I Learned
-
 topics:
+- REST APIs
+
+tags: 
+- HTTP
+- Postman
+- REST APIs
 - Vim
+- Visual Studio Code
+- curl
 ---
 
 :source-language: console

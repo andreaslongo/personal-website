@@ -1,5 +1,12 @@
 ---
 title: Things I Learned
+layout: til
+description: A blog format to record and share my day-to-day learning and knowledge building.
+
+cover:
+    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
+    alt: Field Notes and Pencil
+    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
+    relative: false
 ---
 
-A blog format to record and share my day-to-day learning and knowledge building.

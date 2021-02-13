@@ -3,33 +3,31 @@ title: "How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL"
 date: 2021-01-28
 draft: false
 
-cover:
-    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
-    alt: Field Notes and Pencil
-    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
-    relative: false
-
 showToc: false
 TocOpen: false
 hidemeta: false
 disableShare: false
 comments: false
 
+series:
+- Things I Learned
+
+categories:
+- IT Operations
+
+topics:
+- Public Key Certificates
+
 tags: 
 - Apache Tomcat
 - HTTPS
 - Public Key Certificates
 - TLS
-
-categories:
-- IT Operations
-
-series:
-- Things I Learned
 ---
 
-:source-language: shell
+:source-language: console
 :url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
+
 :url_tomcat: https://tomcat.apache.org/[Apache Tomcat]
 :url_pkcs12: https://en.wikipedia.org/wiki/PKCS_12[PKCS #12]
 :url_tls: https://en.wikipedia.org/wiki/Transport_Layer_Security[Transport Layer Security (TLS)]
@@ -37,8 +35,7 @@ series:
 
 
 {url_til} how to use {url_pkcs12} archives with {url_tomcat} for {url_tls}.
-
-NOTE: TLS superseded Secure Sockets Layer (SSL) protocol.
+TLS superseded Secure Sockets Layer (SSL) protocol.
 
 In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
 
