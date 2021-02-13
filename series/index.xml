@@ -8,14 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Today I Learned</title>
-      <link>https://www.andreaslongo.com/series/today-i-learned/</link>
+      <title>Things I Learned</title>
+      <link>https://www.andreaslongo.com/series/things-i-learned/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/series/today-i-learned/</guid>
-      <description>A blog format to record and share my day-to-day learning and knowledge building.
- I hope you enjoy learning along with me.
- </description>
+      <guid>https://www.andreaslongo.com/series/things-i-learned/</guid>
+      <description></description>
     </item>
     
   </channel>

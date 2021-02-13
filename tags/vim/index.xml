@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Two Editor Plugins Every REST API Developer Should Know</title>
-      <link>https://www.andreaslongo.com/blog/rest-api-editor-plugin/</link>
+      <link>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/rest-api-editor-plugin/</guid>
+      <guid>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</guid>
       <description>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.
  Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
    This plugin is for Vim. It is a wrapper around curl.

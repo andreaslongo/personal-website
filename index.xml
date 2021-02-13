@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Two Editor Plugins Every REST API Developer Should Know</title>
-      <link>https://www.andreaslongo.com/blog/rest-api-editor-plugin/</link>
+      <link>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/rest-api-editor-plugin/</guid>
+      <guid>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</guid>
       <description>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.
  Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
    This plugin is for Vim. It is a wrapper around curl.
@@ -21,21 +21,21 @@
     
     <item>
       <title>How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL</title>
-      <link>https://www.andreaslongo.com/blog/how-to-tomcat-pkcs12/</link>
+      <link>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/how-to-tomcat-pkcs12/</guid>
-      <description>Today I learned how to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS).
-   Note  TLS superseded Secure Sockets Layer (SSL) protocol.     In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
- Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The files file.</description>
+      <guid>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</guid>
+      <description>Today I learned how to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded Secure Sockets Layer (SSL) protocol.
+ In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
+ Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The files file.p12 and server.xml contain the private key and password for a certificate.</description>
     </item>
     
     <item>
       <title>How to Download and Import a Vagrant Box Manually</title>
-      <link>https://www.andreaslongo.com/blog/how-to-download-and-import-a-vagrant-box/</link>
+      <link>https://www.andreaslongo.com/blog/import-a-vagrant-box-manually/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/how-to-download-and-import-a-vagrant-box/</guid>
+      <guid>https://www.andreaslongo.com/blog/import-a-vagrant-box-manually/</guid>
       <description>Today I learned how to download and import a Vagrant box manually.
  To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
  But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
