@@ -2,10 +2,12 @@
 title: Blog
 ---
 
-link:{{< ref "/series" >}}[Series]
-|
 link:{{< ref "/archive" >}}[Archive]
+|
+link:{{< ref "/series" >}}[Series]
 |
 link:{{< ref "/categories" >}}[Categories]
 |
-link:{{< ref "/tags" >}}[Tags] 
+link:{{< ref "/topics" >}}[Topics]
+|
+link:{{< ref "/tags" >}}[Tags]
