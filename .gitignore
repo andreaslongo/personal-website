@@ -3,3 +3,4 @@ resources/
 Vagrantfile
 Makefile
 notes.txt
+__pycache__
