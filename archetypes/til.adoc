@@ -1,14 +1,7 @@
 ---
-# https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-variables/
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
-
-cover:
-    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
-    alt: Field Notes and Pencil
-    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
-    relative: false
+title:
+date:
+draft: false
 
 showToc: false
 TocOpen: false

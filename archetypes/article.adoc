@@ -1,0 +1,37 @@
+---
+# https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-variables/
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: false
+
+cover:
+    image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
+    alt: Field Notes and Pencil
+    caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
+    relative: false
+
+showToc: false
+TocOpen: false
+hidemeta: false
+disableShare: false
+comments: false
+
+series:
+- Things I Learned
+
+categories:
+- DevOps
+
+topics:
+- Vagrant
+
+tags: 
+- Vagrant
+- curl
+---
+
+:source-language: console
+:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
+
+
+{url_til} how to...
