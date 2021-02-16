@@ -12,19 +12,36 @@ comments: false
 series:
 - Things I Learned
 
-categories:
-- DevOps
+# categories:
+# - Software Development
 
 topics:
-- Vagrant
+- Vim
 
-tags: 
-- Vagrant
-- curl
+tags:
+- Vim
 ---
 
 :source-language: console
 :url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 
-{url_til} how to...
+You can undo and redo changes without having to press `u` or `CTRL-R` repeatedly.
+Retrieve the state of your buffer as it was some time ago.
+
+This concept is called *undo tree* or *undo branches*.
+See `:help undo-branches`.
+
+== Moving through the undo tree
+
+Go to older text state (10 minutes before)
+
+----
+:earlier 10m
+----
+
+Go to newer text state (5 minutes later)
+
+----
+:later 5m
+----
