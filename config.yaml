@@ -1,5 +1,5 @@
 baseURL: "https://www.andreaslongo.com"
-defaultContentLanguage: en 
+defaultContentLanguage: en
 theme: papermod
 title: "Andreas Longo"
 
@@ -51,9 +51,9 @@ languages:
       imageHeight: 200
       buttons:
         - name: Blog
-          url: blog 
+          url: blog
         - name: Contact me
-          url: contact 
+          url: contact
         - name: Things I Learned
           url: series/things-i-learned
 

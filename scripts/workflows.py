@@ -44,13 +44,13 @@ def publish(branch: str, dry_run: bool = True) -> None:
     # Merge article branch to master
     run('git switch main', dry_run=dry_run)
     run(f'git merge {branch}', dry_run=dry_run)
-    
+
     # Tag article
     run(f'git tag --sign publish-{branch} --message "Publish article {branch}"', dry_run=dry_run)
-    
+
     # Delete article branch
     run(f'git branch --delete {branch}', dry_run=dry_run)
-    
+
     # Push to github
     run('git push && git push --tags', dry_run=dry_run)
 
@@ -89,11 +89,11 @@ def parse_archetype(archetype: Path, title: str) -> str:
 
 def parse_arguments(arguments: list) -> tuple:
     dry_run = '--dry-run' in arguments
-    
+
     if dry_run:
         arguments.remove('--dry-run')
         print('== Dry run', 69 * '=')
-    
+
     # Get article branch to publish as command line argument
     _, branch = arguments
     return branch, dry_run

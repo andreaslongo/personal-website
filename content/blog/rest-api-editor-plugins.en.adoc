@@ -18,7 +18,7 @@ categories:
 topics:
 - REST APIs
 
-tags: 
+tags:
 - HTTP
 - Postman
 - REST APIs
@@ -59,7 +59,7 @@ You can write multiple request blocks in the same file and send them separately.
 Save your file for later reference, or share it with other developers as an example with your code.
 It doesn't get any simpler than this.
 
-One thing to note is that the syntax for the two plugins is slightly different. 
+One thing to note is that the syntax for the two plugins is slightly different.
 You can't use a Vim request block directly with VS Code.
 However, it is straightforward to adjust the request block to make it work.
 

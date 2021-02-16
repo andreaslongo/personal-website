@@ -9,4 +9,3 @@ cover:
     caption: Photo by [Scott Graham](https://unsplash.com/@homajob)
     relative: false
 ---
-

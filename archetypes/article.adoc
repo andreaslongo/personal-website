@@ -25,7 +25,7 @@ categories:
 topics:
 - Vagrant
 
-tags: 
+tags:
 - Vagrant
 - curl
 ---
