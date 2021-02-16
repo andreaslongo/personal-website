@@ -35,7 +35,7 @@ def new_til(branch: str, dry_run: bool = True) -> None:
 
     # Commit new article
     run(f'git add {article}', dry_run=dry_run)
-    run(f'git commit --message "New article {branch}"', dry_run=dry_run)
+    run(f'git commit --message "Add new article {branch}"', dry_run=dry_run)
 
 
 def publish(branch: str, dry_run: bool = True) -> None:
@@ -46,7 +46,7 @@ def publish(branch: str, dry_run: bool = True) -> None:
     run(f'git merge {branch}', dry_run=dry_run)
     
     # Tag article
-    run(f'git tag --sign publish-{branch} --message "Publish {branch}"', dry_run=dry_run)
+    run(f'git tag --sign publish-{branch} --message "Publish article {branch}"', dry_run=dry_run)
     
     # Delete article branch
     run(f'git branch --delete {branch}', dry_run=dry_run)
