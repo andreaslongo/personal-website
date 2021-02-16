@@ -52,7 +52,8 @@ def publish(branch: str, dry_run: bool = True) -> None:
     run(f'git branch --delete {branch}', dry_run=dry_run)
 
     # Push to github
-    run('git push && git push --tags', dry_run=dry_run)
+    run('git push', dry_run=dry_run)
+    run('git push --tags', dry_run=dry_run)
 
 
 def run(command: str, dry_run: bool = True) -> None:
