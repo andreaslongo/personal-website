@@ -1,5 +1,5 @@
 ---
-title: Python Datetime From String
+title: Python Datetime from/to String
 date: 2021-02-16
 draft: false
 
@@ -13,18 +13,44 @@ series:
 - Things I Learned
 
 categories:
-- DevOps
+- Software Development
 
 topics:
-- Vagrant
+- Python
 
 tags:
-- Vagrant
-- curl
+- Python
+- Data Types
 ---
 
-:source-language: console
+:source-language: python
 :url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
+== From String
 
-{url_til} how to...
+Parse a `string` representing a date/time in any format to a Python `datetime` object with the `datetime.strptime()` method.
+
+----
+>>> from datetime import datetime
+
+>>> timestamp = '01.10.2009 20:36:41'
+>>> datetime.strptime(timestamp, '%d.%m.%Y %H:%M:%S')
+datetime.datetime(2009, 10, 1, 20, 36, 41)
+----
+
+The second argument to `datetime.strptime()` is a *format `string`* build with *format codes*.
+See https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[strftime() and strptime() Format Codes] for a full list of available format codes.
+
+== To String
+
+Convert a `datetime` object to a `string` of any format with the `datetime.strftime()` method.
+
+----
+>>> from datetime import datetime
+
+>>> dt = datetime(2009, 10, 1, 20, 36, 41)
+>>> dt.strftime('%d.%m.%Y %H:%M:%S')
+'01.10.2009 20:36:41'
+----
+
+The argument to `datetime.strftime()` is a *format `string`* (see above).
