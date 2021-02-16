@@ -6,7 +6,20 @@
     <description>Recent content in Blog on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Undo Branches</title>
+      <link>https://www.andreaslongo.com/blog/vim-undo-branches/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/vim-undo-branches/</guid>
+      <description>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
+ This concept is called undo tree or undo branches. See :help undo-branches.
+ Moving through the undo tree Go to older text state (10 minutes before)
+ :earlier 10m   Go to newer text state (5 minutes later)
+ :later 5m     </description>
+    </item>
+    
     <item>
       <title>Two Editor Plugins Every REST API Developer Should Know</title>
       <link>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</link>
