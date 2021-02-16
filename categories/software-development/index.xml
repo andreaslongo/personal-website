@@ -6,7 +6,17 @@
     <description>Recent content in Software Development on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Datetime from/to String</title>
+      <link>https://www.andreaslongo.com/blog/python-datetime-from-string/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/python-datetime-from-string/</guid>
+      <description>From String Parse a string representing a date/time in any format to a Python datetime object with the datetime.strptime() method.
+ &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; timestamp = &amp;#39;01.10.2009 20:36:41&amp;#39; &amp;gt;&amp;gt;&amp;gt; datetime.strptime(timestamp, &amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) datetime.datetime(2009, 10, 1, 20, 36, 41)   The second argument to datetime.strptime() is a format string build with format codes. See strftime() and strptime() Format Codes for a full list of available format codes.</description>
+    </item>
+    
     <item>
       <title>Two Editor Plugins Every REST API Developer Should Know</title>
       <link>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</link>
