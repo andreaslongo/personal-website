@@ -1,5 +1,5 @@
 ---
-title: Linux Find Files Sorted By Time
+title: Find Files and Sort Them By Time on Linux
 date: 2021-02-17
 draft: false
 
@@ -16,15 +16,25 @@ categories:
 - DevOps
 
 topics:
-- Vagrant
+- Linux / Unix
 
 tags:
-- Vagrant
-- curl
+- Command-line Interface (CLI)
+- Linux / Unix
+- find
 ---
 
 :source-language: console
 :url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 
-{url_til} how to...
+Recursively search for files by name with `find`.
+Then, sort the result by time, newest first with `ls -lt`.
+
+----
+$ find . -type f -name "Makefile*" -exec ls -lt {} +
+-rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile
+-rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile
+-rw------- 1 al al  963 Feb 16 15:45 ./personal-website/Makefile
+-rw------- 1 al al  254 Feb 15 17:07 ./cc-python/Makefile
+----
