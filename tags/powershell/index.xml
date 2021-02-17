@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IT Operations on Andreas Longo</title>
-    <link>https://www.andreaslongo.com/categories/it-operations/</link>
-    <description>Recent content in IT Operations on Andreas Longo</description>
+    <title>PowerShell on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/powershell/</link>
+    <description>Recent content in PowerShell on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/it-operations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Get Uptime of a Windows System</title>
       <link>https://www.andreaslongo.com/blog/windows-get-uptime/</link>
@@ -17,17 +17,6 @@
  uptime from the procps-ng package
  $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
  $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
-    </item>
-    
-    <item>
-      <title>How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL</title>
-      <link>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</guid>
-      <description>Today I learned how to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded Secure Sockets Layer (SSL) protocol.
- In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
- Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The files file.p12 and server.xml contain the private key and password for a certificate.</description>
     </item>
     
   </channel>

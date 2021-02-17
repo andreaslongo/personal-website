@@ -6,7 +6,19 @@
     <description>Recent content in Blog on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get Uptime of a Windows System</title>
+      <link>https://www.andreaslongo.com/blog/windows-get-uptime/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/windows-get-uptime/</guid>
+      <description>I haven’t found a good alternative to the Unix uptime command for Windows yet.
+ uptime from the procps-ng package
+ $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
+ $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
+    </item>
+    
     <item>
       <title>Python Datetime from/to String</title>
       <link>https://www.andreaslongo.com/blog/python-datetime-from-string/</link>
