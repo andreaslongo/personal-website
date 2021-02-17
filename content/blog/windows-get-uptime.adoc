@@ -1,0 +1,30 @@
+---
+title: Windows Get Uptime
+date: 2021-02-17
+draft: false
+
+showToc: false
+TocOpen: false
+hidemeta: false
+disableShare: false
+comments: false
+
+series:
+- Things I Learned
+
+categories:
+- DevOps
+
+topics:
+- Vagrant
+
+tags:
+- Vagrant
+- curl
+---
+
+:source-language: console
+:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
+
+
+{url_til} how to...
