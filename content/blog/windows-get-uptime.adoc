@@ -1,5 +1,5 @@
 ---
-title: Get Uptime of a Windows System
+title: Get Uptime on a Windows System
 date: 2021-02-17
 draft: false
 
