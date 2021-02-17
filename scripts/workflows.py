@@ -38,8 +38,9 @@ def new_til(branch: str, dry_run: bool = True) -> None:
     run(f'git commit --message "Add new article {branch}"', dry_run=dry_run)
 
 
-def publish(branch: str, dry_run: bool = True) -> None:
+def publish(dry_run: bool = True) -> None:
     """Publish article"""
+    branch = run('git branch --show-current', dry_run=dry_run, capture_output=True)
 
     # Merge article branch to master
     run('git switch main', dry_run=dry_run)
@@ -56,12 +57,13 @@ def publish(branch: str, dry_run: bool = True) -> None:
     run('git push --tags', dry_run=dry_run)
 
 
-def run(command: str, dry_run: bool = True) -> None:
+def run(command: str, dry_run: bool = True, capture_output: bool = False) -> str:
     cmd = shlex.split(command)
     if dry_run:
         print(cmd)
     else:
-        subprocess.run(cmd, check=True)
+        proc = subprocess.run(cmd, check=True, capture_output=capture_output, text=True)
+        return proc.stdout.strip()
 
 
 def cwd_is_git_root() -> None:
