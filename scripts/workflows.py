@@ -59,11 +59,15 @@ def publish(dry_run: bool = True) -> None:
 
 def run(command: str, dry_run: bool = True, capture_output: bool = False) -> str:
     cmd = shlex.split(command)
+    branch = None
     if dry_run:
         print(cmd)
+        branch = 'fake-branch'
     else:
         proc = subprocess.run(cmd, check=True, capture_output=capture_output, text=True)
-        return proc.stdout.strip()
+        if capture_output:
+            branch = proc.stdout.strip()
+    return branch
 
 
 def cwd_is_git_root() -> None:
@@ -88,15 +92,3 @@ def parse_archetype(archetype: Path, title: str) -> str:
 
     content = ''.join(content)
     return content
-
-
-def parse_arguments(arguments: list) -> tuple:
-    dry_run = '--dry-run' in arguments
-
-    if dry_run:
-        arguments.remove('--dry-run')
-        print('== Dry run', 69 * '=')
-
-    # Get article branch to publish as command line argument
-    _, branch = arguments
-    return branch, dry_run

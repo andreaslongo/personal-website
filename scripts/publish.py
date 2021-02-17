@@ -2,10 +2,13 @@
 """Publish article."""
 
 import sys
-from workflows import parse_arguments, publish
+from workflows import publish
 
 
-_, dry_run = parse_arguments(sys.argv)
+arguments = sys.argv
+dry_run = '--dry-run' in arguments
 
+if dry_run:
+    print('== Dry run', 69 * '=')
 
 publish(dry_run=dry_run)
