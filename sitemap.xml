@@ -23,6 +23,21 @@
   </url>
   
   <url>
+    <loc>https://www.andreaslongo.com/categories/devops/</loc>
+    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.andreaslongo.com/tags/find/</loc>
+    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.andreaslongo.com/blog/linux-find-files-sorted-by-time/</loc>
+    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.andreaslongo.com/blog/windows-get-uptime/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url>
@@ -173,11 +188,6 @@
   </url>
   
   <url>
-    <loc>https://www.andreaslongo.com/categories/devops/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.andreaslongo.com/blog/import-a-vagrant-box-manually/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
@@ -198,6 +208,14 @@
   
   <url>
     <loc>https://www.andreaslongo.com/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.andreaslongo.com/topics/linux-/-unix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.andreaslongo.com/tags/linux-/-unix/</loc>
   </url>
   
   <url>

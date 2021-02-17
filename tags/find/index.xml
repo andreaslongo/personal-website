@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>find on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/find/</link>
+    <description>Recent content in find on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/find/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find Files and Sort Them By Time on Linux</title>
+      <link>https://www.andreaslongo.com/blog/linux-find-files-sorted-by-time/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/linux-find-files-sorted-by-time/</guid>
+      <description>Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
+ $ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile   </description>
+    </item>
+    
+  </channel>
+</rss>
