@@ -6,13 +6,40 @@
     <description>Recent content in Tags on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Actice Directory</title>
+      <link>https://www.andreaslongo.com/tags/actice-directory/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/actice-directory/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Command-line Interface (CLI)</title>
       <link>https://www.andreaslongo.com/tags/command-line-interface-cli/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/command-line-interface-cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Managed Service Accounts</title>
+      <link>https://www.andreaslongo.com/tags/managed-service-accounts/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/managed-service-accounts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://www.andreaslongo.com/tags/powershell/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/powershell/</guid>
       <description></description>
     </item>
     
@@ -31,15 +58,6 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/microsoft-windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PowerShell</title>
-      <link>https://www.andreaslongo.com/tags/powershell/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/powershell/</guid>
       <description></description>
     </item>
     
