@@ -41,6 +41,11 @@ def new_til(branch: str, dry_run: bool = True) -> None:
 def publish(dry_run: bool = True) -> None:
     """Publish article"""
     branch = run('git branch --show-current', dry_run=dry_run, capture_output=True)
+    article = Path.cwd() / f'content/blog/{branch}.adoc'
+
+    # Commit latest changes
+    run(f'git add {article}', dry_run=dry_run)
+    run(f'git commit --message "Publish article {branch}"', dry_run=dry_run)
 
     # Merge article branch to master
     run('git switch main', dry_run=dry_run)
