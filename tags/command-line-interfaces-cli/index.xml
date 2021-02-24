@@ -19,5 +19,16 @@
  </description>
     </item>
     
+    <item>
+      <title>Use the Windows Clipboard in Vim on Cygwin</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</guid>
+      <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
+ ~/.vim/.vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+ </description>
+    </item>
+    
   </channel>
 </rss>
