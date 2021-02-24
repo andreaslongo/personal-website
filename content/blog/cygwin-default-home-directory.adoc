@@ -19,10 +19,10 @@ topics:
 - Cygwin
 
 tags:
-- Cygwin
-- Windows
-- Linux
 - Command-line Interfaces (CLI)
+- Cygwin
+- Linux / Unix
+- Windows
 ---
 
 :source-language: console
