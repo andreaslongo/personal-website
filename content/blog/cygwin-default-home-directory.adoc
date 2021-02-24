@@ -1,5 +1,5 @@
 ---
-title: Cygwin Default Home Directory
+title: Change the Default Home Directory for Every Cygwin User
 date: 2021-02-24
 draft: false
 
@@ -13,18 +13,34 @@ series:
 - Things I Learned
 
 categories:
-- DevOps
+- IT Operations
 
 topics:
-- Vagrant
+- Cygwin
 
 tags:
-- Vagrant
-- curl
+- Cygwin
+- Windows
+- Linux
+- Command-line Interfaces (CLI)
 ---
 
 :source-language: console
 :url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
+:url_cygwin: https://cygwin.com
+:url_cygwin_doc_nsswitch: https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch-home
 
-{url_til} how to...
+
+You can define the default home directory for all {url_cygwin}[Cygwin] users in the `nsswitch.conf` file.
+
+For example, the following sets your default home directory to `/cygdrive/c/Users/{user_name}/home`, or in windows notation `C:\Users\{user_name}\home`.
+
+.`/etc/nsswitch.conf`
+----
+db_home: /%H/home
+----
+
+You can change it to whatever you like.
+Consult the {url_cygwin_doc_nsswitch}[Cygwin documentation] for more information.
+And look https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch-passwd[here] below the `/path` section for more on supported wildcard characters.
