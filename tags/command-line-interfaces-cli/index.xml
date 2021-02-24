@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command-line Interfaces (CLI) on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/command-line-interfaces-cli/</link>
+    <description>Recent content in Command-line Interfaces (CLI) on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/command-line-interfaces-cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Change the Default Home Directory for Every Cygwin User</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</guid>
+      <description>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
+ For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in windows notation C:\Users{user_name}\home.
+ /etc/nsswitch.conf db_home: /%H/home   You can change it to whatever you like. Consult the Cygwin documentation for more information. And look here below the /path section for more on supported wildcard characters.
+ </description>
+    </item>
+    
+  </channel>
+</rss>
