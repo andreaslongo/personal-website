@@ -7,6 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://www.andreaslongo.com/tags/linux-/-unix/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A sudo Like Command for Cygwin</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-sudo/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-sudo/</guid>
+      <description>You can run commands from Cygwin with elevated permissions.
+ On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use sudo for this.
+ To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for ZSH, but it should also work with other bash-like shells.
+ ~/.zshrc alias sudo=&amp;#39;cygstart --action=runas&amp;#39;   Now you can run something like this to test the alias.</description>
+    </item>
+    
+    <item>
+      <title>Change the Default Home Directory for Every Cygwin User</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</guid>
+      <description>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
+ For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in windows notation C:\Users{user_name}\home.
+ /etc/nsswitch.conf db_home: /%H/home   You can change it to whatever you like. Consult the Cygwin documentation for more information. And look here below the /path section for more on supported wildcard characters.
+ </description>
+    </item>
+    
+    <item>
       <title>Use the Windows Clipboard in Vim on Cygwin</title>
       <link>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>

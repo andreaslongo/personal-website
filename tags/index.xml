@@ -26,11 +26,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://www.andreaslongo.com/tags/linux/</link>
+      <title>Sudo</title>
+      <link>https://www.andreaslongo.com/tags/sudo/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/linux/</guid>
+      <guid>https://www.andreaslongo.com/tags/sudo/</guid>
       <description></description>
     </item>
     
@@ -220,6 +220,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/linux-/-unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ZSH / Bash</title>
+      <link>https://www.andreaslongo.com/tags/zsh-/-bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/zsh-/-bash/</guid>
       <description></description>
     </item>
     
