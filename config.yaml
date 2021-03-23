@@ -62,12 +62,18 @@ languages:
         - name: Home
           url: /
           weight: 1
-        - name: Contact
-          url: contact
         - name: Blog
           url: blog
+          weight: 2
+        - name: Training
+          url: training
+          weight: 2
+        - name: Contact
+          url: contact
+          weight: 3
         - name: Search
           url: search
+          weight: 3
 
 taxonomies:
   category: categories

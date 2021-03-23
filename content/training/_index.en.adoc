@@ -1,0 +1,5 @@
+---
+title: Training
+---
+
+- https://training.andreaslongo.com[Einstieg Datenbanken]
