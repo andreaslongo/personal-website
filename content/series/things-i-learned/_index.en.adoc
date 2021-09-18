@@ -1,7 +1,7 @@
 ---
 title: Things I Learned
 layout: til
-description: A blog format to record and share my day-to-day learning and knowledge building.
+description: A blog format to record and share my day-to-day findings.
 
 cover:
     image: /images/field-notes-and-pencil-EPppwcVTZEo.min.jpg
