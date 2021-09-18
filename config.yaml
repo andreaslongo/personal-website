@@ -51,11 +51,9 @@ languages:
       imageHeight: 200
       buttons:
         - name: Blog
-          url: blog
+          url: /series/things-i-learned
         - name: Contact me
           url: contact
-        - name: Things I Learned
-          url: series/things-i-learned
 
     menu:
       main:
@@ -63,7 +61,7 @@ languages:
           url: /
           weight: 1
         - name: Blog
-          url: blog
+          url: /series/things-i-learned
           weight: 2
         - name: Training
           url: training
