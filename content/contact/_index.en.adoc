@@ -3,10 +3,11 @@ title: Contact me on...
 ---
 
 - https://www.linkedin.com/in/andreaslongo[Linkedin^]
-- https://twitter.com/andreas_longo[Twitter^]
-- https://github.com/andreaslongo[GitHub^] | https://gitlab.com/andreaslongo[GitLab^]
+//- https://twitter.com/andreas_longo[Twitter^]
+- https://github.com/andreaslongo[GitHub^]
+//| https://gitlab.com/andreaslongo[GitLab^]
 
-Or send your **Email** to: contact@andreaslongo.com
+Or send your **email** to: contact@andreaslongo.com
 
 Emails that contain blocked attachments will not be delivered to my inbox.
 
