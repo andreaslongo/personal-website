@@ -11,7 +11,7 @@ minify:
 
 params:
   author: Andreas Longo
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: true
   ShowBreadCrumbs: false
   ShowPostNavLinks: false
