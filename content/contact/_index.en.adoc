@@ -2,10 +2,10 @@
 title: Contact me on...
 ---
 
-- https://www.linkedin.com/in/andreaslongo[Linkedin^]
-//- https://twitter.com/andreas_longo[Twitter^]
+- https://www.linkedin.com/in/andreaslongo[LinkedIn^]
+- https://twitter.com/andreas_longo[Twitter^]
 - https://github.com/andreaslongo[GitHub^]
-//| https://gitlab.com/andreaslongo[GitLab^]
+| https://gitlab.com/andreaslongo[GitLab^]
 
 Or send your **email** to: contact@andreaslongo.com
 
