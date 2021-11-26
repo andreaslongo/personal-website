@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vim on Andreas Longo</title>
     <link>https://www.andreaslongo.com/tags/vim/</link>
@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use the Windows Clipboard in Vim on Cygwin</title>
-      <link>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</guid>
       <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
  ~/.vim/.vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
  </description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>Vim Undo Branches</title>
-      <link>https://www.andreaslongo.com/blog/vim-undo-branches/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/vim-undo-branches/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</guid>
       <description>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
  This concept is called undo tree or undo branches. See :help undo-branches.
  Moving through the undo tree Go to older text state (10 minutes before)
@@ -33,10 +33,10 @@
     
     <item>
       <title>Two Editor Plugins Every REST API Developer Should Know</title>
-      <link>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</guid>
       <description>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.
  Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
    This plugin is for Vim. It is a wrapper around curl.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Managed Service Accounts on Andreas Longo</title>
     <link>https://www.andreaslongo.com/tags/managed-service-accounts/</link>
@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/managed-service-accounts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Active Directory Managed Service Accounts</title>
-      <link>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</guid>
       <description>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).
  Managed service accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs, these tasks no longer disrupt a service (downtime).
   Administration  No manual password management is required.

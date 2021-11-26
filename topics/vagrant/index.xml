@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vagrant on Andreas Longo</title>
     <link>https://www.andreaslongo.com/topics/vagrant/</link>
@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/vagrant/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to Download and Import a Vagrant Box Manually</title>
-      <link>https://www.andreaslongo.com/blog/import-a-vagrant-box-manually/</link>
+      <title>Download and Import a Vagrant Box Manually</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/import-a-vagrant-box-manually/</guid>
-      <description>Today I learned how to download and import a Vagrant box manually.
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</guid>
+      <description>How to download and import a Vagrant box manually.
  To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
  But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
     </item>

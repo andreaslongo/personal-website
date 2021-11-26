@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Things I Learned on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/blog/things-i-learned/</link>
+    <description>Recent content in Things I Learned on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/things-i-learned/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A sudo Like Command for Cygwin</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</guid>
+      <description>You can run commands from Cygwin with elevated permissions.
+ On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use sudo for this.
+ To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for ZSH, but it should also work with other bash-like shells.
+ ~/.zshrc alias sudo=&amp;#39;cygstart --action=runas&amp;#39;   Now you can run something like this to test the alias.</description>
+    </item>
+    
+    <item>
+      <title>Change the Default Home Directory for Every Cygwin User</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</guid>
+      <description>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
+ For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in windows notation C:\Users{user_name}\home.
+ /etc/nsswitch.conf db_home: /%H/home   You can change it to whatever you like. Consult the Cygwin documentation for more information. And look here below the /path section for more on supported wildcard characters.
+ </description>
+    </item>
+    
+    <item>
+      <title>Use the Windows Clipboard in Vim on Cygwin</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</guid>
+      <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
+ ~/.vim/.vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+ </description>
+    </item>
+    
+    <item>
+      <title>Using Active Directory Managed Service Accounts</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</guid>
+      <description>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).
+ Managed service accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs, these tasks no longer disrupt a service (downtime).
+  Administration  No manual password management is required.
+ Availability  No service downtime is necessary for password changes.</description>
+    </item>
+    
+    <item>
+      <title>Find Files and Sort Them By Time on Linux</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</guid>
+      <description>Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
+ $ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile   </description>
+    </item>
+    
+    <item>
+      <title>Get Uptime on a Windows System</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</guid>
+      <description>I haven’t found a good alternative to the Unix uptime command for Windows yet.
+ uptime from the procps-ng package
+ $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
+ $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
+    </item>
+    
+    <item>
+      <title>Convert Datetime from and to String</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</guid>
+      <description>From String Parse a string representing a date/time in any format to a Python datetime object with the datetime.strptime() method.
+ &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; timestamp = &amp;#39;01.10.2009 20:36:41&amp;#39; &amp;gt;&amp;gt;&amp;gt; datetime.strptime(timestamp, &amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) datetime.datetime(2009, 10, 1, 20, 36, 41)   The second argument to datetime.strptime() is a format string build with format codes. See strftime() and strptime() Format Codes for a full list of available format codes.</description>
+    </item>
+    
+    <item>
+      <title>Vim Undo Branches</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</guid>
+      <description>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
+ This concept is called undo tree or undo branches. See :help undo-branches.
+ Moving through the undo tree Go to older text state (10 minutes before)
+ :earlier 10m   Go to newer text state (5 minutes later)
+ :later 5m     </description>
+    </item>
+    
+    <item>
+      <title>Two Editor Plugins Every REST API Developer Should Know</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</guid>
+      <description>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.
+ Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
+   This plugin is for Vim. It is a wrapper around curl.
+  This plugin is for Visual Studio Code.</description>
+    </item>
+    
+    <item>
+      <title>How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</guid>
+      <description>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded Secure Sockets Layer (SSL) protocol.
+ In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
+ Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The files file.p12 and server.xml contain the private key and password for a certificate.</description>
+    </item>
+    
+    <item>
+      <title>Download and Import a Vagrant Box Manually</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</guid>
+      <description>How to download and import a Vagrant box manually.
+ To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
+ But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
+    </item>
+    
+  </channel>
+</rss>

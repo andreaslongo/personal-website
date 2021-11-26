@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.andreaslongo.com/blog/cygwin-sudo/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/</loc>
+    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/</loc>
@@ -14,7 +17,7 @@
     <loc>https://www.andreaslongo.com/categories/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/command-line-interfaces-cli/</loc>
@@ -44,7 +47,7 @@
     <loc>https://www.andreaslongo.com/topics/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/vim/</loc>
@@ -68,7 +71,7 @@
     <loc>https://www.andreaslongo.com/tags/powershell/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/categories/devops/</loc>
@@ -77,14 +80,23 @@
     <loc>https://www.andreaslongo.com/tags/find/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/linux-find-files-sorted-by-time/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/windows-get-uptime/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</loc>
+    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/topics/linux-unix/</loc>
+    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/linux-unix/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/microsoft-windows/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</loc>
+    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/data-types/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
@@ -95,16 +107,13 @@
     <loc>https://www.andreaslongo.com/tags/python/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/python-datetime-from-string/</loc>
-    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/categories/software-development/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/topics/vim/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/vim-undo-branches/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/curl/</loc>
@@ -122,7 +131,7 @@
     <loc>https://www.andreaslongo.com/tags/rest-apis/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/visual-studio-code/</loc>
@@ -131,7 +140,7 @@
     <loc>https://www.andreaslongo.com/tags/apache-tomcat/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/https/</loc>
@@ -146,7 +155,7 @@
     <loc>https://www.andreaslongo.com/tags/tls/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/import-a-vagrant-box-manually/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/topics/vagrant/</loc>
@@ -155,11 +164,9 @@
     <loc>https://www.andreaslongo.com/tags/vagrant/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/archive/</loc>
+    <loc>https://www.andreaslongo.com/blog/archive/</loc>
   </url><url>
     <loc>https://www.andreaslongo.com/contact/</loc>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/linux-/-unix/</loc>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/linux-/-unix/</loc>
   </url><url>

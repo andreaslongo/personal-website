@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Andreas Longo</title>
     <link>https://www.andreaslongo.com/tags/</link>
@@ -94,6 +94,15 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/find/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux, Unix</title>
+      <link>https://www.andreaslongo.com/tags/linux-unix/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/linux-unix/</guid>
       <description></description>
     </item>
     

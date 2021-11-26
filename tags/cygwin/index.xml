@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cygwin on Andreas Longo</title>
     <link>https://www.andreaslongo.com/tags/cygwin/</link>
@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/cygwin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A sudo Like Command for Cygwin</title>
-      <link>https://www.andreaslongo.com/blog/cygwin-sudo/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/cygwin-sudo/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</guid>
       <description>You can run commands from Cygwin with elevated permissions.
  On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use sudo for this.
  To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for ZSH, but it should also work with other bash-like shells.
@@ -21,10 +21,10 @@
     
     <item>
       <title>Change the Default Home Directory for Every Cygwin User</title>
-      <link>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/cygwin-default-home-directory/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</guid>
       <description>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
  For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in windows notation C:\Users{user_name}\home.
  /etc/nsswitch.conf db_home: /%H/home   You can change it to whatever you like. Consult the Cygwin documentation for more information. And look here below the /path section for more on supported wildcard characters.
@@ -33,10 +33,10 @@
     
     <item>
       <title>Use the Windows Clipboard in Vim on Cygwin</title>
-      <link>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</guid>
       <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
  ~/.vim/.vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
  </description>
