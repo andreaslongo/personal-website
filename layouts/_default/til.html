@@ -1,7 +1,10 @@
 {{- define "main" }}
+<!-- Source: ../_default/archives.html -->
 
 <header class="page-header">
+    <!-- CUSTOMIZATION: Show article count next to title  -->
 	<h1>{{ .Title }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h1>
+    <!-- CUSTOMIZATION END -->
   {{- if .Description }}
   <div class="post-description">
     {{ .Description }}
@@ -9,19 +12,21 @@
   {{- end }}
 </header>
 
-  {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden}}
-  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{- range .Site.Taxonomies.topics }}
+<!-- CUSTOMIZATION: Show articles grouped by topic -->
+{{- range .Site.Taxonomies.topics }}
+<!-- CUSTOMIZATION END -->
   <div class="archive-month">
+      <!-- CUSTOMIZATION: Show topic with link and article count -->
 	  <h3 class="archive-month-header"><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h3>
+      <!-- CUSTOMIZATION END -->
     <div class="archive-posts">
-      {{- range .Pages  }}
+      {{- range .Pages }}
       {{- if eq .Kind "page" }}
       <div class="archive-entry">
         <h3 class="archive-entry-title">
           {{- .Title | markdownify }}
+          {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
         </h3>
         <div class="archive-meta">
           {{- partial "post_meta.html" . -}}
@@ -35,4 +40,4 @@
 </div>
 {{- end }}
 
-{{- end  }}{{/* end main */}}
+{{- end }}{{/* end main */}}

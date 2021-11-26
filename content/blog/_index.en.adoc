@@ -1,13 +1,15 @@
 ---
 title: Blog
+
+ShowBreadCrumbs: false
 ---
 
-link:{{< ref "/archive" >}}[Archive]
-|
-link:{{< ref "/series" >}}[Series]
-|
-link:{{< ref "/categories" >}}[Categories]
-|
-link:{{< ref "/topics" >}}[Topics]
-|
-link:{{< ref "/tags" >}}[Tags]
+//link:{{< ref "/archive" >}}[Archive]
+//|
+//link:{{< ref "/series" >}}[Series]
+//|
+//link:{{< ref "/categories" >}}[Categories]
+//|
+//link:{{< ref "/topics" >}}[Topics]
+//|
+//link:{{< ref "/tags" >}}[Tags]

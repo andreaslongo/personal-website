@@ -1,5 +1,5 @@
 ---
-title: Python Datetime from/to String
+title: Convert Datetime from and to String
 date: 2021-02-16
 draft: false
 
@@ -24,7 +24,6 @@ tags:
 ---
 
 :source-language: python
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 == From String
 

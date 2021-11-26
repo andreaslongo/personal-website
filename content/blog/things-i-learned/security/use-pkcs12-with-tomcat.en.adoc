@@ -26,7 +26,6 @@ tags:
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 :url_tomcat: https://tomcat.apache.org/[Apache Tomcat]
 :url_pkcs12: https://en.wikipedia.org/wiki/PKCS_12[PKCS #12]
@@ -34,7 +33,7 @@ tags:
 :url_https: https://en.wikipedia.org/wiki/HTTPS
 
 
-{url_til} how to use {url_pkcs12} archives with {url_tomcat} for {url_tls}.
+How to use {url_pkcs12} archives with {url_tomcat} for {url_tls}.
 TLS superseded Secure Sockets Layer (SSL) protocol.
 
 In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.

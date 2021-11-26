@@ -25,7 +25,6 @@ tags:
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 :url_get_uptime: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime
 :url_powershell: https://docs.microsoft.com/en-us/powershell/

@@ -23,7 +23,6 @@ tags:
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 
 You can undo and redo changes without having to press `u` or `CTRL-R` repeatedly.

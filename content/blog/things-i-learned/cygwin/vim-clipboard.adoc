@@ -27,7 +27,6 @@ tags:
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 :url_cygwin: https://cygwin.com
 :url_vim: https://www.vim.org/

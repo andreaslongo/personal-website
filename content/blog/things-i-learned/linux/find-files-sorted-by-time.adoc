@@ -16,16 +16,15 @@ categories:
 - DevOps
 
 topics:
-- Linux / Unix
+- Linux, Unix
 
 tags:
 - Command-line Interface (CLI)
-- Linux / Unix
+- Linux, Unix
 - find
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
 
 Recursively search for files by name with `find`.

@@ -13,7 +13,7 @@ params:
   author: Andreas Longo
   ShowReadingTime: false
   ShowShareButtons: true
-  ShowBreadCrumbs: false
+  ShowBreadCrumbs: true
   ShowPostNavLinks: false
   defaultTheme: auto
   disableThemeToggle: false
@@ -51,27 +51,20 @@ languages:
       imageHeight: 300
       buttons:
         - name: Blog
-          url: /series/things-i-learned
+          url: blog
         - name: Contact me
           url: contact
 
     menu:
       main:
-        - name: Home
-          url: /
-          weight: 1
         - name: Blog
-          url: /series/things-i-learned
-          weight: 2
-        - name: Training
-          url: training
-          weight: 2
+          url: blog
         - name: Contact
           url: contact
-          weight: 3
         - name: Search
           url: search
-          weight: 3
+        - name: Training
+          url: training
 
 taxonomies:
   category: categories

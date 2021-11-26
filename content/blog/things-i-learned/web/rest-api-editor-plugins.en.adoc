@@ -28,7 +28,6 @@ tags:
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I Learned]
 
 :url_curl: https://curl.se/[curl]
 :url_postman: https://www.postman.com/[Postman]

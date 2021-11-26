@@ -1,5 +1,5 @@
 ---
-title: How to Download and Import a Vagrant Box Manually
+title: Download and Import a Vagrant Box Manually
 date: 2021-01-19
 draft: false
 
@@ -30,9 +30,8 @@ tags:
 ---
 
 :source-language: console
-:url_til: link:{{< ref "/things-i-learned" >}}[Today I learned]
 
-{url_til} how to download and import a https://www.vagrantup.com/[Vagrant] box manually.
+How to download and import a https://www.vagrantup.com/[Vagrant] box manually.
 
 *To download or upgrade a Vagrant box*, you can use commands like `vagrant box add` and `vagrant box update`.
 Most of the time, you should be fine using these automated processes.
