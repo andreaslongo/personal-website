@@ -3,6 +3,7 @@ title: Contact me on...
 layout: single
 
 ShowBreadCrumbs: false
+disableShare: true
 ---
 
 - https://www.linkedin.com/in/andreaslongo[LinkedIn^]

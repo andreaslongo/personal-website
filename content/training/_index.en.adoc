@@ -3,6 +3,7 @@ title: Training
 layout: single
 
 ShowBreadCrumbs: false
+disableShare: true
 
 cover:
     image: /images/working-together-dWYU3i-mqEo.min.jpg
