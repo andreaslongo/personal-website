@@ -46,9 +46,11 @@ languages:
     profileMode:
       enabled: true
       title: Senior IT Systems Engineer
+      subtitle: IT Consultant
       imageUrl: /images/brainstorming-over-paper-5fNmWej4tAA.min.jpg
       imageWidth: 300
       imageHeight: 300
+      imageTitle: Two IT professionals brainstorming over paper
       buttons:
         - name: Blog
           url: blog
