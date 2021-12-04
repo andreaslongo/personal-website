@@ -11,10 +11,13 @@ minify:
 
 params:
   author: Andreas Longo
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowFullTextinRSS: true
+  ShowPostNavLinks: true
   ShowReadingTime: false
   ShowShareButtons: true
-  ShowBreadCrumbs: true
-  ShowPostNavLinks: false
+  comments: false
   defaultTheme: auto
   disableThemeToggle: false
   displayFullLangName: true
@@ -106,5 +109,5 @@ services:
 markup:
   asciidocExt:
     attributes:
-      showtitle: true
       figure-caption!:
+      showtitle: true
