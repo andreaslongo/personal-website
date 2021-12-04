@@ -6,7 +6,22 @@
     <description>Recent content in Linux, Unix on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/linux-unix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/linux-unix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zsh configuration files</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</guid>
+      <description>Zsh config files and the order of sourcing during startup.
+  1 ~/.zshenv  always sourced
+ 2 ~/.zprofile  sourced if login shell
+ 3 ~/.zshrc  sourced if interactive shell
+ 4 ~/.zlogin  sourced if login shell
+ 5 ~/.zlogout  sourced when exiting shell
+   </description>
+    </item>
+    
     <item>
       <title>Find Files and Sort Them By Time on Linux</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</link>

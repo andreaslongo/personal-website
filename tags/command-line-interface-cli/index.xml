@@ -6,7 +6,22 @@
     <description>Recent content in Command-line Interface (CLI) on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/command-line-interface-cli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/command-line-interface-cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zsh configuration files</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</guid>
+      <description>Zsh config files and the order of sourcing during startup.
+  1 ~/.zshenv  always sourced
+ 2 ~/.zprofile  sourced if login shell
+ 3 ~/.zshrc  sourced if interactive shell
+ 4 ~/.zlogin  sourced if login shell
+ 5 ~/.zlogout  sourced when exiting shell
+   </description>
+    </item>
+    
     <item>
       <title>Using Active Directory Managed Service Accounts</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</link>

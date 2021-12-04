@@ -6,7 +6,22 @@
     <description>Recent content on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zsh configuration files</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</guid>
+      <description>Zsh config files and the order of sourcing during startup.
+  1 ~/.zshenv  always sourced
+ 2 ~/.zprofile  sourced if login shell
+ 3 ~/.zshrc  sourced if interactive shell
+ 4 ~/.zlogin  sourced if login shell
+ 5 ~/.zlogout  sourced when exiting shell
+   </description>
+    </item>
+    
     <item>
       <title>A sudo Like Command for Cygwin</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</link>

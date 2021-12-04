@@ -3,18 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.andreaslongo.com/blog/things-i-learned/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/categories/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/command-line-interface-cli/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/categories/devops/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/topics/linux-unix/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/linux-unix/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/series/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/series/things-i-learned/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/topics/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/z-shell-zsh/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</loc>
+    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</loc>
@@ -32,19 +62,7 @@
     <loc>https://www.andreaslongo.com/categories/it-operations/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/series/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/sudo/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/series/things-i-learned/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</loc>
@@ -59,9 +77,6 @@
     <loc>https://www.andreaslongo.com/tags/actice-directory/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/command-line-interface-cli/</loc>
-    <lastmod>2021-02-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/managed-service-accounts/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -74,9 +89,6 @@
     <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/categories/devops/</loc>
-    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/find/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -84,12 +96,6 @@
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</loc>
-    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/linux-unix/</loc>
-    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/linux-unix/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/microsoft-windows/</loc>
