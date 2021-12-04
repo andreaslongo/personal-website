@@ -1,0 +1,26 @@
+---
+title: Delete remote tags
+date: 2021-12-05
+
+series:
+- Things I learned
+
+categories:
+- DevOps
+
+topics:
+- Git
+
+tags:
+- Git
+---
+
+:source-language: shell
+
+
+Remove a remote Git tag:
+
+----
+$ git push --delete <remote> <tag>
+$ git push --delete origin v1.0
+----
