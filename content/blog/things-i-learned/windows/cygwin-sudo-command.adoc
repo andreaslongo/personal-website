@@ -16,7 +16,7 @@ categories:
 - IT Operations
 
 topics:
-- Cygwin
+- Microsoft Windows
 
 tags:
 - Command-line Interfaces (CLI)
