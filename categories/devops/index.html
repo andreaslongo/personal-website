@@ -95,11 +95,11 @@ $ git push --delete &lt;remote> &lt;tag> $ git push --delete origin v1.0 </p>
 </p>
 </section>
 <footer class=entry-footer><span title="2021-12-04 00:00:00 +0000 UTC">December 4, 2021</span></footer>
-<a class=entry-link aria-label="post link to Zsh configuration files" href=https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/></a>
+<a class=entry-link aria-label="post link to Zsh configuration files" href=https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Find files and sort them by time
+<h2>Find files and sort them by time on Unix
 </h2>
 </header>
 <section class=entry-content>
@@ -107,7 +107,7 @@ $ git push --delete &lt;remote> &lt;tag> $ git push --delete origin v1.0 </p>
 $ find . -type f -name "Makefile*" -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </p>
 </section>
 <footer class=entry-footer><span title="2021-02-17 00:00:00 +0000 UTC">February 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to Find files and sort them by time" href=https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/></a>
+<a class=entry-link aria-label="post link to Find files and sort them by time on Unix" href=https://www.andreaslongo.com/blog/things-i-learned/unix/find-files-sorted-by-time/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
@@ -115,11 +115,11 @@ $ find . -type f -name "Makefile*" -exec ls -lt {} + -rw------- 1 al al 1916 Feb
 </h2>
 </header>
 <section class=entry-content>
-<p>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
-This concept is called undo tree or undo branches. See :help undo-branches.
-Moving through the undo tree Go to older text state (10 minutes before)
-:earlier 10m Go to newer text state (5 minutes later)
-:later 5m </p>
+<p>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+Moving through the undo tree Go to newer/older text state.
+g+ g- Go to older text state, 10 minutes before.
+:earlier 10m Go to newer text state, 5 minutes later.
+:later 5m Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
 <a class=entry-link aria-label="post link to Vim undo branches" href=https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/></a>
@@ -133,9 +133,8 @@ Moving through the undo tree Go to older text state (10 minutes before)
 </h2>
 </header>
 <section class=entry-content>
-<p>How to download and import a Vagrant box manually.
-To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
-But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality....</p>
+<p>To download or upgrade a Vagrant box, you can use the command vagrant box add and vagrant box update.
+Most of the time, you should be fine using these automated processes. But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have video calls with your customers throughout the day, so your priority is to maintain high call quality....</p>
 </section>
 <footer class=entry-footer><span title="2021-01-19 00:00:00 +0000 UTC">January 19, 2021</span></footer>
 <a class=entry-link aria-label="post link to Download and import a Vagrant box manually" href=https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/></a>

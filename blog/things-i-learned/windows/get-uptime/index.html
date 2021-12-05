@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>Show uptime on a Windows system | Andreas Longo</title>
-<meta name=keywords content="Command-line Interface (CLI),Microsoft Windows,PowerShell">
+<meta name=keywords content="Command-line interface (CLI),PowerShell,Windows">
 <meta name=description content="I haven’t found a good alternative to the Unix uptime command for Windows yet.
  uptime from the procps-ng package
  $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
@@ -33,7 +33,7 @@
 <meta property="og:url" content="https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/"><meta property="article:section" content="blog">
 <meta property="article:published_time" content="2021-02-17T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-02-17T00:00:00+00:00">
-<meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/">
+<meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/unix/lvm-extend-logical-volume/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/"><meta property="og:see_also" content="https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Show uptime on a Windows system">
 <meta name=twitter:description content="I haven’t found a good alternative to the Unix uptime command for Windows yet.
@@ -41,7 +41,7 @@
  $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
  $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.andreaslongo.com/blog/"},{"@type":"ListItem","position":3,"name":"Things I learned","item":"https://www.andreaslongo.com/blog/things-i-learned/"},{"@type":"ListItem","position":4,"name":"Show uptime on a Windows system","item":"https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Show uptime on a Windows system","name":"Show uptime on a Windows system","description":"I haven’t found a good alternative to the Unix uptime command for Windows yet.\n uptime from the procps-ng package\n $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.\n $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.","keywords":["Command-line Interface (CLI)","Microsoft Windows","PowerShell"],"articleBody":"I haven’t found a good alternative to the Unix uptime command for Windows yet.\n uptime from the procps-ng package\n $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.\n $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet. On Windows, this is the same as the Get-Uptime -Since command.\n $ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime LastBootUpTime -------------- 18.01.2021 07:56:41   The LastBootUpTime value may not be updated if you have fast startup enabled for your system.\n   ","wordCount":"158","inLanguage":"en","datePublished":"2021-02-17T00:00:00Z","dateModified":"2021-02-17T00:00:00Z","author":{"@type":"Person","name":"Andreas Longo"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/"},"publisher":{"@type":"Organization","name":"Andreas Longo","logo":{"@type":"ImageObject","url":"https://www.andreaslongo.com/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Show uptime on a Windows system","name":"Show uptime on a Windows system","description":"I haven’t found a good alternative to the Unix uptime command for Windows yet.\n uptime from the procps-ng package\n $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.\n $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.","keywords":["Command-line interface (CLI)","PowerShell","Windows"],"articleBody":"I haven’t found a good alternative to the Unix uptime command for Windows yet.\n uptime from the procps-ng package\n $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.\n $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet. On Windows, this is the same as the Get-Uptime -Since command.\n $ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime LastBootUpTime -------------- 18.01.2021 07:56:41   The LastBootUpTime value may not be updated if you have fast startup enabled for your system.\n   ","wordCount":"158","inLanguage":"en","datePublished":"2021-02-17T00:00:00Z","dateModified":"2021-02-17T00:00:00Z","author":{"@type":"Person","name":"Andreas Longo"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/"},"publisher":{"@type":"Organization","name":"Andreas Longo","logo":{"@type":"ImageObject","url":"https://www.andreaslongo.com/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -96,7 +96,7 @@ Show uptime on a Windows system
 </div>
 <div class=listingblock>
 <div class=content>
-<pre class=highlight><code class=language-console data-lang=console>$ uptime
+<pre class=highlight><code class=language-powershell data-lang=powershell>$ uptime
  12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
 $ uptime --pretty
 up 5 hours, 3 minutes
@@ -112,7 +112,7 @@ $ uptime --since
 </div>
 <div class=listingblock>
 <div class=content>
-<pre class=highlight><code class=language-console data-lang=console>$ Get-Uptime
+<pre class=highlight><code class=language-powershell data-lang=powershell>$ Get-Uptime
 
 Days              : 30
 Hours             : 7
@@ -137,7 +137,7 @@ On Windows, this is the same as the <code>Get-Uptime -Since</code> command.</p>
 </div>
 <div class=listingblock>
 <div class=content>
-<pre class=highlight><code class=language-console data-lang=console>$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+<pre class=highlight><code class=language-powershell data-lang=powershell>$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
 
 LastBootUpTime
 --------------
@@ -152,24 +152,24 @@ LastBootUpTime
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://www.andreaslongo.com/tags/command-line-interface-cli/>Command-line Interface (CLI)</a></li>
-<li><a href=https://www.andreaslongo.com/tags/microsoft-windows/>Microsoft Windows</a></li>
+<li><a href=https://www.andreaslongo.com/tags/command-line-interface-cli/>Command-line interface (CLI)</a></li>
 <li><a href=https://www.andreaslongo.com/tags/powershell/>PowerShell</a></li>
+<li><a href=https://www.andreaslongo.com/tags/windows/>Windows</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/>
+<a class=prev href=https://www.andreaslongo.com/blog/things-i-learned/unix/find-files-sorted-by-time/>
 <span class=title>« Prev Page</span>
 <br>
-<span>Find files and sort them by time</span>
+<span>Find files and sort them by time on Unix</span>
 </a>
 <a class=next href=https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/>
 <span class=title>Next Page »</span>
 <br>
-<span>Convert datetime from and to string</span>
+<span>Convert datetime from and to string in Python</span>
 </a>
 </nav>
 <div class=share-buttons>
-<a target=_blank rel="noopener noreferrer" aria-label="share Show uptime on a Windows system on twitter" href="https://twitter.com/intent/tweet/?text=Show%20uptime%20on%20a%20Windows%20system&url=https%3a%2f%2fwww.andreaslongo.com%2fblog%2fthings-i-learned%2fwindows%2fget-uptime%2f&hashtags=Command-lineInterface%28CLI%29%2cMicrosoftWindows%2cPowerShell"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Show uptime on a Windows system on twitter" href="https://twitter.com/intent/tweet/?text=Show%20uptime%20on%20a%20Windows%20system&url=https%3a%2f%2fwww.andreaslongo.com%2fblog%2fthings-i-learned%2fwindows%2fget-uptime%2f&hashtags=Command-lineinterface%28CLI%29%2cPowerShell%2cWindows"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 <a target=_blank rel="noopener noreferrer" aria-label="share Show uptime on a Windows system on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.andreaslongo.com%2fblog%2fthings-i-learned%2fwindows%2fget-uptime%2f&title=Show%20uptime%20on%20a%20Windows%20system&summary=Show%20uptime%20on%20a%20Windows%20system&source=https%3a%2f%2fwww.andreaslongo.com%2fblog%2fthings-i-learned%2fwindows%2fget-uptime%2f"><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
 </a>

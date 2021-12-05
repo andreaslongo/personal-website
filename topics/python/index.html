@@ -70,15 +70,16 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Convert datetime from and to string
+<h2>Convert datetime from and to string in Python
 </h2>
 </header>
 <section class=entry-content>
-<p>From String Parse a string representing a date/time in any format to a Python datetime object with the datetime.strptime() method.
->>> from datetime import datetime >>> timestamp = '01.10.2009 20:36:41' >>> datetime.strptime(timestamp, '%d.%m.%Y %H:%M:%S') datetime.datetime(2009, 10, 1, 20, 36, 41) The second argument to datetime.strptime() is a format string build with format codes. See strftime() and strptime() Format Codes for a full list of available format codes....</p>
+<p>Datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
+>>> from datetime import datetime >>> dt = datetime(2009, 10, 1, 20, 36, 41) >>> dt.strftime('%d.%m.%Y %H:%M:%S') '01.10.2009 20:36:41' The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
+String to datetime Use the datetime....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-16 00:00:00 +0000 UTC">February 16, 2021</span></footer>
-<a class=entry-link aria-label="post link to Convert datetime from and to string" href=https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/></a>
+<a class=entry-link aria-label="post link to Convert datetime from and to string in Python" href=https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/></a>
 </article>
 </main>
 <footer class=footer>

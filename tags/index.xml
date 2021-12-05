@@ -18,7 +18,27 @@
     </item>
     
     <item>
-      <title>Command-line Interface (CLI)</title>
+      <title>Linux</title>
+      <link>https://www.andreaslongo.com/tags/linux/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/linux/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Logical Volume Manager (LVM)</title>
+      <link>https://www.andreaslongo.com/tags/logical-volume-manager-lvm/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/logical-volume-manager-lvm/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Command-line interface (CLI)</title>
       <link>https://www.andreaslongo.com/tags/command-line-interface-cli/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -28,11 +48,21 @@
     </item>
     
     <item>
-      <title>Linux, Unix</title>
-      <link>https://www.andreaslongo.com/tags/linux-unix/</link>
+      <title>Shell</title>
+      <link>https://www.andreaslongo.com/tags/shell/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/linux-unix/</guid>
+      <guid>https://www.andreaslongo.com/tags/shell/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Unix</title>
+      <link>https://www.andreaslongo.com/tags/unix/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/unix/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -48,11 +78,21 @@
     </item>
     
     <item>
-      <title>Command-line Interfaces (CLI)</title>
-      <link>https://www.andreaslongo.com/tags/command-line-interfaces-cli/</link>
+      <title>Bash</title>
+      <link>https://www.andreaslongo.com/tags/bash/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/command-line-interfaces-cli/</guid>
+      <guid>https://www.andreaslongo.com/tags/bash/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Command-line interpreter (CLI)</title>
+      <link>https://www.andreaslongo.com/tags/command-line-interpreter-cli/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/command-line-interpreter-cli/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -68,7 +108,7 @@
     </item>
     
     <item>
-      <title>Sudo</title>
+      <title>sudo</title>
       <link>https://www.andreaslongo.com/tags/sudo/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -98,21 +138,31 @@
     </item>
     
     <item>
-      <title>Actice Directory</title>
-      <link>https://www.andreaslongo.com/tags/actice-directory/</link>
-      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      <title>Zsh</title>
+      <link>https://www.andreaslongo.com/tags/zsh/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/actice-directory/</guid>
+      <guid>https://www.andreaslongo.com/tags/zsh/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Managed Service Accounts</title>
-      <link>https://www.andreaslongo.com/tags/managed-service-accounts/</link>
+      <title>Active Directory (AD)</title>
+      <link>https://www.andreaslongo.com/tags/active-directory-ad/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/managed-service-accounts/</guid>
+      <guid>https://www.andreaslongo.com/tags/active-directory-ad/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Managed Service Account (MSA)</title>
+      <link>https://www.andreaslongo.com/tags/managed-service-account-msa/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/managed-service-account-msa/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -138,21 +188,11 @@
     </item>
     
     <item>
-      <title>Microsoft Windows</title>
-      <link>https://www.andreaslongo.com/tags/microsoft-windows/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/microsoft-windows/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Data Types</title>
-      <link>https://www.andreaslongo.com/tags/data-types/</link>
+      <title>Data type</title>
+      <link>https://www.andreaslongo.com/tags/data-type/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/data-types/</guid>
+      <guid>https://www.andreaslongo.com/tags/data-type/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -178,11 +218,11 @@
     </item>
     
     <item>
-      <title>HTTP</title>
-      <link>https://www.andreaslongo.com/tags/http/</link>
+      <title>Hypertext Transfer Protocol (HTTP)</title>
+      <link>https://www.andreaslongo.com/tags/hypertext-transfer-protocol-http/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/http/</guid>
+      <guid>https://www.andreaslongo.com/tags/hypertext-transfer-protocol-http/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -198,21 +238,61 @@
     </item>
     
     <item>
-      <title>REST APIs</title>
-      <link>https://www.andreaslongo.com/tags/rest-apis/</link>
+      <title>Representational state transfer (REST)</title>
+      <link>https://www.andreaslongo.com/tags/representational-state-transfer-rest/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/rest-apis/</guid>
+      <guid>https://www.andreaslongo.com/tags/representational-state-transfer-rest/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Visual Studio Code</title>
-      <link>https://www.andreaslongo.com/tags/visual-studio-code/</link>
+      <title>REST API</title>
+      <link>https://www.andreaslongo.com/tags/rest-api/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/visual-studio-code/</guid>
+      <guid>https://www.andreaslongo.com/tags/rest-api/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>RESTful API</title>
+      <link>https://www.andreaslongo.com/tags/restful-api/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/restful-api/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code (vscode)</title>
+      <link>https://www.andreaslongo.com/tags/visual-studio-code-vscode/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/visual-studio-code-vscode/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://www.andreaslongo.com/tags/web/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/web/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Web API</title>
+      <link>https://www.andreaslongo.com/tags/web-api/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/web-api/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -228,31 +308,51 @@
     </item>
     
     <item>
-      <title>HTTPS</title>
-      <link>https://www.andreaslongo.com/tags/https/</link>
+      <title>Digital certificate</title>
+      <link>https://www.andreaslongo.com/tags/digital-certificate/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/https/</guid>
+      <guid>https://www.andreaslongo.com/tags/digital-certificate/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Public key certificates</title>
-      <link>https://www.andreaslongo.com/tags/public-key-certificates/</link>
+      <title>Hypertext Transfer Protocol Secure (HTTPS)</title>
+      <link>https://www.andreaslongo.com/tags/hypertext-transfer-protocol-secure-https/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/public-key-certificates/</guid>
+      <guid>https://www.andreaslongo.com/tags/hypertext-transfer-protocol-secure-https/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>TLS</title>
-      <link>https://www.andreaslongo.com/tags/tls/</link>
+      <title>Public key certificate</title>
+      <link>https://www.andreaslongo.com/tags/public-key-certificate/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/tls/</guid>
+      <guid>https://www.andreaslongo.com/tags/public-key-certificate/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Secure Sockets Layer (SSL)</title>
+      <link>https://www.andreaslongo.com/tags/secure-sockets-layer-ssl/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/secure-sockets-layer-ssl/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Transport Layer Security (TLS)</title>
+      <link>https://www.andreaslongo.com/tags/transport-layer-security-tls/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/transport-layer-security-tls/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -263,26 +363,6 @@
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/vagrant/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Linux / Unix</title>
-      <link>https://www.andreaslongo.com/tags/linux-/-unix/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/linux-/-unix/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>ZSH / Bash</title>
-      <link>https://www.andreaslongo.com/tags/zsh-/-bash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/zsh-/-bash/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

@@ -75,7 +75,7 @@
 </header>
 <section class=entry-content>
 <p>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
-~/.vim/.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
 </p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
@@ -87,18 +87,18 @@
 </h2>
 </header>
 <section class=entry-content>
-<p>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
-This concept is called undo tree or undo branches. See :help undo-branches.
-Moving through the undo tree Go to older text state (10 minutes before)
-:earlier 10m Go to newer text state (5 minutes later)
-:later 5m </p>
+<p>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+Moving through the undo tree Go to newer/older text state.
+g+ g- Go to older text state, 10 minutes before.
+:earlier 10m Go to newer text state, 5 minutes later.
+:later 5m Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
 <a class=entry-link aria-label="post link to Vim undo branches" href=https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Text editor plugins for REST APIs
+<h2>Text editor plugins for web APIs
 </h2>
 </header>
 <section class=entry-content>
@@ -108,7 +108,7 @@ This plugin is for Vim. It is a wrapper around curl.
 This plugin is for Visual Studio Code....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-11 00:00:00 +0000 UTC">February 11, 2021</span></footer>
-<a class=entry-link aria-label="post link to Text editor plugins for REST APIs" href=https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/></a>
+<a class=entry-link aria-label="post link to Text editor plugins for web APIs" href=https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/></a>
 </article>
 </main>
 <footer class=footer>

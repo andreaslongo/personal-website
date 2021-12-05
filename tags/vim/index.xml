@@ -14,15 +14,15 @@
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</guid>
       <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
- ~/.vim/.vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+ .vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
  </description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p>To use the Windows clipboard in <a href="https://www.vim.org/">Vim</a> on <a href="https://cygwin.com">Cygwin</a>, add the following to your Vim config file.</p>
 </div>
 <div class="listingblock">
-<div class="title"><code>~/.vim/.vimrc</code></div>
+<div class="title"><code>.vimrc</code></div>
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">set clipboard=unnamed</code></pre>
+<pre class="highlight"><code class="language-vim" data-lang="vim">set clipboard=unnamed</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -38,37 +38,48 @@ The <code>*</code> register gets synced with the Windows clipboard automatically
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</guid>
-      <description>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
- This concept is called undo tree or undo branches. See :help undo-branches.
- Moving through the undo tree Go to older text state (10 minutes before)
- :earlier 10m   Go to newer text state (5 minutes later)
- :later 5m     </description>
+      <description>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+ Moving through the undo tree Go to newer/older text state.
+ g+ g-   Go to older text state, 10 minutes before.
+ :earlier 10m   Go to newer text state, 5 minutes later.
+ :later 5m   Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not.</description>
       <content:encoded><![CDATA[<div class="paragraph">
-<p>You can undo and redo changes without having to press <code>u</code> or <code>CTRL-R</code> repeatedly.
-Retrieve the state of your buffer as it was some time ago.</p>
-</div>
-<div class="paragraph">
-<p>This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.
-See <code>:help undo-branches</code>.</p>
+<p>You can retrieve the state of your text as it was some time ago.
+This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.</p>
 </div>
 <div class="sect1">
 <h2 id="_moving_through_the_undo_tree">Moving through the undo tree</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Go to older text state (10 minutes before)</p>
+<p>Go to newer/older text state.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">:earlier 10m</code></pre>
+<pre class="highlight"><code class="language-vim" data-lang="vim">g+
+g-</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Go to newer text state (5 minutes later)</p>
+<p>Go to older text state, 10 minutes before.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">:later 5m</code></pre>
+<pre class="highlight"><code class="language-vim" data-lang="vim">:earlier 10m</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Go to newer text state, 5 minutes later.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">:later 5m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using <code>g-</code> and <code>g+</code> will get you to all possible text states while repeating <code>u</code> and <code>CTRL-R</code> does not.</p>
+</div>
+<div class="paragraph">
+<p>See also <code>:help undo-branches</code>.</p>
 </div>
 </div>
 </div>
@@ -76,7 +87,7 @@ See <code>:help undo-branches</code>.</p>
     </item>
     
     <item>
-      <title>Text editor plugins for REST APIs</title>
+      <title>Text editor plugins for web APIs</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -116,44 +127,54 @@ It is a wrapper around <code>curl</code>.</p>
 <p>You can write multiple request blocks in the same file and send them separately.</p>
 </div>
 <div class="paragraph">
-<p>Save your file for later reference, or share it with other developers as an example with your code.
-It doesn’t get any simpler than this.</p>
+<p>Save your file for later reference, or share it with other developers as an example with your code.</p>
 </div>
 <div class="paragraph">
 <p>One thing to note is that the syntax for the two plugins is slightly different.
 You can’t use a Vim request block directly with VS Code.
 However, it is straightforward to adjust the request block to make it work.</p>
 </div>
+<div class="paragraph">
+<p><strong>To send requests</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Type in a request block.</p>
+</li>
+<li>
+<p>Place the cursor anywhere within the block.</p>
+</li>
+<li>
+<p>Hit the trigger key to send the request (default: <code>CTRL-J</code>).</p>
+</li>
+</ol>
+</div>
 <div class="listingblock">
 <div class="title">Vim <code>./example.rest</code></div>
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console"># vim: set filetype=rest
+<pre class="highlight"><code class="language-sh" data-lang="sh"># vim: set filetype=rest
 
 # global curl options
 --silent
 --include
 --
 
-# Type in a request block
-# Placed the cursor anywhere within the block
-# Hit the trigger key &lt;C-j&gt; (default) to send the request
-# A new vertically split buffer will be shown to display the output
-
-# A simple GET request
+# GET request
 
 https://reqres.in
 GET /api/users/2
 
-# A POST request
+# POST request
 
 https://reqres.in
 POST /api/users
 {
-    &#34;name&#34;: &#34;morpheus&#34;,
-    &#34;job&#34;: &#34;leader&#34;
+    &#34;name&#34;: &#34;andreas&#34;,
+    &#34;job&#34;: &#34;consultant&#34;
 }
 
-# And a DELETE request
+# DELETE request
 
 https://reqres.in
 DELETE /api/users/2</code></pre>
@@ -162,14 +183,14 @@ DELETE /api/users/2</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bonus_tip">Bonus Tip</h2>
+<h2 id="_tip">Tip</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can add query parameters like so.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">https://reqres.in
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://reqres.in
 GET /api/users?per_page=2&amp;page=4</code></pre>
 </div>
 </div>
@@ -178,7 +199,7 @@ GET /api/users?per_page=2&amp;page=4</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">https://reqres.in
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://reqres.in
 GET /api/users
 per_page=2
 page=4</code></pre>
@@ -189,7 +210,7 @@ page=4</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">https://localhost:8001
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://localhost:8001
 GET /api/content/search
 limit=10
 cql=(type=page and space=IT and label=infrastructure)</code></pre>

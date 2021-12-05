@@ -13,30 +13,40 @@
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</guid>
-      <description>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).
- Managed service accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs, these tasks no longer disrupt a service (downtime).
-  Administration  No manual password management is required.
- Availability  No service downtime is necessary for password changes.</description>
+      <description>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
+ Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
+ Pro  Administration  Automatic password changes. No manual password management.
+ Availability  No service downtime for password changes.</description>
       <content:encoded><![CDATA[<div class="paragraph">
-<p>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).</p>
+<p>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).</p>
 </div>
 <div class="paragraph">
-<p><strong>Managed service accounts (MSA)</strong> are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts.
-Also, with MSAs, these tasks no longer disrupt a service (downtime).</p>
+<p><strong>Managed Service Accounts (MSA)</strong> are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts.
+Also, with MSAs these tasks no longer disrupt a service (no downtime).</p>
 </div>
 <div class="dlist">
+<div class="title">Pro</div>
 <dl>
 <dt class="hdlist1">Administration</dt>
 <dd>
-<p>No manual password management is required.</p>
+<p>Automatic password changes. No manual password management.</p>
 </dd>
 <dt class="hdlist1">Availability</dt>
 <dd>
-<p>No service downtime is necessary for password changes.</p>
+<p>No service downtime for password changes.</p>
 </dd>
 <dt class="hdlist1">Security</dt>
 <dd>
-<p>Besides the automatic password changes, system logins are not possible with MSAs.</p>
+<p>Frequent password changes. User login to systems via MSA is not possible.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">Con</div>
+<dl>
+<dt class="hdlist1">Initial Setup</dt>
+<dd>
+<p>Initial setup and troubleshooting is more complex for MSAs than with basic user accounts.</p>
 </dd>
 </dl>
 </div>
@@ -50,15 +60,15 @@ Also, with MSAs, these tasks no longer disrupt a service (downtime).</p>
 <dl>
 <dt class="hdlist1">Virtual Account</dt>
 <dd>
-<p>Local system accounts <strong>for local services</strong>. Access to network resources is possible via computer identity.</p>
+<p>Local system account <strong>for local services</strong>. Access to network resources is only possible via computer identity.</p>
 </dd>
 <dt class="hdlist1">Managed Service Account (MSA)</dt>
 <dd>
-<p>Active Directory accounts <strong>for generic services</strong>.</p>
+<p>Active Directory account <strong>for generic services</strong>.</p>
 </dd>
 <dt class="hdlist1">Group Managed Service Account (gMSA)</dt>
 <dd>
-<p>Active Directory accounts <strong>for cluster services</strong>.</p>
+<p>Active Directory account <strong>for cluster services</strong>.</p>
 </dd>
 </dl>
 </div>
@@ -68,12 +78,12 @@ Also, with MSAs, these tasks no longer disrupt a service (downtime).</p>
 <h2 id="_requirements">Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use PowerShell to work with managed service accounts.
+<p>Use the PowerShell to work with managed service accounts.
 Install and import the following module on the system on which you want to use MSAs.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Install-WindowsFeature RSAT-AD-PowerShell
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-WindowsFeature RSAT-AD-PowerShell
 $ Import-Module ActiveDirectory</code></pre>
 </div>
 </div>
@@ -87,7 +97,7 @@ $ Import-Module ActiveDirectory</code></pre>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ New-ADServiceAccount &lt;account name&gt; -RestrictToSingleComputer</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ New-ADServiceAccount &lt;account name&gt; -RestrictToSingleComputer</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -103,7 +113,7 @@ $ Import-Module ActiveDirectory</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -111,7 +121,7 @@ $ Import-Module ActiveDirectory</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Test-ADServiceAccount &lt;account name&gt;
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Test-ADServiceAccount &lt;account name&gt;
 
 True</code></pre>
 </div>
@@ -145,7 +155,7 @@ True</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Uninstall-ADServiceAccount &lt;account name&gt;</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Uninstall-ADServiceAccount &lt;account name&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -163,7 +173,7 @@ Should you still have to reset the password manually, you can do so.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Reset-ADServiceAccountPassword &lt;account name&gt;</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Reset-ADServiceAccountPassword &lt;account name&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -179,7 +189,7 @@ Should you still have to reset the password manually, you can do so.</p>
 <div class="listingblock">
 <div class="title">Confirm that the MSA exists and is enabled in Active Directory.</div>
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Get-ADServiceAccount &lt;account name&gt;
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Get-ADServiceAccount &lt;account name&gt;
 
 DistinguishedName : CN=msa-sql01,CN=Managed Service Accounts,DC=example,DC=com
 Enabled           : True
@@ -194,13 +204,13 @@ UserPrincipalName :</code></pre>
 <div class="listingblock">
 <div class="title">Confirm that the account is installed on the system</div>
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Confirm that the account has the <code>SeServiceLogonRight</code> permission</div>
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ NTRights +r SeServiceLogonRight –u &lt;account name&gt;</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ NTRights +r SeServiceLogonRight –u &lt;account name&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -230,7 +240,7 @@ UserPrincipalName :</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ uptime
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ uptime
  12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
 $ uptime --pretty
 up 5 hours, 3 minutes
@@ -246,7 +256,7 @@ $ uptime --since
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Get-Uptime
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Get-Uptime
 
 Days              : 30
 Hours             : 7
@@ -271,7 +281,7 @@ On Windows, this is the same as the <code>Get-Uptime -Since</code> command.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
 
 LastBootUpTime
 --------------

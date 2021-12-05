@@ -18,11 +18,11 @@
     </item>
     
     <item>
-      <title>Linux, Unix</title>
-      <link>https://www.andreaslongo.com/topics/linux-unix/</link>
-      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Unix</title>
+      <link>https://www.andreaslongo.com/topics/unix/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/linux-unix/</guid>
+      <guid>https://www.andreaslongo.com/topics/unix/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -58,21 +58,21 @@
     </item>
     
     <item>
-      <title>REST APIs</title>
-      <link>https://www.andreaslongo.com/topics/rest-apis/</link>
+      <title>Web</title>
+      <link>https://www.andreaslongo.com/topics/web/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/rest-apis/</guid>
+      <guid>https://www.andreaslongo.com/topics/web/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Public key certificates</title>
-      <link>https://www.andreaslongo.com/topics/public-key-certificates/</link>
+      <title>Security</title>
+      <link>https://www.andreaslongo.com/topics/security/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/public-key-certificates/</guid>
+      <guid>https://www.andreaslongo.com/topics/security/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

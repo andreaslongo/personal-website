@@ -75,8 +75,8 @@
 </header>
 <section class=entry-content>
 <p>You can run commands from Cygwin with elevated permissions.
-On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use sudo for this.
-To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for ZSH, but it should also work with other bash-like shells.
+On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use the sudo command for this.
+To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for Zsh, but it should also work for other bash-like shells.
 ~/.zshrc alias sudo='cygstart --action=runas' Now you can run something like this to test the alias....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
@@ -89,8 +89,9 @@ To get similar functionality on Cygwin, you can add a new alias to your shell’
 </header>
 <section class=entry-content>
 <p>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
-For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in windows notation C:\Users{user_name}\home.
-/etc/nsswitch.conf db_home: /%H/home You can change it to whatever you like. Consult the Cygwin documentation for more information. And look here below the /path section for more on supported wildcard characters.
+For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in Windows notation to C:\Users\{user_name}\home.
+/etc/nsswitch.conf db_home: /%H/home You can change it to whatever you like.
+See the Cygwin documentation for more information. Look here below the /path section for more on supported wildcard characters.
 </p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
@@ -103,7 +104,7 @@ For example, the following sets your default home directory to /cygdrive/c/Users
 </header>
 <section class=entry-content>
 <p>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
-~/.vim/.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
 </p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
@@ -115,10 +116,10 @@ For example, the following sets your default home directory to /cygdrive/c/Users
 </h2>
 </header>
 <section class=entry-content>
-<p>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).
-Managed service accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs, these tasks no longer disrupt a service (downtime).
-Administration No manual password management is required.
-Availability No service downtime is necessary for password changes....</p>
+<p>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
+Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
+Pro Administration Automatic password changes. No manual password management.
+Availability No service downtime for password changes....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-22 00:00:00 +0000 UTC">February 22, 2021</span></footer>
 <a class=entry-link aria-label="post link to Active Directory - Managed Service Accounts" href=https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/></a>
