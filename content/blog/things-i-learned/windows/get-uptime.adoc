@@ -1,13 +1,6 @@
 ---
 title: Show uptime on a Windows system
 date: 2021-02-17
-draft: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -19,12 +12,12 @@ topics:
 - Microsoft Windows
 
 tags:
-- Command-line Interface (CLI)
-- Microsoft Windows
+- Command-line interface (CLI)
 - PowerShell
+- Windows
 ---
 
-:source-language: console
+:source-language: powershell
 
 :url_get_uptime: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime
 :url_powershell: https://docs.microsoft.com/en-us/powershell/

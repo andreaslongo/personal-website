@@ -1,13 +1,6 @@
 ---
-title: Find files and sort them by time
+title: Find files and sort them by time on Unix
 date: 2021-02-17
-draft: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -16,15 +9,17 @@ categories:
 - DevOps
 
 topics:
-- Linux, Unix
+- Unix
 
 tags:
-- Command-line Interface (CLI)
-- Linux, Unix
+- Command-line interface (CLI)
+- Linux
+- Shell
+- Unix
 - find
 ---
 
-:source-language: console
+:source-language: shell
 
 
 Recursively search for files by name with `find`.

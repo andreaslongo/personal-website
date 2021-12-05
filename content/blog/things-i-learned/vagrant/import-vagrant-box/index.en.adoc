@@ -1,19 +1,12 @@
 ---
 title: Download and import a Vagrant box manually
 date: 2021-01-19
-draft: false
 
 cover:
     image: blank-box-in-office-workspace-yW9jdBmE1BY.min.jpg
     alt: Blank box in office workspace
     caption: Photo by [Brandable Box](https://unsplash.com/@brandablebox)
     relative: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -29,45 +22,43 @@ tags:
 - curl
 ---
 
-:source-language: console
+:source-language: shell
 
-How to download and import a https://www.vagrantup.com/[Vagrant] box manually.
+*To download or upgrade a https://www.vagrantup.com/[Vagrant] box*, you can use the command `vagrant box add` and `vagrant box update`.
 
-*To download or upgrade a Vagrant box*, you can use commands like `vagrant box add` and `vagrant box update`.
 Most of the time, you should be fine using these automated processes.
-
 *But sometimes you need more control.*
 Imagine you are working from home and you need to download several huge boxes.
-You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality. To do that, you need to prevent Vagrant from eating up your entire internet bandwidth.
+You also have video calls with your customers throughout the day, so your priority is to maintain high call quality. To do that, you need to prevent Vagrant from eating up your entire internet bandwidth.
 
-== A Better Way to Control your Vagrant Download
+== Control your Vagrant download
 
-Vagrant has no built-in option for controlling the download process, but fortunately, you can always use the tool of your choice to download a box.
+Vagrant has no built-in option for controlling the download process, but fortunately, you can use the tool of your choice to download a box.
 
-*You also want to integrate a box smoothly into your existing Vagrant environment* so that commands like `vagrant box update` will work as intended.
+You also want to integrate a box smoothly into your existing Vagrant environment so that commands like `vagrant box update` will work as intended.
 
 In the following example, we will download and import the https://app.vagrantup.com/debian/boxes/contrib-buster64[Debian Buster v10.7.0] box for https://www.virtualbox.org[Virtualbox].
 
-*Steps*
+=== To download a box
 
-. Get the direct download link for a box
+. Get the direct download link for a box.
 +
 - https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box
 
 
-. Download the box
+. Download the box.
 +
 --
 I am using `curl` here with a download rate limit, but you can use any tool that works for you.
 
-[source]
 ----
 $ curl --location --remote-name --limit-rate 500k --continue-at - https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box
 ----
 --
 
+=== To import a box
 
-. Add the box to Vagrant
+. Add the box to Vagrant.
 +
 --
 Note the last argument, which is the local file you just downloaded.
@@ -78,7 +69,7 @@ $ vagrant box add debian/contrib-buster64 ./virtualbox.box
 --
 
 
-. Rename the version directory of the box to the correct version
+. Rename the version directory of the box to the correct version.
 +
 --
 
@@ -89,7 +80,6 @@ $ mv ./0 ./10.7.0
 
 Your directory structure should now look like this:
 
-[source]
 ----
 debian-VAGRANTSLASH-contrib-buster64/
 | 10.7.0/
@@ -105,7 +95,7 @@ debian-VAGRANTSLASH-contrib-buster64/
 --
 
 
-. If not exist, create a `metadata_url` file
+. If not exist, create a `metadata_url` file.
 +
 --
 This file should contain a link to the Vagrant box *without the version part*.
@@ -116,9 +106,8 @@ $ echo -n "https://app.vagrantup.com/debian/boxes/contrib-buster64" > ./metadata
 --
 
 
-. Verify by listing all installed boxes
+. Verify by listing all installed boxes.
 +
-[source]
 ----
 $ vagrant box list
 debian/contrib-buster64  (virtualbox, 10.7.0)

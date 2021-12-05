@@ -1,13 +1,6 @@
 ---
 title: "Use PKCS #12 archives with Apache Tomcat for TLS/SSL"
 date: 2021-01-28
-draft: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -16,16 +9,18 @@ categories:
 - IT Operations
 
 topics:
-- Public key certificates
+- Security
 
 tags:
 - Apache Tomcat
-- HTTPS
-- Public key certificates
-- TLS
+- Digital certificate
+- Hypertext Transfer Protocol Secure (HTTPS)
+- Public key certificate
+- Secure Sockets Layer (SSL)
+- Transport Layer Security (TLS)
 ---
 
-:source-language: console
+:source-language: shell
 
 :url_tomcat: https://tomcat.apache.org/[Apache Tomcat]
 :url_pkcs12: https://en.wikipedia.org/wiki/PKCS_12[PKCS #12]
@@ -34,9 +29,9 @@ tags:
 
 
 How to use {url_pkcs12} archives with {url_tomcat} for {url_tls}.
-TLS superseded Secure Sockets Layer (SSL) protocol.
+TLS superseded the Secure Sockets Layer (SSL) protocol.
 
-In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
+In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.
 
 .Directory layout `../Tomcat/`
 ----
@@ -47,14 +42,15 @@ In the following example, we create a Tomcat TLS connector that uses a PKCS #12 
 | | server.xml
 ----
 
-The files `file.p12` and `server.xml` contain the private key and password for a certificate.
+The file `file.p12` contains the private key and the file `server.xml` contains the password for the certificate.
 *Make sure that only the Tomcat process can access them*.
 
 *The password for the certificate's private key must match that for the PKCS #12 file*.
 
+== Tomcat version 8, 9 and 10
 
-.`../Tomcat/conf/server.xml` for Tomcat version 10, 9, and 8
-[source,xml]
+.`server.xml`
+[source, xml]
 ----
 <!-- TOMCAT TLS CONNECTOR -->
 <Connector
@@ -78,9 +74,12 @@ The files `file.p12` and `server.xml` contain the private key and password for a
 <1> Adapt `certificateKeystoreFile` and
 <2> `certificateKeystorePassword` to your environment
 
-*For Tomcat 7, we need a different config*.
 
-.`../Tomcat/conf/server.xml` for Tomcat version 7
+== Tomcat version 7
+
+We need a different config for Tomcat 7.
+
+.`server.xml`
 [source,xml]
 ----
 <!-- TOMCAT 7.x TLS CONNECTOR -->

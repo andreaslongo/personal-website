@@ -1,13 +1,6 @@
 ---
 title: Zsh configuration files
 date: 2021-12-04
-draft: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -16,13 +9,18 @@ categories:
 - DevOps
 
 topics:
-- Linux, Unix
+- Unix
 
 tags:
-- Command-line Interface (CLI)
-- Linux, Unix
+- Command-line interface (CLI)
+- Linux
+- Shell
+- Unix
 - Z shell (Zsh)
 ---
+
+:source-language: plaintext
+
 
 Zsh config files and the order of sourcing during startup.
 

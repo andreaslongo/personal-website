@@ -1,13 +1,6 @@
 ---
 title: A sudo command for Cygwin
 date: 2021-02-24
-draft: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -19,15 +12,19 @@ topics:
 - Microsoft Windows
 
 tags:
-- Command-line Interfaces (CLI)
+- Bash
+- Command-line interface (CLI)
+- Command-line interpreter (CLI)
 - Cygwin
-- Linux / Unix
-- Sudo
+- Linux
+- Shell
+- Unix
 - Windows
-- ZSH / Bash
+- Zsh
+- sudo
 ---
 
-:source-language: console
+:source-language: shell
 
 :url_cygwin: https://cygwin.com
 :url_sudo: https://www.sudo.ws
@@ -37,10 +34,10 @@ tags:
 You can run commands from {url_cygwin}[Cygwin] with elevated permissions.
 
 On Windows, you have something like `Run as different user` or `Run as administrator`.
-And on Linux, you probably use {url_sudo}[`sudo`] for this.
+And on Linux, you probably use the {url_sudo}[`sudo`] command for this.
 
 To get similar functionality on Cygwin, you can add a new alias to your shell's config file.
-The following is for {url_zsh}[ZSH], but it should also work with other bash-like shells.
+The following is for {url_zsh}[Zsh], but it should also work for other bash-like shells.
 
 .`~/.zshrc`
 ----
@@ -56,6 +53,7 @@ $ sudo touch sudo-test
 Windows will ask for your username and password.
 Then it will run the command in the context of the given user.
 
-That works, but it is a bit of a hack.
-The command is executed in a new Cygwin process, which is closed when the command returns.
-Also, the password/user prompt is uncomfortable at best compared to the real `sudo` user experience.
+That works, but the user experience is not great.
+
+Your command gets executed in a new Cygwin process which automatically exits when the command returns.
+Also, the user prompt is GUI based which interrupts your CLI workflow.

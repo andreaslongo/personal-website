@@ -1,13 +1,6 @@
 ---
 title: Use the clipboard in Vim on Cygwin
 date: 2021-02-24
-draft: false
-
-showToc: false
-TocOpen: false
-hidemeta: false
-disableShare: false
-comments: false
 
 series:
 - Things I learned
@@ -19,14 +12,15 @@ topics:
 - Microsoft Windows
 
 tags:
-- Command-line Interfaces (CLI)
+- Command-line interface (CLI)
 - Cygwin
-- Linux / Unix
+- Linux
+- Unix
 - Vim
 - Windows
 ---
 
-:source-language: console
+:source-language: vim
 
 :url_cygwin: https://cygwin.com
 :url_vim: https://www.vim.org/
@@ -34,7 +28,7 @@ tags:
 
 To use the Windows clipboard in {url_vim}[Vim] on {url_cygwin}[Cygwin], add the following to your Vim config file.
 
-.`~/.vim/.vimrc`
+.`.vimrc`
 ----
 set clipboard=unnamed
 ----
