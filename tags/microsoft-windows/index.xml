@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/microsoft-windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Get Uptime on a Windows System</title>
+      <title>Show uptime on a Windows system</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -17,6 +17,68 @@
  uptime from the procps-ng package
  $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
  $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I haven’t found a good alternative to the Unix <code>uptime</code> command for Windows yet.</p>
+</div>
+<div class="paragraph">
+<p><code>uptime</code> from the <a href="https://gitlab.com/procps-ng/procps">procps-ng</a> package</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ uptime
+ 12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
+$ uptime --pretty
+up 5 hours, 3 minutes
+$ uptime --since
+2021-02-17 07:50:35</code></pre>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tell_how_long_a_windows_system_has_been_running">Tell how long a Windows system has been running</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For <a href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> version 6+, there is the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime"><code>Get-Uptime</code></a> cmdlet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Get-Uptime
+
+Days              : 30
+Hours             : 7
+Minutes           : 33
+Seconds           : 45
+Milliseconds      : 0
+Ticks             : 26192250000000
+TotalDays         : 30,3151041666667
+TotalHours        : 727,5625
+TotalMinutes      : 43653,75
+TotalSeconds      : 2619225
+TotalMilliseconds : 2619225000
+
+$ Get-Uptime -Since
+
+Monday, January 18, 2021 7:56:57 AM</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If <code>Get-Uptime</code> is not available, you can query the WMI with a CIM cmdlet.
+On Windows, this is the same as the <code>Get-Uptime -Since</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+
+LastBootUpTime
+--------------
+18.01.2021 07:56:41</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>LastBootUpTime</code> value may not be updated if you have <strong>fast startup</strong> enabled for your system.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

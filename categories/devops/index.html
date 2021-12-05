@@ -5,7 +5,7 @@
 <meta name=robots content="index, follow">
 <title>DevOps | Andreas Longo</title>
 <meta name=keywords content>
-<meta name=description content="Personal Website">
+<meta name=description content="Personal website">
 <meta name=author content="Andreas Longo">
 <link rel=canonical href=https://www.andreaslongo.com/categories/devops/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
@@ -22,12 +22,12 @@
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript><meta property="og:title" content="DevOps">
-<meta property="og:description" content="Personal Website">
+<meta property="og:description" content="Personal website">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.andreaslongo.com/categories/devops/">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="DevOps">
-<meta name=twitter:description content="Personal Website">
+<meta name=twitter:description content="Personal website">
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -70,6 +70,18 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Delete remote Git tags
+</h2>
+</header>
+<section class=entry-content>
+<p>Remove a remote Git tag:
+$ git push --delete &lt;remote> &lt;tag> $ git push --delete origin v1.0 </p>
+</section>
+<footer class=entry-footer><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span></footer>
+<a class=entry-link aria-label="post link to Delete remote Git tags" href=https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Zsh configuration files
 </h2>
 </header>
@@ -87,7 +99,7 @@
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Find Files and Sort Them By Time on Linux
+<h2>Find files and sort them by time
 </h2>
 </header>
 <section class=entry-content>
@@ -95,14 +107,29 @@
 $ find . -type f -name "Makefile*" -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </p>
 </section>
 <footer class=entry-footer><span title="2021-02-17 00:00:00 +0000 UTC">February 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to Find Files and Sort Them By Time on Linux" href=https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/></a>
+<a class=entry-link aria-label="post link to Find files and sort them by time" href=https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Vim undo branches
+</h2>
+</header>
+<section class=entry-content>
+<p>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
+This concept is called undo tree or undo branches. See :help undo-branches.
+Moving through the undo tree Go to older text state (10 minutes before)
+:earlier 10m Go to newer text state (5 minutes later)
+:later 5m </p>
+</section>
+<footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
+<a class=entry-link aria-label="post link to Vim undo branches" href=https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/></a>
 </article>
 <article class="post-entry tag-entry">
 <figure class=entry-cover>
 <img loading=lazy srcset="https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/blank-box-in-office-workspace-yW9jdBmE1BY.min_hub7b22973781b950dfa263c1d1be77c21_61138_360x0_resize_q75_box.jpg 360w ,https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/blank-box-in-office-workspace-yW9jdBmE1BY.min_hub7b22973781b950dfa263c1d1be77c21_61138_480x0_resize_q75_box.jpg 480w ,https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/blank-box-in-office-workspace-yW9jdBmE1BY.min_hub7b22973781b950dfa263c1d1be77c21_61138_720x0_resize_q75_box.jpg 720w ,https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/blank-box-in-office-workspace-yW9jdBmE1BY.min.jpg 720w" sizes="(min-width: 768px) 720px, 100vw" src=https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/blank-box-in-office-workspace-yW9jdBmE1BY.min.jpg alt="Blank box in office workspace" width=720 height=480>
 </figure>
 <header class=entry-header>
-<h2>Download and Import a Vagrant Box Manually
+<h2>Download and import a Vagrant box manually
 </h2>
 </header>
 <section class=entry-content>
@@ -111,7 +138,7 @@ To download or upgrade a Vagrant box, you can use commands like vagrant box add 
 But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality....</p>
 </section>
 <footer class=entry-footer><span title="2021-01-19 00:00:00 +0000 UTC">January 19, 2021</span></footer>
-<a class=entry-link aria-label="post link to Download and Import a Vagrant Box Manually" href=https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/></a>
+<a class=entry-link aria-label="post link to Download and import a Vagrant box manually" href=https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/></a>
 </article>
 </main>
 <footer class=footer>

@@ -6,7 +6,27 @@
     <description>Recent content in DevOps on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delete remote Git tags</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</guid>
+      <description>Remove a remote Git tag:
+ $ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag&amp;gt; $ git push --delete origin v1.0   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Remove a remote Git tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Zsh configuration files</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</link>
@@ -20,20 +40,105 @@
  4 ~/.zlogin  sourced if login shell
  5 ~/.zlogout  sourced when exiting shell
    </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Zsh config files and the order of sourcing during startup.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1 <code>~/.zshenv</code></dt>
+<dd>
+<p>always sourced</p>
+</dd>
+<dt class="hdlist1">2 <code>~/.zprofile</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">3 <code>~/.zshrc</code></dt>
+<dd>
+<p>sourced if interactive shell</p>
+</dd>
+<dt class="hdlist1">4 <code>~/.zlogin</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">5 <code>~/.zlogout</code></dt>
+<dd>
+<p>sourced when exiting shell</p>
+</dd>
+</dl>
+</div>
+]]></content:encoded>
     </item>
     
     <item>
-      <title>Find Files and Sort Them By Time on Linux</title>
+      <title>Find files and sort them by time</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</guid>
       <description>Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
  $ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Recursively search for files by name with <code>find</code>.
+Then, sort the result by time, newest first with <code>ls -lt</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ find . -type f -name &#34;Makefile*&#34; -exec ls -lt {} +
+-rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile
+-rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile
+-rw------- 1 al al  963 Feb 16 15:45 ./personal-website/Makefile
+-rw------- 1 al al  254 Feb 15 17:07 ./cc-python/Makefile</code></pre>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
     <item>
-      <title>Download and Import a Vagrant Box Manually</title>
+      <title>Vim undo branches</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</guid>
+      <description>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
+ This concept is called undo tree or undo branches. See :help undo-branches.
+ Moving through the undo tree Go to older text state (10 minutes before)
+ :earlier 10m   Go to newer text state (5 minutes later)
+ :later 5m     </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can undo and redo changes without having to press <code>u</code> or <code>CTRL-R</code> repeatedly.
+Retrieve the state of your buffer as it was some time ago.</p>
+</div>
+<div class="paragraph">
+<p>This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.
+See <code>:help undo-branches</code>.</p>
+</div>
+<div class="sect1">
+<h2 id="_moving_through_the_undo_tree">Moving through the undo tree</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to older text state (10 minutes before)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">:earlier 10m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go to newer text state (5 minutes later)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">:later 5m</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Download and import a Vagrant box manually</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -41,6 +146,138 @@
       <description>How to download and import a Vagrant box manually.
  To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
  But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>How to download and import a <a href="https://www.vagrantup.com/">Vagrant</a> box manually.</p>
+</div>
+<div class="paragraph">
+<p><strong>To download or upgrade a Vagrant box</strong>, you can use commands like <code>vagrant box add</code> and <code>vagrant box update</code>.
+Most of the time, you should be fine using these automated processes.</p>
+</div>
+<div class="paragraph">
+<p><strong>But sometimes you need more control.</strong>
+Imagine you are working from home and you need to download several huge boxes.
+You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality. To do that, you need to prevent Vagrant from eating up your entire internet bandwidth.</p>
+</div>
+<div class="sect1">
+<h2 id="_a_better_way_to_control_your_vagrant_download">A Better Way to Control your Vagrant Download</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vagrant has no built-in option for controlling the download process, but fortunately, you can always use the tool of your choice to download a box.</p>
+</div>
+<div class="paragraph">
+<p><strong>You also want to integrate a box smoothly into your existing Vagrant environment</strong> so that commands like <code>vagrant box update</code> will work as intended.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, we will download and import the <a href="https://app.vagrantup.com/debian/boxes/contrib-buster64">Debian Buster v10.7.0</a> box for <a href="https://www.virtualbox.org">Virtualbox</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Get the direct download link for a box</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box" class="bare">https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Download the box</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>I am using <code>curl</code> here with a download rate limit, but you can use any tool that works for you.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ curl --location --remote-name --limit-rate 500k --continue-at - https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Add the box to Vagrant</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Note the last argument, which is the local file you just downloaded.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vagrant box add debian/contrib-buster64 ./virtualbox.box</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Rename the version directory of the box to the correct version</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cd ~/.vagrant.d/boxes/debian-VAGRANTSLASH-buster64/
+$ mv ./0 ./10.7.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Your directory structure should now look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">debian-VAGRANTSLASH-contrib-buster64/
+| 10.7.0/
+| | virtualbox/
+| | | Vagrantfile
+| | | box.ovf
+| | | box_update_check
+| | | contrib-buster.vmdk
+| | | master_id
+| | | metadata.json
+| metadata_url</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>If not exist, create a <code>metadata_url</code> file</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>This file should contain a link to the Vagrant box <strong>without the version part</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ echo -n &#34;https://app.vagrantup.com/debian/boxes/contrib-buster64&#34; &gt; ./metadata_url</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Verify by listing all installed boxes</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vagrant box list
+debian/contrib-buster64  (virtualbox, 10.7.0)</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You should see your new or updated box with the <strong>correct version number</strong> and,
+commands like <code>vagrant box update</code> should work as usual.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

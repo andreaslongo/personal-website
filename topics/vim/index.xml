@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vim Undo Branches</title>
+      <title>Vim undo branches</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -18,6 +18,36 @@
  Moving through the undo tree Go to older text state (10 minutes before)
  :earlier 10m   Go to newer text state (5 minutes later)
  :later 5m     </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can undo and redo changes without having to press <code>u</code> or <code>CTRL-R</code> repeatedly.
+Retrieve the state of your buffer as it was some time ago.</p>
+</div>
+<div class="paragraph">
+<p>This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.
+See <code>:help undo-branches</code>.</p>
+</div>
+<div class="sect1">
+<h2 id="_moving_through_the_undo_tree">Moving through the undo tree</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to older text state (10 minutes before)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">:earlier 10m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go to newer text state (5 minutes later)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">:later 5m</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

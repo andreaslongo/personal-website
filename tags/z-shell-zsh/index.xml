@@ -20,6 +20,34 @@
  4 ~/.zlogin  sourced if login shell
  5 ~/.zlogout  sourced when exiting shell
    </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Zsh config files and the order of sourcing during startup.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1 <code>~/.zshenv</code></dt>
+<dd>
+<p>always sourced</p>
+</dd>
+<dt class="hdlist1">2 <code>~/.zprofile</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">3 <code>~/.zshrc</code></dt>
+<dd>
+<p>sourced if interactive shell</p>
+</dd>
+<dt class="hdlist1">4 <code>~/.zlogin</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">5 <code>~/.zlogout</code></dt>
+<dd>
+<p>sourced when exiting shell</p>
+</dd>
+</dl>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

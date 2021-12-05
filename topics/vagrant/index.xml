@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/vagrant/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Download and Import a Vagrant Box Manually</title>
+      <title>Download and import a Vagrant box manually</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
@@ -16,6 +16,138 @@
       <description>How to download and import a Vagrant box manually.
  To download or upgrade a Vagrant box, you can use commands like vagrant box add and vagrant box update. Most of the time, you should be fine using these automated processes.
  But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>How to download and import a <a href="https://www.vagrantup.com/">Vagrant</a> box manually.</p>
+</div>
+<div class="paragraph">
+<p><strong>To download or upgrade a Vagrant box</strong>, you can use commands like <code>vagrant box add</code> and <code>vagrant box update</code>.
+Most of the time, you should be fine using these automated processes.</p>
+</div>
+<div class="paragraph">
+<p><strong>But sometimes you need more control.</strong>
+Imagine you are working from home and you need to download several huge boxes.
+You also have lots of video calls with your customers throughout the day, so your priority is to maintain high call quality. To do that, you need to prevent Vagrant from eating up your entire internet bandwidth.</p>
+</div>
+<div class="sect1">
+<h2 id="_a_better_way_to_control_your_vagrant_download">A Better Way to Control your Vagrant Download</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vagrant has no built-in option for controlling the download process, but fortunately, you can always use the tool of your choice to download a box.</p>
+</div>
+<div class="paragraph">
+<p><strong>You also want to integrate a box smoothly into your existing Vagrant environment</strong> so that commands like <code>vagrant box update</code> will work as intended.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, we will download and import the <a href="https://app.vagrantup.com/debian/boxes/contrib-buster64">Debian Buster v10.7.0</a> box for <a href="https://www.virtualbox.org">Virtualbox</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Get the direct download link for a box</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box" class="bare">https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Download the box</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>I am using <code>curl</code> here with a download rate limit, but you can use any tool that works for you.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ curl --location --remote-name --limit-rate 500k --continue-at - https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Add the box to Vagrant</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Note the last argument, which is the local file you just downloaded.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vagrant box add debian/contrib-buster64 ./virtualbox.box</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Rename the version directory of the box to the correct version</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ cd ~/.vagrant.d/boxes/debian-VAGRANTSLASH-buster64/
+$ mv ./0 ./10.7.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Your directory structure should now look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">debian-VAGRANTSLASH-contrib-buster64/
+| 10.7.0/
+| | virtualbox/
+| | | Vagrantfile
+| | | box.ovf
+| | | box_update_check
+| | | contrib-buster.vmdk
+| | | master_id
+| | | metadata.json
+| metadata_url</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>If not exist, create a <code>metadata_url</code> file</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>This file should contain a link to the Vagrant box <strong>without the version part</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ echo -n &#34;https://app.vagrantup.com/debian/boxes/contrib-buster64&#34; &gt; ./metadata_url</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Verify by listing all installed boxes</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ vagrant box list
+debian/contrib-buster64  (virtualbox, 10.7.0)</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You should see your new or updated box with the <strong>correct version number</strong> and,
+commands like <code>vagrant box update</code> should work as usual.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

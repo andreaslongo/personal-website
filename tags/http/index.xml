@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Two Editor Plugins Every REST API Developer Should Know</title>
+      <title>Text editor plugins for REST APIs</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -17,6 +17,119 @@
  Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
    This plugin is for Vim. It is a wrapper around curl.
   This plugin is for Visual Studio Code.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.</p>
+</div>
+<div class="paragraph">
+<p>Send requests and receive responses to and from your REST APIs with your editor.
+You can quickly explore your REST API without switching context to other tools like <a href="https://curl.se/">curl</a> or <a href="https://www.postman.com/">Postman</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/diepm/vim-rest-console">This plugin</a> is for <a href="https://www.vim.org/">Vim</a>.
+It is a wrapper around <code>curl</code>.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">This plugin</a> is for <a href="https://code.visualstudio.com/">Visual Studio Code</a>. It is similar to the Vim plugin.</p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_clean_and_easy_requests">Clean and Easy Requests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With both plugins, you write your API request as a text block in your editor and sent it to your API on demand.</p>
+</div>
+<div class="paragraph">
+<p>The response shows up in a new editor buffer/window.</p>
+</div>
+<div class="paragraph">
+<p>You can write multiple request blocks in the same file and send them separately.</p>
+</div>
+<div class="paragraph">
+<p>Save your file for later reference, or share it with other developers as an example with your code.
+It doesn’t get any simpler than this.</p>
+</div>
+<div class="paragraph">
+<p>One thing to note is that the syntax for the two plugins is slightly different.
+You can’t use a Vim request block directly with VS Code.
+However, it is straightforward to adjust the request block to make it work.</p>
+</div>
+<div class="listingblock">
+<div class="title">Vim <code>./example.rest</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console"># vim: set filetype=rest
+
+# global curl options
+--silent
+--include
+--
+
+# Type in a request block
+# Placed the cursor anywhere within the block
+# Hit the trigger key &lt;C-j&gt; (default) to send the request
+# A new vertically split buffer will be shown to display the output
+
+# A simple GET request
+
+https://reqres.in
+GET /api/users/2
+
+# A POST request
+
+https://reqres.in
+POST /api/users
+{
+    &#34;name&#34;: &#34;morpheus&#34;,
+    &#34;job&#34;: &#34;leader&#34;
+}
+
+# And a DELETE request
+
+https://reqres.in
+DELETE /api/users/2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bonus_tip">Bonus Tip</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add query parameters like so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">https://reqres.in
+GET /api/users?per_page=2&amp;page=4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For better readability, you can write this instead.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">https://reqres.in
+GET /api/users
+per_page=2
+page=4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your query parameters are more complex, you may have to enable <a href="https://github.com/diepm/vim-rest-console#54-line-by-line-request-body">Line-by-line Request Body</a> in Vim <code>:let b:vrc_split_request_body = 1</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">https://localhost:8001
+GET /api/content/search
+limit=10
+cql=(type=page and space=IT and label=infrastructure)</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

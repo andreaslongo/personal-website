@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Using Active Directory Managed Service Accounts</title>
+      <title>Active Directory - Managed Service Accounts</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -17,10 +17,203 @@
  Managed service accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs, these tasks no longer disrupt a service (downtime).
   Administration  No manual password management is required.
  Availability  No service downtime is necessary for password changes.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).</p>
+</div>
+<div class="paragraph">
+<p><strong>Managed service accounts (MSA)</strong> are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts.
+Also, with MSAs, these tasks no longer disrupt a service (downtime).</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Administration</dt>
+<dd>
+<p>No manual password management is required.</p>
+</dd>
+<dt class="hdlist1">Availability</dt>
+<dd>
+<p>No service downtime is necessary for password changes.</p>
+</dd>
+<dt class="hdlist1">Security</dt>
+<dd>
+<p>Besides the automatic password changes, system logins are not possible with MSAs.</p>
+</dd>
+</dl>
+</div>
+<div class="sect1">
+<h2 id="_types_of_managed_service_accounts">Types of managed service accounts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three types of managed service accounts.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Virtual Account</dt>
+<dd>
+<p>Local system accounts <strong>for local services</strong>. Access to network resources is possible via computer identity.</p>
+</dd>
+<dt class="hdlist1">Managed Service Account (MSA)</dt>
+<dd>
+<p>Active Directory accounts <strong>for generic services</strong>.</p>
+</dd>
+<dt class="hdlist1">Group Managed Service Account (gMSA)</dt>
+<dd>
+<p>Active Directory accounts <strong>for cluster services</strong>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements">Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use PowerShell to work with managed service accounts.
+Install and import the following module on the system on which you want to use MSAs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Install-WindowsFeature RSAT-AD-PowerShell
+$ Import-Module ActiveDirectory</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-US/troubleshoot/windows-server/system-management-components/remote-server-administration-tools">Remote Server Administration Tools (RSAT) for Windows</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration">ActiveDirectory</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_managed_service_account_in_active_directory">Create a managed service account in Active Directory</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ New-ADServiceAccount &lt;account name&gt; -RestrictToSingleComputer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adserviceaccount">New-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_a_managed_service_account_on_a_system">Install a managed service account on a system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can use an MSA, you have to install it on the target system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can test the MSA from the system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Test-ADServiceAccount &lt;account name&gt;
+
+True</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, use the Services console <code>Services.msc</code> to configure a service to use the MSA.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Leave the password blank.</p>
+</li>
+<li>
+<p>Ensure that the account name ends with a dollar sign <code>$</code>.</p>
+</li>
+<li>
+<p>Start or restart the service.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/install-adserviceaccount">Install-ADServiceAccount</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/test-adserviceaccount">Test-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remove_a_managed_service_account">Remove a managed service account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You should remove an MSA from the system if it is no longer needed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Uninstall-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/uninstall-adserviceaccount">Uninstall-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reset_the_password_for_a_managed_service_account">Reset the password for a managed service account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Active Directory manages MSA passwords automatically.
+You don’t have to do anything.
+Should you still have to reset the password manually, you can do so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Reset-ADServiceAccountPassword &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/reset-adserviceaccountpassword">Reset-ADServiceAccountPassword</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_service_does_not_start_with_a_managed_service_account">A service does not start with a managed service account</h3>
+<div class="listingblock">
+<div class="title">Confirm that the MSA exists and is enabled in Active Directory.</div>
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Get-ADServiceAccount &lt;account name&gt;
+
+DistinguishedName : CN=msa-sql01,CN=Managed Service Accounts,DC=example,DC=com
+Enabled           : True
+Name              : msa-sql01
+ObjectClass       : msDS-ManagedServiceAccount
+ObjectGUID        : 12345a13-12e3-1c23-b456-a123e123fd78
+SamAccountName    : msa-sql01$
+SID               : S-1-5-21-1234567890-1234567890-098765432-184195
+UserPrincipalName :</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Confirm that the account is installed on the system</div>
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Confirm that the account has the <code>SeServiceLogonRight</code> permission</div>
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ NTRights +r SeServiceLogonRight –u &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adserviceaccount">Get-ADServiceAccount</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/install-adserviceaccount">Install-ADServiceAccount</a>, <a href="https://ss64.com/nt/ntrights.html">NTRIGHTS.exe (Windows Server 2003 Resource Kit Tools)</a></p>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
     <item>
-      <title>Get Uptime on a Windows System</title>
+      <title>Show uptime on a Windows system</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -29,6 +222,68 @@
  uptime from the procps-ng package
  $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35   Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
  $ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM   If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I haven’t found a good alternative to the Unix <code>uptime</code> command for Windows yet.</p>
+</div>
+<div class="paragraph">
+<p><code>uptime</code> from the <a href="https://gitlab.com/procps-ng/procps">procps-ng</a> package</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ uptime
+ 12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
+$ uptime --pretty
+up 5 hours, 3 minutes
+$ uptime --since
+2021-02-17 07:50:35</code></pre>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tell_how_long_a_windows_system_has_been_running">Tell how long a Windows system has been running</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For <a href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> version 6+, there is the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime"><code>Get-Uptime</code></a> cmdlet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Get-Uptime
+
+Days              : 30
+Hours             : 7
+Minutes           : 33
+Seconds           : 45
+Milliseconds      : 0
+Ticks             : 26192250000000
+TotalDays         : 30,3151041666667
+TotalHours        : 727,5625
+TotalMinutes      : 43653,75
+TotalSeconds      : 2619225
+TotalMilliseconds : 2619225000
+
+$ Get-Uptime -Since
+
+Monday, January 18, 2021 7:56:57 AM</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If <code>Get-Uptime</code> is not available, you can query the WMI with a CIM cmdlet.
+On Windows, this is the same as the <code>Get-Uptime -Since</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+
+LastBootUpTime
+--------------
+18.01.2021 07:56:41</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>LastBootUpTime</code> value may not be updated if you have <strong>fast startup</strong> enabled for your system.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

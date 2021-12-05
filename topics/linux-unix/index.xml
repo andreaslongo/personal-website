@@ -20,16 +20,58 @@
  4 ~/.zlogin  sourced if login shell
  5 ~/.zlogout  sourced when exiting shell
    </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Zsh config files and the order of sourcing during startup.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1 <code>~/.zshenv</code></dt>
+<dd>
+<p>always sourced</p>
+</dd>
+<dt class="hdlist1">2 <code>~/.zprofile</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">3 <code>~/.zshrc</code></dt>
+<dd>
+<p>sourced if interactive shell</p>
+</dd>
+<dt class="hdlist1">4 <code>~/.zlogin</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">5 <code>~/.zlogout</code></dt>
+<dd>
+<p>sourced when exiting shell</p>
+</dd>
+</dl>
+</div>
+]]></content:encoded>
     </item>
     
     <item>
-      <title>Find Files and Sort Them By Time on Linux</title>
+      <title>Find files and sort them by time</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/</guid>
       <description>Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
  $ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Recursively search for files by name with <code>find</code>.
+Then, sort the result by time, newest first with <code>ls -lt</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">$ find . -type f -name &#34;Makefile*&#34; -exec ls -lt {} +
+-rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile
+-rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile
+-rw------- 1 al al  963 Feb 16 15:45 ./personal-website/Makefile
+-rw------- 1 al al  254 Feb 15 17:07 ./cc-python/Makefile</code></pre>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>

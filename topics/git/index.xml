@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/topics/git/</link>
+    <description>Recent content in Git on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delete remote Git tags</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</guid>
+      <description>Remove a remote Git tag:
+ $ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag&amp;gt; $ git push --delete origin v1.0   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Remove a remote Git tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

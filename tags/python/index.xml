@@ -8,13 +8,55 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Convert Datetime from and to String</title>
+      <title>Convert datetime from and to string</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</guid>
       <description>From String Parse a string representing a date/time in any format to a Python datetime object with the datetime.strptime() method.
  &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; timestamp = &amp;#39;01.10.2009 20:36:41&amp;#39; &amp;gt;&amp;gt;&amp;gt; datetime.strptime(timestamp, &amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) datetime.datetime(2009, 10, 1, 20, 36, 41)   The second argument to datetime.strptime() is a format string build with format codes. See strftime() and strptime() Format Codes for a full list of available format codes.</description>
+      <content:encoded><![CDATA[<div class="sect1">
+<h2 id="_from_string">From String</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Parse a <code>string</code> representing a date/time in any format to a Python <code>datetime</code> object with the <code>datetime.strptime()</code> method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; timestamp = &#39;01.10.2009 20:36:41&#39;
+&gt;&gt;&gt; datetime.strptime(timestamp, &#39;%d.%m.%Y %H:%M:%S&#39;)
+datetime.datetime(2009, 10, 1, 20, 36, 41)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The second argument to <code>datetime.strptime()</code> is a <strong>format <code>string</code></strong> build with <strong>format codes</strong>.
+See <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">strftime() and strptime() Format Codes</a> for a full list of available format codes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_to_string">To String</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Convert a <code>datetime</code> object to a <code>string</code> of any format with the <code>datetime.strftime()</code> method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; dt = datetime(2009, 10, 1, 20, 36, 41)
+&gt;&gt;&gt; dt.strftime(&#39;%d.%m.%Y %H:%M:%S&#39;)
+&#39;01.10.2009 20:36:41&#39;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The argument to <code>datetime.strftime()</code> is a <strong>format <code>string</code></strong> (see above).</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
     </item>
     
   </channel>
