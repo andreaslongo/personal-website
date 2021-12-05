@@ -1,5 +1,5 @@
 ---
-title: Use the Windows clipboard in Vim on Cygwin
+title: Use the clipboard in Vim on Cygwin
 date: 2021-02-24
 draft: false
 
