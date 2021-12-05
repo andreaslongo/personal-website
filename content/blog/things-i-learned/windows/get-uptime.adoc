@@ -1,5 +1,5 @@
 ---
-title: Get Uptime on a Windows System
+title: Show uptime on a Windows system
 date: 2021-02-17
 draft: false
 
@@ -10,7 +10,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - IT Operations

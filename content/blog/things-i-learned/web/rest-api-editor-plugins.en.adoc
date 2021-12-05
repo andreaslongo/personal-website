@@ -1,5 +1,5 @@
 ---
-title: Two Editor Plugins Every REST API Developer Should Know
+title: Text editor plugins for REST APIs
 date: 2021-02-11
 draft: false
 
@@ -10,7 +10,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - Software Development

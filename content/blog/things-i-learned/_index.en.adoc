@@ -1,5 +1,5 @@
 ---
-title: Things I Learned
+title: Things I learned
 layout: til
 description: A blog format to record and share my day-to-day findings.
 

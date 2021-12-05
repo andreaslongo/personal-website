@@ -1,5 +1,5 @@
 ---
-title: Vim Undo Branches
+title: Vim undo branches
 date: 2021-02-14
 draft: false
 
@@ -10,10 +10,10 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
-# categories:
-# - Software Development
+categories:
+- DevOps
 
 topics:
 - Vim

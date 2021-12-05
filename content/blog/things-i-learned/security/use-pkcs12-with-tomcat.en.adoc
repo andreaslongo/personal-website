@@ -1,5 +1,5 @@
 ---
-title: "How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL"
+title: "Use PKCS #12 archives with Apache Tomcat for TLS/SSL"
 date: 2021-01-28
 draft: false
 
@@ -10,18 +10,18 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - IT Operations
 
 topics:
-- Public Key Certificates
+- Public key certificates
 
 tags:
 - Apache Tomcat
 - HTTPS
-- Public Key Certificates
+- Public key certificates
 - TLS
 ---
 

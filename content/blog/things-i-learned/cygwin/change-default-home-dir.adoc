@@ -1,5 +1,5 @@
 ---
-title: Change the Default Home Directory for Every Cygwin User
+title: Change the default home directory for Cygwin users
 date: 2021-02-24
 draft: false
 
@@ -10,7 +10,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - IT Operations

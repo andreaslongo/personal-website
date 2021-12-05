@@ -10,7 +10,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - DevOps

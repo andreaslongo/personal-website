@@ -1,5 +1,5 @@
 ---
-title: Find Files and Sort Them By Time on Linux
+title: Find files and sort them by time
 date: 2021-02-17
 draft: false
 
@@ -10,7 +10,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - DevOps

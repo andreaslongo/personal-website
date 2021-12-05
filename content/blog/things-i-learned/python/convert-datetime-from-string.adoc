@@ -1,5 +1,5 @@
 ---
-title: Convert Datetime from and to String
+title: Convert datetime from and to string
 date: 2021-02-16
 draft: false
 
@@ -10,7 +10,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - Software Development

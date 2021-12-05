@@ -1,5 +1,5 @@
 ---
-title: Download and Import a Vagrant Box Manually
+title: Download and import a Vagrant box manually
 date: 2021-01-19
 draft: false
 
@@ -16,7 +16,7 @@ disableShare: false
 comments: false
 
 series:
-- Things I Learned
+- Things I learned
 
 categories:
 - DevOps

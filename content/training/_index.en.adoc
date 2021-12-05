@@ -12,4 +12,4 @@ cover:
     relative: false
 ---
 
-- https://training.andreaslongo.com[Database Fundamentals (Deutsch)]
+- https://training.andreaslongo.com[Database fundamentals (Deutsch)]
