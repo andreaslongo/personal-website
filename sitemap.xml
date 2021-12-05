@@ -53,16 +53,13 @@
     <loc>https://www.andreaslongo.com/blog/things-i-learned/linux/zsh-config-files/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/command-line-interfaces-cli/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/cygwin/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/cygwin/</loc>
@@ -71,10 +68,13 @@
     <loc>https://www.andreaslongo.com/categories/it-operations/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.andreaslongo.com/topics/microsoft-windows/</loc>
+    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.andreaslongo.com/tags/sudo/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/</loc>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/vim/</loc>
@@ -90,9 +90,6 @@
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/managed-service-accounts/</loc>
-    <lastmod>2021-02-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/microsoft-windows/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/powershell/</loc>

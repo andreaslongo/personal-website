@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="https://www.andreaslongo.com/tags/zsh-/-bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A sudo command for Cygwin</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</link>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/</guid>
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</guid>
       <description>You can run commands from Cygwin with elevated permissions.
  On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use sudo for this.
  To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for ZSH, but it should also work with other bash-like shells.
