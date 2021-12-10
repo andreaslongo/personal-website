@@ -1,0 +1,46 @@
+---
+title: Auto update container images
+date: 2021-12-10
+
+series:
+- Things I learned
+
+categories:
+- DevOps
+
+topics:
+- Container
+
+tags:
+- Container virtualization
+- Containerization
+- Docker
+- Kubernetes
+- OS-level virtualization
+- Podman
+---
+
+:source-language: shell
+
+
+Auto update Podman/Docker images.
+
+----
+$ podman container run --pull=always
+----
+
+This runs `podman image pull` before the container starts.
+
+NOTE: Podman provides a Docker-compatible command line front end.
+You can substitute the `docker` command with `podman` or set up a shell alias `alias docker=podman`.
+
+
+With Kubernetes, you can set the image pull policy for a container.
+
+[source, yaml]
+----
+spec:
+  containers:
+    - name: <name>
+      imagePullPolicy: Always
+----
