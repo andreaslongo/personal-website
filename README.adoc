@@ -45,7 +45,7 @@ If you change a file, Hugo will automatically rebuild the site and refresh your 
 Useful options:
 
 - `--buildDrafts` to include content marked as draft
-- `--buildFuture` to add content with publishdate in the future
+- `--buildFuture` to include content with future publishing date
 - `--debug` for debug output
 - `--verbose` for verbose output
 
