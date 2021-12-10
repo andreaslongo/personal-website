@@ -3,21 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.andreaslongo.com/blog/things-i-learned/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/container/auto-update-container-images/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/categories/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
+    <loc>https://www.andreaslongo.com/topics/container/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/container-virtualization/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/containerization/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/categories/devops/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/docker/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/kubernetes/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/os-level-virtualization/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/podman/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/series/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/series/things-i-learned/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/topics/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</loc>
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/things-i-learned/unix/lvm-extend-logical-volume/</loc>
@@ -36,18 +72,6 @@
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/logical-volume-manager-lvm/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/series/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/series/things-i-learned/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/</loc>
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/topics/unix/</loc>

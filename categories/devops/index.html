@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://www.andreaslongo.com/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.89.4">
+<meta name=generator content="Hugo 0.90.0">
 <link rel=alternate type=application/rss+xml href=https://www.andreaslongo.com/categories/devops/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -68,6 +68,20 @@
 <header class=page-header><div class=breadcrumbs><a href=https://www.andreaslongo.com>Home</a>&nbsp;»&nbsp;<a href=https://www.andreaslongo.com/categories/>Categories</a></div>
 <h1>DevOps</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Auto update container images
+</h2>
+</header>
+<section class=entry-content>
+<p>Auto update Podman/Docker images.
+$ podman container run --pull=always This runs podman image pull before the container starts.
+Note Podman provides a Docker-compatible command line front end. You can substitute the docker command with podman or set up a shell alias alias docker=podman. With Kubernetes, you can set the image pull policy for a container.
+spec: containers: - name: &lt;name> imagePullPolicy: Always </p>
+</section>
+<footer class=entry-footer><span title="2021-12-10 00:00:00 +0000 UTC">December 10, 2021</span></footer>
+<a class=entry-link aria-label="post link to Auto update container images" href=https://www.andreaslongo.com/blog/things-i-learned/container/auto-update-container-images/></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>Delete remote Git tags
