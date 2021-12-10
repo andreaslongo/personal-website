@@ -18,9 +18,9 @@
 [link={url_workflow_deployment}]
 image::{url_workflow_deployment_batch}[Deployment]
 
-This repository contains the source code for my website {url_site}.
+This repository contains the source code of my website {url_site}.
 
-It's built with {url_hugo}, a {url_static_site_generator}, and hosted on {url_github_pages}.
+The site is built with {url_hugo}, a {url_static_site_generator}, and hosted on {url_github_pages}.
 
 == Requirements
 
@@ -28,25 +28,28 @@ It's built with {url_hugo}, a {url_static_site_generator}, and hosted on {url_gi
 
 == Editing
 
-I write my content in {url_asciidoc} format.
+I write content in the {url_asciidoc} format.
 
-To get a live preview of the website, launch a local Hugo server:
+For a live preview of the website, clone this repository and launch a local Hugo server:
 
 [source]
 ----
+$ git clone https://github.com/andreaslongo/personal-website.git
+$ cd ./personal-website
 $ hugo server
 ----
 
-It will build and serve the site with Hugo's webserver.
-The site gets automatically rebuild if you change a file.
+The `hugo server` command builds the site and serves it via Hugo's built-in web server.
+If you change a file, Hugo will automatically rebuild the site and refresh your web browser.
 
 Useful options:
 
 - `--buildDrafts` to include content marked as draft
 - `--buildFuture` to add content with publishdate in the future
-- `--debug` for debugging output
+- `--debug` for debug output
 - `--verbose` for verbose output
 
 == Deployment
 
-Deployment to {url_github_pages} happens automatically via {url_github_actions} when a new tag gets pushed to the repository.
+The site is deployed to {url_github_pages} when a new tag is pushed to the repository.
+{url_github_actions} is used to automate the process.
