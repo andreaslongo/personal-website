@@ -30,11 +30,11 @@ The site is built with {url_hugo}, a {url_static_site_generator}, and hosted on 
 
 I write content in the {url_asciidoc} format.
 
-For a live preview of the website, clone this repository and launch a local Hugo server:
+For a live preview of the website, clone the repository and launch a local Hugo server:
 
 [source]
 ----
-$ git clone https://github.com/andreaslongo/personal-website.git
+$ git clone --recurse-submodules https://github.com/andreaslongo/personal-website.git
 $ cd ./personal-website
 $ hugo server
 ----
