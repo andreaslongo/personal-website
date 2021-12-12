@@ -1,0 +1,127 @@
+---
+title: Rename Git tags
+date: 2021-12-12
+
+series:
+- Things I learned
+
+categories:
+- DevOps
+
+topics:
+- Git
+
+tags:
+- Git
+---
+
+:source-language: sh
+
+
+Be careful.
+Renaming tags after the fact is difficult.
+
+There is no single step for renaming a tag.
+Create a new tag with a new name and then delete the old tag.
+
+
+== First
+
+Review the commit logs and identify your tags.
+
+----
+git log --decorate --graph --oneline
+----
+
+
+== For local, annotated tags
+
+Optional, if you want to preserve the date of the old tag.
+
+----
+# Get date of the old tag
+git show --date=iso <old>
+git show --date=iso first-release
+
+# Set date for the new tag via environment variable
+export GIT_COMMITTER_DATE="<date>"
+export GIT_COMMITTER_DATE="2021-01-22 16:24:39 +0100"
+----
+
+Rename an *annotated* tag.
+
+----
+# Create a new tag
+git tag --annotate <new> '<old>^{}'
+git tag --annotate v1.0 'first-release^{}'
+
+# Delete the old tag
+git tag --delete <old>
+git tag --delete first-release
+----
+
+Rename a *GPG-signed* tag.
+
+----
+# Create a new tag
+git tag --sign <new> '<old>^{}'
+git tag --sign v1.0 'first-release^{}'
+
+# Delete the old tag
+git tag --delete <old>
+git tag --delete first-release
+----
+
+An annotated tag is a Git object.
+It can point to another annotated tag.
+GPG-signed tags are also annotated tags.
+
+Make sure that your new tag points to a commit object and not to the old tag object.
+
+
+== For local, lightweight tags
+
+Rename a *lightweight* tag
+
+----
+# Create a new tag
+git tag <new> <old>
+
+# Delete the old tag
+git tag --delete <old>
+----
+
+A lightweight tag is not a Git object.
+It is just a name or label for an object, usually a commit object.
+
+
+== For remote tags
+
+Additional steps for tags already pushed to remote repositories.
+
+Push new tags
+
+----
+git push --tags
+----
+
+Delete old tag
+
+----
+git push --delete <remote> <tag>
+git push --delete origin first-release
+----
+
+
+== For other users
+
+Delete tags from local repository that no longer exist on the remote.
+
+----
+git pull --prune --tags
+----
+
+Other users will receive a "renamed" tag as new tag from your remote repositories.
+Git will not delete old tags automatically.
+
+Make sure that other users remove deleted tags from their local repositories.
