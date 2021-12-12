@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Series on Andreas Longo</title>
     <link>https://www.andreaslongo.com/series/</link>
     <description>Recent content in Series on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Today I Learned</title>
-      <link>https://www.andreaslongo.com/series/today-i-learned/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      <title>Things I learned</title>
+      <link>https://www.andreaslongo.com/series/things-i-learned/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/series/today-i-learned/</guid>
-      <description>A blog format to record and share my acquisition of knowledge as I learn day-to-day.
- I hope you enjoy learning along with me.
- </description>
+      <guid>https://www.andreaslongo.com/series/things-i-learned/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
   </channel>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/git/</link>
+    <description>Recent content in Git on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rename Git tags</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/git/rename-tag/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/git/rename-tag/</guid>
+      <description>Be careful. Renaming tags after the fact is difficult.
+ There is no single step for renaming a tag. Create a new tag with a new name and then delete the old tag.
+ First Review the commit logs and identify your tags.
+ git log --decorate --graph --oneline     For local, annotated tags Optional, if you want to preserve the date of the old tag.
+ # Get date of the old tag git show --date=iso &amp;lt;old&amp;gt; git show --date=iso first-release # Set date for the new tag via environment variable export GIT_COMMITTER_DATE=&amp;#34;&amp;lt;date&amp;gt;&amp;#34; export GIT_COMMITTER_DATE=&amp;#34;2021-01-22 16:24:39 +0100&amp;#34;   Rename an annotated tag.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Be careful.
+Renaming tags after the fact is difficult.</p>
+</div>
+<div class="paragraph">
+<p>There is no single step for renaming a tag.
+Create a new tag with a new name and then delete the old tag.</p>
+</div>
+<div class="sect1">
+<h2 id="_first">First</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Review the commit logs and identify your tags.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">git log --decorate --graph --oneline</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_for_local_annotated_tags">For local, annotated tags</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Optional, if you want to preserve the date of the old tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Get date of the old tag
+git show --date=iso &lt;old&gt;
+git show --date=iso first-release
+
+# Set date for the new tag via environment variable
+export GIT_COMMITTER_DATE=&#34;&lt;date&gt;&#34;
+export GIT_COMMITTER_DATE=&#34;2021-01-22 16:24:39 +0100&#34;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rename an <strong>annotated</strong> tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Create a new tag
+git tag --annotate &lt;new&gt; &#39;&lt;old&gt;^{}&#39;
+git tag --annotate v1.0 &#39;first-release^{}&#39;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;
+git tag --delete first-release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rename a <strong>GPG-signed</strong> tag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Create a new tag
+git tag --sign &lt;new&gt; &#39;&lt;old&gt;^{}&#39;
+git tag --sign v1.0 &#39;first-release^{}&#39;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;
+git tag --delete first-release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An annotated tag is a Git object.
+It can point to another annotated tag.
+GPG-signed tags are also annotated tags.</p>
+</div>
+<div class="paragraph">
+<p>Make sure that your new tag points to a commit object and not to the old tag object.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_for_local_lightweight_tags">For local, lightweight tags</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rename a <strong>lightweight</strong> tag</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Create a new tag
+git tag &lt;new&gt; &lt;old&gt;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A lightweight tag is not a Git object.
+It is just a name or label for an object, usually a commit object.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_for_remote_tags">For remote tags</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Additional steps for tags already pushed to remote repositories.</p>
+</div>
+<div class="paragraph">
+<p>Push new tags</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">git push --tags</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete old tag</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">git push --delete &lt;remote&gt; &lt;tag&gt;
+git push --delete origin first-release</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_for_other_users">For other users</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delete tags from local repository that no longer exist on the remote.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">git pull --prune --tags</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other users will receive a &#34;renamed&#34; tag as new tag from your remote repositories.
+Git will not delete old tags automatically.</p>
+</div>
+<div class="paragraph">
+<p>Make sure that other users remove deleted tags from their local repositories.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Delete remote Git tags</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</guid>
+      <description>Remove a remote Git tag:
+ $ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag&amp;gt; $ git push --delete origin v1.0   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Remove a remote Git tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

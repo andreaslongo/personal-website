@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vim on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/vim/</link>
+    <description>Recent content in Vim on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use the clipboard in Vim on Cygwin</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</guid>
+      <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
+ .vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+ </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>To use the Windows clipboard in <a href="https://www.vim.org/">Vim</a> on <a href="https://cygwin.com">Cygwin</a>, add the following to your Vim config file.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>.vimrc</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">set clipboard=unnamed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vim will now use the clipboard register <code>*</code> for yank, delete, change and put operations.
+The <code>*</code> register gets synced with the Windows clipboard automatically.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Vim undo branches</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</guid>
+      <description>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+ Moving through the undo tree Go to newer/older text state.
+ g+ g-   Go to older text state, 10 minutes before.
+ :earlier 10m   Go to newer text state, 5 minutes later.
+ :later 5m   Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can retrieve the state of your text as it was some time ago.
+This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.</p>
+</div>
+<div class="sect1">
+<h2 id="_moving_through_the_undo_tree">Moving through the undo tree</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to newer/older text state.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">g+
+g-</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go to older text state, 10 minutes before.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">:earlier 10m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go to newer text state, 5 minutes later.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">:later 5m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using <code>g-</code> and <code>g+</code> will get you to all possible text states while repeating <code>u</code> and <code>CTRL-R</code> does not.</p>
+</div>
+<div class="paragraph">
+<p>See also <code>:help undo-branches</code>.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Text editor plugins for web APIs</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</guid>
+      <description>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.
+ Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
+   This plugin is for Vim. It is a wrapper around curl.
+  This plugin is for Visual Studio Code.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.</p>
+</div>
+<div class="paragraph">
+<p>Send requests and receive responses to and from your REST APIs with your editor.
+You can quickly explore your REST API without switching context to other tools like <a href="https://curl.se/">curl</a> or <a href="https://www.postman.com/">Postman</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/diepm/vim-rest-console">This plugin</a> is for <a href="https://www.vim.org/">Vim</a>.
+It is a wrapper around <code>curl</code>.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">This plugin</a> is for <a href="https://code.visualstudio.com/">Visual Studio Code</a>. It is similar to the Vim plugin.</p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_clean_and_easy_requests">Clean and Easy Requests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With both plugins, you write your API request as a text block in your editor and sent it to your API on demand.</p>
+</div>
+<div class="paragraph">
+<p>The response shows up in a new editor buffer/window.</p>
+</div>
+<div class="paragraph">
+<p>You can write multiple request blocks in the same file and send them separately.</p>
+</div>
+<div class="paragraph">
+<p>Save your file for later reference, or share it with other developers as an example with your code.</p>
+</div>
+<div class="paragraph">
+<p>One thing to note is that the syntax for the two plugins is slightly different.
+You can’t use a Vim request block directly with VS Code.
+However, it is straightforward to adjust the request block to make it work.</p>
+</div>
+<div class="paragraph">
+<p><strong>To send requests</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Type in a request block.</p>
+</li>
+<li>
+<p>Place the cursor anywhere within the block.</p>
+</li>
+<li>
+<p>Hit the trigger key to send the request (default: <code>CTRL-J</code>).</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">Vim <code>./example.rest</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># vim: set filetype=rest
+
+# global curl options
+--silent
+--include
+--
+
+# GET request
+
+https://reqres.in
+GET /api/users/2
+
+# POST request
+
+https://reqres.in
+POST /api/users
+{
+    &#34;name&#34;: &#34;andreas&#34;,
+    &#34;job&#34;: &#34;consultant&#34;
+}
+
+# DELETE request
+
+https://reqres.in
+DELETE /api/users/2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tip">Tip</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add query parameters like so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://reqres.in
+GET /api/users?per_page=2&amp;page=4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For better readability, you can write this instead.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://reqres.in
+GET /api/users
+per_page=2
+page=4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your query parameters are more complex, you may have to enable <a href="https://github.com/diepm/vim-rest-console#54-line-by-line-request-body">Line-by-line Request Body</a> in Vim <code>:let b:vrc_split_request_body = 1</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://localhost:8001
+GET /api/content/search
+limit=10
+cql=(type=page and space=IT and label=infrastructure)</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
