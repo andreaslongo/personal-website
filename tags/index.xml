@@ -6,7 +6,37 @@
     <description>Recent content in Tags on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenSSH</title>
+      <link>https://www.andreaslongo.com/tags/openssh/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/openssh/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Secure copy protocol (SCP)</title>
+      <link>https://www.andreaslongo.com/tags/secure-copy-protocol-scp/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/secure-copy-protocol-scp/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Secure Shell (SSH)</title>
+      <link>https://www.andreaslongo.com/tags/secure-shell-ssh/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/secure-shell-ssh/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
     <item>
       <title>Git</title>
       <link>https://www.andreaslongo.com/tags/git/</link>

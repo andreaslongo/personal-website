@@ -70,6 +70,19 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Use wildcards with scp to copy remote files
+</h2>
+</header>
+<section class=entry-content>
+<p>Use quotes for the remote side of your command.
+$ scp 'remote-host:path/source-file*' ./local-target source-file1.png 100% 10KB 180.1KB/s 00:00 source-file2.png 100% 17KB 282.7KB/s 00:00 source-file3.png 100% 12KB 274.4KB/s 00:00 With quotes, wildcards are expanded by the remote’s shell instead of your local shell.
+</p>
+</section>
+<footer class=entry-footer><span title="2021-12-15 00:00:00 +0000 UTC">December 15, 2021</span></footer>
+<a class=entry-link aria-label="post link to Use wildcards with scp to copy remote files" href=https://www.andreaslongo.com/blog/things-i-learned/ssh/scp-wildcards/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Rename Git tags
 </h2>
 </header>
@@ -195,18 +208,6 @@ Availability No service downtime for password changes....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-22 00:00:00 +0000 UTC">February 22, 2021</span></footer>
 <a class=entry-link aria-label="post link to Active Directory - Managed Service Accounts" href=https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Find files and sort them by time on Unix
-</h2>
-</header>
-<section class=entry-content>
-<p>Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
-$ find . -type f -name "Makefile*" -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </p>
-</section>
-<footer class=entry-footer><span title="2021-02-17 00:00:00 +0000 UTC">February 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to Find files and sort them by time on Unix" href=https://www.andreaslongo.com/blog/things-i-learned/unix/find-files-sorted-by-time/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

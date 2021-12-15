@@ -70,6 +70,19 @@
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
+<h2>Use wildcards with scp to copy remote files
+</h2>
+</header>
+<section class=entry-content>
+<p>Use quotes for the remote side of your command.
+$ scp 'remote-host:path/source-file*' ./local-target source-file1.png 100% 10KB 180.1KB/s 00:00 source-file2.png 100% 17KB 282.7KB/s 00:00 source-file3.png 100% 12KB 274.4KB/s 00:00 With quotes, wildcards are expanded by the remote’s shell instead of your local shell.
+</p>
+</section>
+<footer class=entry-footer><span title="2021-12-15 00:00:00 +0000 UTC">December 15, 2021</span></footer>
+<a class=entry-link aria-label="post link to Use wildcards with scp to copy remote files" href=https://www.andreaslongo.com/blog/things-i-learned/ssh/scp-wildcards/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
 <h2>Rename Git tags
 </h2>
 </header>
