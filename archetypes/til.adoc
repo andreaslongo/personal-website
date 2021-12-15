@@ -16,3 +16,9 @@ tags:
 ---
 
 :source-language: plaintext
+
+// shell session
+// :source-language: shell
+
+// shell script
+// :source-language: sh
