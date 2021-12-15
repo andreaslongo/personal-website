@@ -18,9 +18,17 @@ tags:
 :source-language: shell
 
 
-Remove a remote Git tag:
+Remove a remote tag:
 
 ----
 $ git push --delete <remote> <tag>
+$ git push --delete origin v1.0
+----
+
+
+Remove multiple remote tags:
+
+----
+$ git push --delete <remote> <tag-1> <tag-2> <...>
 $ git push --delete origin v1.0
 ----
