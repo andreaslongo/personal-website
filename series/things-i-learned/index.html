@@ -3,9 +3,9 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Things I learned | Andreas Longo</title>
+<title>Things I Learned | Andreas Longo</title>
 <meta name=keywords content>
-<meta name=description content="Personal website">
+<meta name=description content="Personal Website">
 <meta name=author content="Andreas Longo">
 <link rel=canonical href=https://www.andreaslongo.com/series/things-i-learned/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
@@ -21,13 +21,13 @@
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:title" content="Things I learned">
-<meta property="og:description" content="Personal website">
+</noscript><meta property="og:title" content="Things I Learned">
+<meta property="og:description" content="Personal Website">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.andreaslongo.com/series/things-i-learned/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Things I learned">
-<meta name=twitter:description content="Personal website">
+<meta name=twitter:title content="Things I Learned">
+<meta name=twitter:description content="Personal Website">
 </head>
 <body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -66,138 +66,66 @@
 </header>
 <main class=main>
 <header class=page-header><div class=breadcrumbs><a href=https://www.andreaslongo.com>Home</a>&nbsp;»&nbsp;<a href=https://www.andreaslongo.com/series/>Series</a></div>
-<h1>Things I learned</h1>
+<h1>Things I Learned</h1>
 </header>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Rename Git tags
-</h2>
-</header>
-<section class=entry-content>
-<p>Be careful. Renaming tags after the fact is difficult.
-There is no single step for renaming a tag. Create a new tag with a new name and then delete the old tag.
-First Review the commit logs and identify your tags.
-git log --decorate --graph --oneline For local, annotated tags Optional, if you want to preserve the date of the old tag.
-# Get date of the old tag git show --date=iso &lt;old> git show --date=iso first-release # Set date for the new tag via environment variable export GIT_COMMITTER_DATE="&lt;date>" export GIT_COMMITTER_DATE="2021-01-22 16:24:39 +0100" Rename an annotated tag....</p>
-</section>
-<footer class=entry-footer><span title="2021-12-12 00:00:00 +0000 UTC">December 12, 2021</span></footer>
-<a class=entry-link aria-label="post link to Rename Git tags" href=https://www.andreaslongo.com/blog/things-i-learned/git/rename-tag/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Auto update container images
-</h2>
-</header>
-<section class=entry-content>
-<p>Auto update Podman/Docker images.
-$ podman container run --pull=always This runs podman image pull before the container starts.
-Note Podman provides a Docker-compatible command line front end. You can substitute the docker command with podman or set up a shell alias alias docker=podman. With Kubernetes, you can set the image pull policy for a container.
-spec: containers: - name: &lt;name> imagePullPolicy: Always </p>
-</section>
-<footer class=entry-footer><span title="2021-12-10 00:00:00 +0000 UTC">December 10, 2021</span></footer>
-<a class=entry-link aria-label="post link to Auto update container images" href=https://www.andreaslongo.com/blog/things-i-learned/container/auto-update-container-images/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Delete remote Git tags
-</h2>
-</header>
-<section class=entry-content>
-<p>Remove a remote Git tag:
-$ git push --delete &lt;remote> &lt;tag> $ git push --delete origin v1.0 </p>
-</section>
-<footer class=entry-footer><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span></footer>
-<a class=entry-link aria-label="post link to Delete remote Git tags" href=https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Extend a LVM logical volume
-</h2>
-</header>
-<section class=entry-content>
-<p>Add space to a LVM logical volume.
-$ sudo lvextend --resizefs --size &lt;size> &lt;group>/&lt;volume> $ sudo lvextend --resizefs --size +2G centos/root Add 100% of the available free space.
-$ sudo lvextend --resizefs --extents +100%FREE centos/root </p>
-</section>
-<footer class=entry-footer><span title="2021-12-05 00:00:00 +0000 UTC">December 5, 2021</span></footer>
-<a class=entry-link aria-label="post link to Extend a LVM logical volume" href=https://www.andreaslongo.com/blog/things-i-learned/unix/lvm-extend-logical-volume/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Zsh configuration files
-</h2>
-</header>
-<section class=entry-content>
-<p>Zsh config files and the order of sourcing during startup.
-1 ~/.zshenv always sourced
-2 ~/.zprofile sourced if login shell
-3 ~/.zshrc sourced if interactive shell
-4 ~/.zlogin sourced if login shell
-5 ~/.zlogout sourced when exiting shell
-</p>
-</section>
-<footer class=entry-footer><span title="2021-12-04 00:00:00 +0000 UTC">December 4, 2021</span></footer>
-<a class=entry-link aria-label="post link to Zsh configuration files" href=https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/></a>
-</article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>A sudo command for Cygwin
+<h2>A sudo Like Command for Cygwin
 </h2>
 </header>
 <section class=entry-content>
 <p>You can run commands from Cygwin with elevated permissions.
-On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use the sudo command for this.
-To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for Zsh, but it should also work for other bash-like shells.
+On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use sudo for this.
+To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for ZSH, but it should also work with other bash-like shells.
 ~/.zshrc alias sudo='cygstart --action=runas' Now you can run something like this to test the alias....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to A sudo command for Cygwin" href=https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/></a>
+<a class=entry-link aria-label="post link to A sudo Like Command for Cygwin" href=https://www.andreaslongo.com/blog/things-i-learned/cygwin/sudo-command/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Change the default home directory for Cygwin users
+<h2>Change the Default Home Directory for Every Cygwin User
 </h2>
 </header>
 <section class=entry-content>
 <p>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
-For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in Windows notation to C:\Users\{user_name}\home.
-/etc/nsswitch.conf db_home: /%H/home You can change it to whatever you like.
-See the Cygwin documentation for more information. Look here below the /path section for more on supported wildcard characters.
+For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in windows notation C:\Users{user_name}\home.
+/etc/nsswitch.conf db_home: /%H/home You can change it to whatever you like. Consult the Cygwin documentation for more information. And look here below the /path section for more on supported wildcard characters.
 </p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to Change the default home directory for Cygwin users" href=https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/></a>
+<a class=entry-link aria-label="post link to Change the Default Home Directory for Every Cygwin User" href=https://www.andreaslongo.com/blog/things-i-learned/cygwin/change-default-home-dir/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Use the clipboard in Vim on Cygwin
+<h2>Use the Windows Clipboard in Vim on Cygwin
 </h2>
 </header>
 <section class=entry-content>
 <p>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
-.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
+~/.vim/.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
 </p>
 </section>
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
-<a class=entry-link aria-label="post link to Use the clipboard in Vim on Cygwin" href=https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/></a>
+<a class=entry-link aria-label="post link to Use the Windows Clipboard in Vim on Cygwin" href=https://www.andreaslongo.com/blog/things-i-learned/cygwin/vim-clipboard/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Active Directory - Managed Service Accounts
+<h2>Using Active Directory Managed Service Accounts
 </h2>
 </header>
 <section class=entry-content>
-<p>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
-Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
-Pro Administration Automatic password changes. No manual password management.
-Availability No service downtime for password changes....</p>
+<p>Traditionally, system administrators use Active Directory (AD) user accounts with limited permissions to run a service (service account).
+Managed service accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs, these tasks no longer disrupt a service (downtime).
+Administration No manual password management is required.
+Availability No service downtime is necessary for password changes....</p>
 </section>
 <footer class=entry-footer><span title="2021-02-22 00:00:00 +0000 UTC">February 22, 2021</span></footer>
-<a class=entry-link aria-label="post link to Active Directory - Managed Service Accounts" href=https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/></a>
+<a class=entry-link aria-label="post link to Using Active Directory Managed Service Accounts" href=https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/></a>
 </article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
-<h2>Find files and sort them by time on Unix
+<h2>Find Files and Sort Them By Time on Linux
 </h2>
 </header>
 <section class=entry-content>
@@ -205,7 +133,75 @@ Availability No service downtime for password changes....</p>
 $ find . -type f -name "Makefile*" -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </p>
 </section>
 <footer class=entry-footer><span title="2021-02-17 00:00:00 +0000 UTC">February 17, 2021</span></footer>
-<a class=entry-link aria-label="post link to Find files and sort them by time on Unix" href=https://www.andreaslongo.com/blog/things-i-learned/unix/find-files-sorted-by-time/></a>
+<a class=entry-link aria-label="post link to Find Files and Sort Them By Time on Linux" href=https://www.andreaslongo.com/blog/things-i-learned/linux/find-files-sorted-by-time/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Get Uptime on a Windows System
+</h2>
+</header>
+<section class=entry-content>
+<p>I haven’t found a good alternative to the Unix uptime command for Windows yet.
+uptime from the procps-ng package
+$ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35 Tell how long a Windows system has been running For PowerShell version 6+, there is the Get-Uptime cmdlet.
+$ Get-Uptime Days : 30 Hours : 7 Minutes : 33 Seconds : 45 Milliseconds : 0 Ticks : 26192250000000 TotalDays : 30,3151041666667 TotalHours : 727,5625 TotalMinutes : 43653,75 TotalSeconds : 2619225 TotalMilliseconds : 2619225000 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM If Get-Uptime is not available, you can query the WMI with a CIM cmdlet....</p>
+</section>
+<footer class=entry-footer><span title="2021-02-17 00:00:00 +0000 UTC">February 17, 2021</span></footer>
+<a class=entry-link aria-label="post link to Get Uptime on a Windows System" href=https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Convert Datetime from and to String
+</h2>
+</header>
+<section class=entry-content>
+<p>From String Parse a string representing a date/time in any format to a Python datetime object with the datetime.strptime() method.
+>>> from datetime import datetime >>> timestamp = '01.10.2009 20:36:41' >>> datetime.strptime(timestamp, '%d.%m.%Y %H:%M:%S') datetime.datetime(2009, 10, 1, 20, 36, 41) The second argument to datetime.strptime() is a format string build with format codes. See strftime() and strptime() Format Codes for a full list of available format codes....</p>
+</section>
+<footer class=entry-footer><span title="2021-02-16 00:00:00 +0000 UTC">February 16, 2021</span></footer>
+<a class=entry-link aria-label="post link to Convert Datetime from and to String" href=https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Vim Undo Branches
+</h2>
+</header>
+<section class=entry-content>
+<p>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
+This concept is called undo tree or undo branches. See :help undo-branches.
+Moving through the undo tree Go to older text state (10 minutes before)
+:earlier 10m Go to newer text state (5 minutes later)
+:later 5m </p>
+</section>
+<footer class=entry-footer><span title="2021-02-14 00:00:00 +0000 UTC">February 14, 2021</span></footer>
+<a class=entry-link aria-label="post link to Vim Undo Branches" href=https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Two Editor Plugins Every REST API Developer Should Know
+</h2>
+</header>
+<section class=entry-content>
+<p>Whether you are a developer or a consumer of RESTful web services, these two plugins might come in handy.
+Send requests and receive responses to and from your REST APIs with your editor. You can quickly explore your REST API without switching context to other tools like curl or Postman.
+This plugin is for Vim. It is a wrapper around curl.
+This plugin is for Visual Studio Code....</p>
+</section>
+<footer class=entry-footer><span title="2021-02-11 00:00:00 +0000 UTC">February 11, 2021</span></footer>
+<a class=entry-link aria-label="post link to Two Editor Plugins Every REST API Developer Should Know" href=https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL
+</h2>
+</header>
+<section class=entry-content>
+<p>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded Secure Sockets Layer (SSL) protocol.
+In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
+Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml The files file.p12 and server.xml contain the private key and password for a certificate....</p>
+</section>
+<footer class=entry-footer><span title="2021-01-28 00:00:00 +0000 UTC">January 28, 2021</span></footer>
+<a class=entry-link aria-label="post link to How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL" href=https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

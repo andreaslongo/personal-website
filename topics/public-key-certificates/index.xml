@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Public Key Certificates on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/topics/public-key-certificates/</link>
+    <description>Recent content in Public Key Certificates on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/public-key-certificates/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</guid>
+      <description>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded Secure Sockets Layer (SSL) protocol.
+ In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
+ Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The files file.p12 and server.xml contain the private key and password for a certificate.</description>
+    </item>
+    
+  </channel>
+</rss>

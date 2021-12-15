@@ -8,114 +8,14 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/apache-tomcat/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Use PKCS #12 archives with Apache Tomcat for TLS/SSL</title>
+      <title>How to Use PKCS #12 Archives with Apache Tomcat for TLS/SSL</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</guid>
-      <description>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded the Secure Sockets Layer (SSL) protocol.
- In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.
- Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The file file.p12 contains the private key and the file server.xml contains the password for the certificate.</description>
-      <content:encoded><![CDATA[<div class="paragraph">
-<p>How to use <a href="https://en.wikipedia.org/wiki/PKCS_12">PKCS #12</a> archives with <a href="https://tomcat.apache.org/">Apache Tomcat</a> for <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security (TLS)</a>.
-TLS superseded the Secure Sockets Layer (SSL) protocol.</p>
-</div>
-<div class="paragraph">
-<p>In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.</p>
-</div>
-<div class="listingblock">
-<div class="title">Directory layout <code>../Tomcat/</code></div>
-<div class="content">
-<pre class="highlight"><code class="language-shell" data-lang="shell">../Tomcat/
-| certificates/
-| | file.p12
-| conf/
-| | server.xml</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The file <code>file.p12</code> contains the private key and the file <code>server.xml</code> contains the password for the certificate.
-<strong>Make sure that only the Tomcat process can access them</strong>.</p>
-</div>
-<div class="paragraph">
-<p><strong>The password for the certificate’s private key must match that for the PKCS #12 file</strong>.</p>
-</div>
-<div class="sect1">
-<h2 id="_tomcat_version_8_9_and_10">Tomcat version 8, 9 and 10</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="title"><code>server.xml</code></div>
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- TOMCAT TLS CONNECTOR --&gt;
-&lt;Connector
-    port=&#34;8443&#34;
-        protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34;
-        SSLEnabled=&#34;true&#34;
-        scheme=&#34;https&#34;
-	secure=&#34;true&#34;
-    &gt;
-    &lt;SSLHostConfig&gt;
-        certificateVerification=&#34;optional&#34;
-        &lt;Certificate
-            certificateKeystoreType=&#34;PKCS12&#34;
-            certificateKeystoreFile=&#34;certificates/&lt;file&gt;.p12&#34; <b class="conum">(1)</b>
-            certificateKeystorePassword=&#34;&lt;password&gt;&#34; <b class="conum">(2)</b>
-        /&gt;
-    &lt;/SSLHostConfig&gt;
-&lt;/Connector&gt;</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<ol>
-<li>
-<p>Adapt <code>certificateKeystoreFile</code> and</p>
-</li>
-<li>
-<p><code>certificateKeystorePassword</code> to your environment</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tomcat_version_7">Tomcat version 7</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>We need a different config for Tomcat 7.</p>
-</div>
-<div class="listingblock">
-<div class="title"><code>server.xml</code></div>
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- TOMCAT 7.x TLS CONNECTOR --&gt;
-&lt;Connector
-    port=&#34;8443&#34;
-        protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34;
-        SSLEnabled=&#34;true&#34;
-        scheme=&#34;https&#34;
-        secure=&#34;true&#34;
-        clientAuth=&#34;false&#34;
-        keystoreType=&#34;PKCS12&#34;
-        keystoreFile=&#34;certificates/&lt;file&gt;.p12&#34; <b class="conum">(1)</b>
-        keystorePass=&#34;&lt;password&gt;&#34; <b class="conum">(2)</b>
-/&gt;</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<ol>
-<li>
-<p>Adapt <code>keystoreFile</code> and</p>
-</li>
-<li>
-<p><code>keystorePass</code> to your environment</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After restarting Tomcat, you can connect to TCP port 8443 via <a href="https://en.wikipedia.org/wiki/HTTPS">HTTP over TLS (HTTPS)</a>, for example.</p>
-</div>
-</div>
-</div>
-]]></content:encoded>
+      <description>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded Secure Sockets Layer (SSL) protocol.
+ In the following example, we create a Tomcat TLS connector that uses a PKCS #12 file as Keystore.
+ Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The files file.p12 and server.xml contain the private key and password for a certificate.</description>
     </item>
     
   </channel>

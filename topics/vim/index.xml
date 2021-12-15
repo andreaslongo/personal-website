@@ -8,57 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vim undo branches</title>
+      <title>Vim Undo Branches</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</guid>
-      <description>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
- Moving through the undo tree Go to newer/older text state.
- g+ g-   Go to older text state, 10 minutes before.
- :earlier 10m   Go to newer text state, 5 minutes later.
- :later 5m   Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not.</description>
-      <content:encoded><![CDATA[<div class="paragraph">
-<p>You can retrieve the state of your text as it was some time ago.
-This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.</p>
-</div>
-<div class="sect1">
-<h2 id="_moving_through_the_undo_tree">Moving through the undo tree</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Go to newer/older text state.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-vim" data-lang="vim">g+
-g-</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Go to older text state, 10 minutes before.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-vim" data-lang="vim">:earlier 10m</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Go to newer text state, 5 minutes later.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-vim" data-lang="vim">:later 5m</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Using <code>g-</code> and <code>g+</code> will get you to all possible text states while repeating <code>u</code> and <code>CTRL-R</code> does not.</p>
-</div>
-<div class="paragraph">
-<p>See also <code>:help undo-branches</code>.</p>
-</div>
-</div>
-</div>
-]]></content:encoded>
+      <description>You can undo and redo changes without having to press u or CTRL-R repeatedly. Retrieve the state of your buffer as it was some time ago.
+ This concept is called undo tree or undo branches. See :help undo-branches.
+ Moving through the undo tree Go to older text state (10 minutes before)
+ :earlier 10m   Go to newer text state (5 minutes later)
+ :later 5m     </description>
     </item>
     
   </channel>
