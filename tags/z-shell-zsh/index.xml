@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Z shell (Zsh) on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/z-shell-zsh/</link>
+    <description>Recent content in Z shell (Zsh) on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/z-shell-zsh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zsh configuration files</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/</guid>
+      <description>Zsh config files and the order of sourcing during startup.
+  1 ~/.zshenv  always sourced
+ 2 ~/.zprofile  sourced if login shell
+ 3 ~/.zshrc  sourced if interactive shell
+ 4 ~/.zlogin  sourced if login shell
+ 5 ~/.zlogout  sourced when exiting shell
+   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Zsh config files and the order of sourcing during startup.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1 <code>~/.zshenv</code></dt>
+<dd>
+<p>always sourced</p>
+</dd>
+<dt class="hdlist1">2 <code>~/.zprofile</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">3 <code>~/.zshrc</code></dt>
+<dd>
+<p>sourced if interactive shell</p>
+</dd>
+<dt class="hdlist1">4 <code>~/.zlogin</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">5 <code>~/.zlogout</code></dt>
+<dd>
+<p>sourced when exiting shell</p>
+</dd>
+</dl>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,32 +6,45 @@
     <description>Recent content in Topics on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cygwin</title>
-      <link>https://www.andreaslongo.com/topics/cygwin/</link>
-      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <title>Git</title>
+      <link>https://www.andreaslongo.com/topics/git/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/cygwin/</guid>
+      <guid>https://www.andreaslongo.com/topics/git/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>https://www.andreaslongo.com/topics/container/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/topics/container/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Unix</title>
+      <link>https://www.andreaslongo.com/topics/unix/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/topics/unix/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
       <title>Microsoft Windows</title>
       <link>https://www.andreaslongo.com/topics/microsoft-windows/</link>
-      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/topics/microsoft-windows/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Linux, Unix</title>
-      <link>https://www.andreaslongo.com/topics/linux-unix/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/topics/linux-unix/</guid>
-      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -41,6 +54,7 @@
       
       <guid>https://www.andreaslongo.com/topics/python/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -50,24 +64,27 @@
       
       <guid>https://www.andreaslongo.com/topics/vim/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>REST APIs</title>
-      <link>https://www.andreaslongo.com/topics/rest-apis/</link>
+      <title>Web</title>
+      <link>https://www.andreaslongo.com/topics/web/</link>
       <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/rest-apis/</guid>
+      <guid>https://www.andreaslongo.com/topics/web/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Public Key Certificates</title>
-      <link>https://www.andreaslongo.com/topics/public-key-certificates/</link>
+      <title>Security</title>
+      <link>https://www.andreaslongo.com/topics/security/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/public-key-certificates/</guid>
+      <guid>https://www.andreaslongo.com/topics/security/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -77,6 +94,7 @@
       
       <guid>https://www.andreaslongo.com/topics/vagrant/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
   </channel>
