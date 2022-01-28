@@ -84,8 +84,18 @@ outputs:
     - RSS
     - JSON
 
-# Privacy Config
+markup:
+  asciidocExt:
+    attributes:
+      figure-caption!:
+      showtitle: true
+
+
+###############################################################################
+# Privacy settings
 # https://gohugo.io/about/hugo-and-gdpr/
+###############################################################################
+
 privacy:
   disqus:
     disable: true
@@ -106,8 +116,18 @@ services:
   twitter:
     disableInlineCSS: true
 
-markup:
-  asciidocExt:
-    attributes:
-      figure-caption!:
-      showtitle: true
+
+###############################################################################
+# Security settings
+# https://gohugo.io/about/security-model/
+###############################################################################
+
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+    - ^asciidoctor$
+    - ^dart-sass-embedded$
+    - ^go$
+    - ^npx$
+    - ^postcss$
