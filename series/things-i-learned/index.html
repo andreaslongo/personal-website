@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://www.andreaslongo.com/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.90.1">
+<meta name=generator content="Hugo 0.91.2">
 <link rel=alternate type=application/rss+xml href=https://www.andreaslongo.com/series/things-i-learned/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -68,6 +68,22 @@
 <header class=page-header><div class=breadcrumbs><a href=https://www.andreaslongo.com>Home</a>&nbsp;»&nbsp;<a href=https://www.andreaslongo.com/series/>Series</a></div>
 <h1>Things I learned</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Generate diagrams with asciidoctor and Hugo
+</h2>
+</header>
+<section class=entry-content>
+<p>Asciidoctor has good support for diagrams with the Asciidoctor Diagram plugin.
+To make this work with Hugo, a static site generator, you need
+a working asciidoctor-diagram plugin
+and some settings in your site config.
+Then run hugo --destination public to generate your site and diagrams.
+Have a look at my example repository to get an idea of how this works....</p>
+</section>
+<footer class=entry-footer><span title="2022-01-28 00:00:00 +0000 UTC">January 28, 2022</span></footer>
+<a class=entry-link aria-label="post link to Generate diagrams with asciidoctor and Hugo" href=https://www.andreaslongo.com/blog/things-i-learned/asciidoctor/diagram-hugo/></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>Use wildcards with scp to copy remote files
@@ -195,20 +211,6 @@ See the Cygwin documentation for more information. Look here below the /path sec
 <footer class=entry-footer><span title="2021-02-24 00:00:00 +0000 UTC">February 24, 2021</span></footer>
 <a class=entry-link aria-label="post link to Use the clipboard in Vim on Cygwin" href=https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/></a>
 </article>
-<article class="post-entry tag-entry">
-<header class=entry-header>
-<h2>Active Directory - Managed Service Accounts
-</h2>
-</header>
-<section class=entry-content>
-<p>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
-Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
-Pro Administration Automatic password changes. No manual password management.
-Availability No service downtime for password changes....</p>
-</section>
-<footer class=entry-footer><span title="2021-02-22 00:00:00 +0000 UTC">February 22, 2021</span></footer>
-<a class=entry-link aria-label="post link to Active Directory - Managed Service Accounts" href=https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=next href=https://www.andreaslongo.com/series/things-i-learned/page/2/>Next Page »</a>
@@ -216,7 +218,7 @@ Availability No service downtime for password changes....</p>
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://www.andreaslongo.com>Andreas Longo</a></span>
+<span>&copy; 2022 <a href=https://www.andreaslongo.com>Andreas Longo</a></span>
 </footer>
 <a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a>
