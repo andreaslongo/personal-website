@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Diagram on Andreas Longo</title>
-    <link>https://www.andreaslongo.com/tags/diagram/</link>
-    <description>Recent content in Diagram on Andreas Longo</description>
+    <title>AsciiDoc on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/asciidoc/</link>
+    <description>Recent content in AsciiDoc on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/diagram/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/asciidoc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generate diagrams with Asciidoctor and Hugo</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/asciidoc/diagram-hugo/</link>

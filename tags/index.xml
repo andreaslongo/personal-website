@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AsciiDoc</title>
+      <link>https://www.andreaslongo.com/tags/asciidoc/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/asciidoc/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Asciidoctor</title>
       <link>https://www.andreaslongo.com/tags/asciidoctor/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
@@ -18,7 +28,7 @@
     </item>
     
     <item>
-      <title>Asciidoctor-diagram</title>
+      <title>Asciidoctor Diagram</title>
       <link>https://www.andreaslongo.com/tags/asciidoctor-diagram/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
       
