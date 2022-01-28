@@ -1,5 +1,5 @@
 ---
-title: Generate diagrams with asciidoctor and Hugo
+title: Generate diagrams with Asciidoctor and Hugo
 date: 2022-01-28
 
 series:
@@ -9,11 +9,12 @@ categories:
 - DevOps
 
 topics:
-- Asciidoctor
+- AsciiDoc
 
 tags:
+- AsciiDoc
 - Asciidoctor
-- Asciidoctor-diagram
+- Asciidoctor Diagram
 - Diagram
 - Docsy
 - Hugo
