@@ -23,8 +23,6 @@ tags:
 :source-language: sh
 
 
-= Generate diagrams with asciidoctor and Hugo
-
 Asciidoctor has good support for diagrams with the https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor Diagram] plugin.
 
 To make this work with https://gohugo.io[Hugo], a static site generator, you need
