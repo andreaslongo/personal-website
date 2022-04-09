@@ -6,7 +6,27 @@
     <description>Recent content in Tags on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://www.andreaslongo.com/tags/git/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/git/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://www.andreaslongo.com/tags/github/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/github/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
     <item>
       <title>AsciiDoc</title>
       <link>https://www.andreaslongo.com/tags/asciidoc/</link>
@@ -103,16 +123,6 @@
       <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/secure-shell-ssh/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://www.andreaslongo.com/tags/git/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/git/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

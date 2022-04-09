@@ -6,7 +6,44 @@
     <description>Recent content in DevOps on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPG-sign already pushed Git commits</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/git/gpg-sign-pushed-commit/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/git/gpg-sign-pushed-commit/</guid>
+      <description>You have created a pull request (PR) with a single commit on GitHub. The commit is not GPG-signed. The maintainer asked you to sign the commit.
+ If you are the only one working (committing) to this PR, you can force-push a signed commit.
+ # Sign the latest commit on your local repository git commit --amend --no-edit --gpg-sign # Force push the commit to your remote repository (fork) git push --force-with-lease   GitHub will automatically update your PR.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You have created a pull request (PR) with a single commit on GitHub.
+The commit is not GPG-signed.
+The maintainer asked you to sign the commit.</p>
+</div>
+<div class="paragraph">
+<p>If you are the only one working (committing) to this PR, you can force-push a signed commit.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Sign the latest commit on your local repository
+git commit --amend --no-edit --gpg-sign
+
+# Force push the commit to your remote repository (fork)
+git push --force-with-lease</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GitHub will automatically update your PR.</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="gpg-sign-pushed-commit.png" alt="gpg sign pushed commit"/>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Generate diagrams with Asciidoctor and Hugo</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/asciidoc/diagram-hugo/</link>
