@@ -6,7 +6,41 @@
     <description>Recent content in DevOps on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create new images based on a running container</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/container/snapshot-running-container/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/container/snapshot-running-container/</guid>
+      <description>You can save the state of a running container as a new image. This is somewhat similar to &amp;#34;creating a snapshot&amp;#34; when working with virtual machines.
+ If you use Docker, just replace &amp;#39;podman&amp;#39; with &amp;#39;docker&amp;#39; in the below commands.
+ podman container commit &amp;lt;container&amp;gt; &amp;lt;new-image:tag&amp;gt; podman container commit ansible ansible:snapshot.1   There is also a shorthand form of the command which does the same.
+ podman commit &amp;lt;container&amp;gt; &amp;lt;new-image:tag&amp;gt;   </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can save the state of a running container as a new image.
+This is somewhat similar to &#34;creating a snapshot&#34; when working with virtual machines.</p>
+</div>
+<div class="paragraph">
+<p>If you use Docker, just replace &#39;podman&#39; with &#39;docker&#39; in the below commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">podman container commit &lt;container&gt; &lt;new-image:tag&gt;
+podman container commit ansible ansible:snapshot.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is also a shorthand form of the command which does the same.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">podman commit &lt;container&gt; &lt;new-image:tag&gt;</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>GPG-sign already pushed Git commits</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/git/gpg-sign-pushed-commit/</link>
