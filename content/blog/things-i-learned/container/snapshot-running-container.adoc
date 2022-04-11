@@ -25,7 +25,7 @@ tags:
 You can save the state of a running container as a new image.
 This is somewhat similar to "creating a snapshot" when working with virtual machines.
 
-If you use Docker, just replace 'podman' with 'docker' in the below commands.
+If you use Docker, just replace `podman` with `docker` in the below commands.
 
 ----
 podman container commit <container> <new-image:tag>
