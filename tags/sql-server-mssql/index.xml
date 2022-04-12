@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SQL Server (MSSQL) on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/sql-server-mssql/</link>
+    <description>Recent content in SQL Server (MSSQL) on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/sql-server-mssql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configure an alias for SQL Server connections</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</guid>
+      <description>You can use SQL Server Configuration Manager to configure an alias for connections to a Microsoft SQL Server instance.
+ On some versions of Windows, SQL Server Configuration Manager does not appear as an application but as a snap-in for the Microsoft Management Console (MMC). Have a look there if you can’t find it.
+ If the tool is indeed not present, you can use another GUI utility which is generally available on most Windows machines.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can use <strong>SQL Server Configuration Manager</strong> to configure an alias for connections to a Microsoft SQL Server instance.</p>
+</div>
+<div class="paragraph">
+<p>On some versions of Windows, SQL Server Configuration Manager does not appear as an application but as a snap-in for the Microsoft Management Console (MMC). Have a look there if you can’t find it.</p>
+</div>
+<div class="paragraph">
+<p>If the tool is indeed not present, you can use another GUI utility which is generally available on most Windows machines.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell"># 64 bit version
+C:\Windows\System32\cliconfg.exe
+
+# 32 bit version
+C:\Windows\SysWOW64\cliconfg.exe</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

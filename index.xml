@@ -6,7 +6,37 @@
     <description>Recent content on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configure an alias for SQL Server connections</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</guid>
+      <description>You can use SQL Server Configuration Manager to configure an alias for connections to a Microsoft SQL Server instance.
+ On some versions of Windows, SQL Server Configuration Manager does not appear as an application but as a snap-in for the Microsoft Management Console (MMC). Have a look there if you can’t find it.
+ If the tool is indeed not present, you can use another GUI utility which is generally available on most Windows machines.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can use <strong>SQL Server Configuration Manager</strong> to configure an alias for connections to a Microsoft SQL Server instance.</p>
+</div>
+<div class="paragraph">
+<p>On some versions of Windows, SQL Server Configuration Manager does not appear as an application but as a snap-in for the Microsoft Management Console (MMC). Have a look there if you can’t find it.</p>
+</div>
+<div class="paragraph">
+<p>If the tool is indeed not present, you can use another GUI utility which is generally available on most Windows machines.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell"># 64 bit version
+C:\Windows\System32\cliconfg.exe
+
+# 32 bit version
+C:\Windows\SysWOW64\cliconfg.exe</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Create new images based on a running container</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/container/snapshot-running-container/</link>
@@ -14,7 +44,7 @@
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/container/snapshot-running-container/</guid>
       <description>You can save the state of a running container as a new image. This is somewhat similar to &amp;#34;creating a snapshot&amp;#34; when working with virtual machines.
- If you use Docker, just replace &amp;#39;podman&amp;#39; with &amp;#39;docker&amp;#39; in the below commands.
+ If you use Docker, just replace podman with docker in the below commands.
  podman container commit &amp;lt;container&amp;gt; &amp;lt;new-image:tag&amp;gt; podman container commit ansible ansible:snapshot.1   There is also a shorthand form of the command which does the same.
  podman commit &amp;lt;container&amp;gt; &amp;lt;new-image:tag&amp;gt;   </description>
       <content:encoded><![CDATA[<div class="paragraph">
@@ -22,7 +52,7 @@
 This is somewhat similar to &#34;creating a snapshot&#34; when working with virtual machines.</p>
 </div>
 <div class="paragraph">
-<p>If you use Docker, just replace &#39;podman&#39; with &#39;docker&#39; in the below commands.</p>
+<p>If you use Docker, just replace <code>podman</code> with <code>docker</code> in the below commands.</p>
 </div>
 <div class="listingblock">
 <div class="content">

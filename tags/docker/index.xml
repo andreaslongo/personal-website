@@ -14,7 +14,7 @@
       
       <guid>https://www.andreaslongo.com/blog/things-i-learned/container/snapshot-running-container/</guid>
       <description>You can save the state of a running container as a new image. This is somewhat similar to &amp;#34;creating a snapshot&amp;#34; when working with virtual machines.
- If you use Docker, just replace &amp;#39;podman&amp;#39; with &amp;#39;docker&amp;#39; in the below commands.
+ If you use Docker, just replace podman with docker in the below commands.
  podman container commit &amp;lt;container&amp;gt; &amp;lt;new-image:tag&amp;gt; podman container commit ansible ansible:snapshot.1   There is also a shorthand form of the command which does the same.
  podman commit &amp;lt;container&amp;gt; &amp;lt;new-image:tag&amp;gt;   </description>
       <content:encoded><![CDATA[<div class="paragraph">
@@ -22,7 +22,7 @@
 This is somewhat similar to &#34;creating a snapshot&#34; when working with virtual machines.</p>
 </div>
 <div class="paragraph">
-<p>If you use Docker, just replace &#39;podman&#39; with &#39;docker&#39; in the below commands.</p>
+<p>If you use Docker, just replace <code>podman</code> with <code>docker</code> in the below commands.</p>
 </div>
 <div class="listingblock">
 <div class="content">
