@@ -1,5 +1,5 @@
 ---
-title: Use wildcards with scp to copy remote files
+title: Use wildcards with `scp` to copy remote files
 date: 2021-12-15
 
 series:

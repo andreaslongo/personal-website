@@ -1,5 +1,5 @@
 ---
-title: Convert datetime from and to string in Python
+title: Convert `datetime` from and to `string` in Python
 date: 2021-02-16
 
 series:

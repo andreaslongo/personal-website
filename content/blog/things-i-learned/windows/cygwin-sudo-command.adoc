@@ -1,5 +1,5 @@
 ---
-title: A sudo command for Cygwin
+title: A `sudo` like command for Cygwin
 date: 2021-02-24
 
 series:
