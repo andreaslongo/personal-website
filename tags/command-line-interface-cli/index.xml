@@ -6,7 +6,44 @@
     <description>Recent content in Command-line interface (CLI) on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/command-line-interface-cli/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/command-line-interface-cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Unix like `watch` command for PowerShell</title>
+      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/powershell-watch/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/powershell-watch/</guid>
+      <description>To my knowledge, there is no equivalent to the Unix watch command for PowerShell on Windows. But you can get similar behavior:
+ # Similar to `watch &amp;lt;command&amp;gt;` PS&amp;gt; while ($true) {&amp;lt;your command&amp;gt;; sleep -Seconds 2} PS&amp;gt; while ($true) {(Get-Service -Name &amp;#39;Remote Desktop Services&amp;#39;).Status; sleep -Seconds 2} Running Running   If you want to follow log file outputs like with the famous Unix tail command:
+ # Similar to `tail --follow &amp;lt;filename&amp;gt;` PS&amp;gt; Get-Content -Path &amp;lt;logfile&amp;gt; -Tail 10 –Wait PS&amp;gt; Get-Content -Path &amp;#39;C:\app.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>To my knowledge, there is no equivalent to the Unix <a href="https://en.wikipedia.org/wiki/Watch_(command)"><code>watch</code></a> command for PowerShell on Windows.
+But you can get similar behavior:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell"># Similar to `watch &lt;command&gt;`
+PS&gt; while ($true) {&lt;your command&gt;; sleep -Seconds 2}
+
+PS&gt; while ($true) {(Get-Service -Name &#39;Remote Desktop Services&#39;).Status; sleep -Seconds 2}
+Running
+Running</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to follow log file outputs like with the famous Unix <a href="https://en.wikipedia.org/wiki/Tail_(Unix)"><code>tail</code></a> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell"># Similar to `tail --follow &lt;filename&gt;`
+PS&gt; Get-Content -Path &lt;logfile&gt; -Tail 10 –Wait
+
+PS&gt; Get-Content -Path &#39;C:\app.log&#39; -Tail 10 –Wait</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Zsh configuration files</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/</link>

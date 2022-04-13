@@ -6,13 +6,23 @@
     <description>Recent content in Tags on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SQL Server (MSSQL)</title>
-      <link>https://www.andreaslongo.com/tags/sql-server-mssql/</link>
-      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      <title>Command-line interface (CLI)</title>
+      <link>https://www.andreaslongo.com/tags/command-line-interface-cli/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/tags/sql-server-mssql/</guid>
+      <guid>https://www.andreaslongo.com/tags/command-line-interface-cli/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://www.andreaslongo.com/tags/powershell/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/powershell/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -20,9 +30,19 @@
     <item>
       <title>Windows</title>
       <link>https://www.andreaslongo.com/tags/windows/</link>
-      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/windows/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>SQL Server (MSSQL)</title>
+      <link>https://www.andreaslongo.com/tags/sql-server-mssql/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/tags/sql-server-mssql/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -228,16 +248,6 @@
     </item>
     
     <item>
-      <title>Command-line interface (CLI)</title>
-      <link>https://www.andreaslongo.com/tags/command-line-interface-cli/</link>
-      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/command-line-interface-cli/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
       <title>Shell</title>
       <link>https://www.andreaslongo.com/tags/shell/</link>
       <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
@@ -343,16 +353,6 @@
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/tags/managed-service-account-msa/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>PowerShell</title>
-      <link>https://www.andreaslongo.com/tags/powershell/</link>
-      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/tags/powershell/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
