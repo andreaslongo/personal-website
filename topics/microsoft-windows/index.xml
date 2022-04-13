@@ -45,7 +45,7 @@ PS&gt; Get-Content -Path &#39;C:\app.log&#39; -Tail 10 –Wait</code></pre>
     </item>
     
     <item>
-      <title>A sudo command for Cygwin</title>
+      <title>A `sudo` like command for Cygwin</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       

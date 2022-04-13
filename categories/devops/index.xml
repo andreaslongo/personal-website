@@ -116,7 +116,7 @@ git push --force-with-lease</code></pre>
     </item>
     
     <item>
-      <title>Use wildcards with scp to copy remote files</title>
+      <title>Use wildcards with `scp` to copy remote files</title>
       <link>https://www.andreaslongo.com/blog/things-i-learned/ssh/scp-wildcards/</link>
       <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
       
