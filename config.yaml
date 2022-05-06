@@ -1,3 +1,6 @@
+ignoreFiles:
+  - database-fundamentals
+
 baseURL: "https://www.andreaslongo.com"
 defaultContentLanguage: en
 theme: papermod
