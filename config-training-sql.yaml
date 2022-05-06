@@ -74,3 +74,14 @@ markup:
       note-caption: '<i class="fas fa-info-circle"></i>'
       experimental:
       source-language: sql
+
+
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+    - ^asciidoctor$
+    - ^dart-sass-embedded$
+    - ^go$
+    - ^npx$
+    - ^postcss$
