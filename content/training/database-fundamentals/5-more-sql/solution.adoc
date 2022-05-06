@@ -1,0 +1,43 @@
+---
+title: "Lösung"
+date: 2021-03-08
+draft: false
+weight: 8
+---
+
+
+== Nutze SQL Anweisungen für die Arbeit mit Datensätzen
+
+[source]
+----
+-- Füge drei neue Datensätze in die Tabelle deiner Datenbank aus der ersten Aufgabe ein.
+USE BuecherAlongo;
+
+INSERT INTO BuchStandort (Titel, Autor, RaumNummer, RegalNummer)
+VALUES ('Windows Server 2019', 'Peter Kloep', 102, 2),
+       ('Linux', 'Michael Kofler', 201, 1),
+       ('Sichere Windows-Infrastrukturen', 'Karsten Weigel', 310, 5);
+
+SELECT *
+FROM BuchStandort;
+
+
+-- Lösche einen der neuen Datensätze.
+DELETE
+FROM BuchStandort
+WHERE Titel = 'Windows Server 2019';
+
+
+-- Frage einige Daten mit dem `SELECT` Befehl ab.
+SELECT *
+FROM BuchStandort
+WHERE Autor = 'Michael Kofler';
+
+SELECT *
+FROM BuchStandort
+WHERE RaumNummer = 310;
+
+SELECT *
+FROM BuchStandort
+WHERE Titel LIKE '%windows%';
+----

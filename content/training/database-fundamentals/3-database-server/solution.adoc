@@ -1,0 +1,32 @@
+---
+title: "Lösung"
+date: 2021-03-08
+draft: false
+weight: 12
+---
+
+== Erstelle deine eigene Datenbank
+
+Datenbank: `BuecherAlongo`
+
+*Tabelle*
+
+.BuchStandort
+[%header,format=csv, width=40%]
+|===
+Column Name,Data Type,Allow Nulls
+Titel,nvarchar(100),
+Autor,nvarchar(100),
+RaumNummer,int,
+RegalNummer,int,
+|===
+
+*Datensätze*
+
+.BuchStandort
+[%header,format=csv, width=35%]
+|===
+Titel,Autor,RaumNummer,RegalNummer
+Windows Server 2019,Peter Kloep,102,2
+Linux,Michael Kofler,201,1
+|===
