@@ -2,6 +2,11 @@ contentDir: content/training/database-fundamentals
 publishDir: public/training/database-fundamentals
 staticDir: static/training/database-fundamentals
 
+module:
+  mounts:
+    - source: layouts-training
+      target: layouts
+
 baseURL: "https://www.andreaslongo.com/training/database-fundamentals"
 defaultContentLanguage: de
 theme: learn
