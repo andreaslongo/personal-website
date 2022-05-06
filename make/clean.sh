@@ -11,4 +11,8 @@ set -o pipefail #   : The return value of a pipeline is the value of the last co
 
 
 # clean
+rm -rf *.log
+rm -rf .cache/
 rm -rf .hugo_build.lock
+rm -rf public/
+rm -rf resources/
