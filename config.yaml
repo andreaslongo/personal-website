@@ -1,25 +1,45 @@
-ignoreFiles:
-  - database-fundamentals
-
-baseURL: "https://www.andreaslongo.com"
-defaultContentLanguage: en
-theme: papermod
-title: "Andreas Longo"
-
-enableInlineShortcodes: false
 enableRobotsTXT: true
+
+imaging:
+  resampleFilter: CatmullRom
+  quality: 75
+  anchor: smart
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 minify:
   disableXML: true
 
+markup:
+  asciidocExt:
+    attributes:
+      figure-caption!:
+      showtitle: true
+
+ignoreFiles:
+  - database-fundamentals
+
+
+###############################################################################
+# Site settings
+###############################################################################
+
+baseURL: "https://www.andreaslongo.com"
+theme: papermod
+defaultContentLanguage: en
+
 params:
-  author: Andreas Longo
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowFullTextinRSS: true
   ShowPostNavLinks: true
   ShowReadingTime: false
   ShowShareButtons: true
+  author: Andreas Longo
   comments: false
   defaultTheme: auto
   disableThemeToggle: false
@@ -47,7 +67,19 @@ languages:
     languageName: English
     languageCode: en-us
     weight: 1
+    title: Andreas Longo
     description: Personal website
+
+    menu:
+      main:
+        - name: Blog
+          url: blog
+        - name: Contact
+          url: contact
+        - name: Search
+          url: search
+        - name: Training
+          url: training
 
     profileMode:
       enabled: true
@@ -63,36 +95,11 @@ languages:
         - name: Contact me
           url: contact
 
-    menu:
-      main:
-        - name: Blog
-          url: blog
-        - name: Contact
-          url: contact
-        - name: Search
-          url: search
-        - name: Training
-          url: training
-
 taxonomies:
   category: categories
   series: series
   tag: tags
   topic: topics
-
-# Enable site search
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
-
-markup:
-  asciidocExt:
-    attributes:
-      figure-caption!:
-      showtitle: true
-
 
 ###############################################################################
 # Privacy settings

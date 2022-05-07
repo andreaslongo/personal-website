@@ -21,14 +21,14 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Build training website
+      - name: Build website - training database fundamentals
         uses: klakegg/actions-hugo@1.0.0
         with:
           image: ext-asciidoctor
           env: production
-          command: --minify --config config-training-sql.yaml
+          command: --minify --config config-training-database-fundamentals.yaml
 
-      - name: Build website
+      - name: Build website - main
         uses: klakegg/actions-hugo@1.0.0
         with:
           image: ext-asciidoctor

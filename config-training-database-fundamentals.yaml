@@ -1,0 +1,109 @@
+enableRobotsTXT: true
+
+imaging:
+  resampleFilter: CatmullRom
+  quality: 75
+  anchor: smart
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+minify:
+  disableXML: true
+
+markup:
+  asciidocExt:
+    attributes:
+      note-caption: '<i class="fas fa-info-circle"></i>'
+      experimental:
+      source-language: sql
+
+contentDir: content/training/database-fundamentals
+publishDir: public/training/database-fundamentals
+staticDir: static/training/database-fundamentals
+
+module:
+  mounts:
+    - source: layouts-training
+      target: layouts
+
+
+###############################################################################
+# Site settings
+###############################################################################
+
+baseURL: "https://www.andreaslongo.com/training/database-fundamentals"
+theme: learn
+defaultContentLanguage: de
+
+params:
+  author: Andreas Longo
+  disableBreadcrumb: false
+  disableInlineCopyToClipBoard: true
+  disableLandingPageButton: true
+  disableMermaid: false
+  disableNextPrev: false
+  disableShortcutsTitle: true
+  showVisitedLinks: true
+
+languages:
+  de:
+    languageName: Deutsch
+    languageCode: de-de
+    weight: 1
+    title: Einstieg Datenbanken
+    description: Grundlagen und Praxis für IT-Experten
+
+    menu:
+      shortcuts:
+        - name: "<i class='fas fa-fw fa-book-open'></i> Begriffe"
+          url: /glossary
+          weight: 10
+        - name: "<i class='fas fa-fw fa-code'></i> Beispiele"
+          url: https://github.com/andreaslongo/training-database-fundamentals/tree/main/static/examples
+          weight: 11
+
+
+###############################################################################
+# Privacy settings
+# https://gohugo.io/about/hugo-and-gdpr/
+###############################################################################
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
+
+
+###############################################################################
+# Security settings
+# https://gohugo.io/about/security-model/
+###############################################################################
+
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+    - ^asciidoctor$
+    - ^dart-sass-embedded$
+    - ^go$
+    - ^npx$
+    - ^postcss$
