@@ -1,10 +1,1 @@
-repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: db7346d375eda68a0174f2c057dd97f2fbffe030  # frozen: v4.2.0
-    hooks:
-      - id: check-case-conflict
-      - id: detect-private-key
-      - id: end-of-file-fixer
-      - id: fix-byte-order-marker
-      - id: mixed-line-ending
-      - id: trailing-whitespace
+../templates/src/python/pre-commit-config.yaml
