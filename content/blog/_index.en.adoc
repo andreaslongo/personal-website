@@ -1,15 +1,16 @@
 ---
-title: Blog
-
+title: Things I learned
+// title: Blog
+// description: A blog format to record and share my day-to-day findings.
+// description: A collection of my day-to-day findings.
+description: Some notes which might be valuable.
 ShowBreadCrumbs: false
 ---
 
-//link:{{< ref "/archive" >}}[Archive]
-//|
-//link:{{< ref "/series" >}}[Series]
-//|
-//link:{{< ref "/categories" >}}[Categories]
-//|
-//link:{{< ref "/topics" >}}[Topics]
-//|
-//link:{{< ref "/tags" >}}[Tags]
+link:{{< ref "blog" >}}[*all*]
+|
+link:{{< ref "by-date" >}}[by date]
+|
+link:{{< ref "by-topic" >}}[by topic]
+|
+link:{{< ref "search" >}}[search]

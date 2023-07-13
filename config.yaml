@@ -76,8 +76,6 @@ languages:
           url: blog
         - name: Contact
           url: contact
-        - name: Search
-          url: search
         - name: Training
           url: training
 

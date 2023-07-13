@@ -1,0 +1,13 @@
+---
+title: Things I learned
+description: Some notes which might be valuable.
+layout: by-date
+---
+
+link:{{< ref "blog" >}}[all]
+|
+link:{{< ref "by-date" >}}[*by date*]
+|
+link:{{< ref "by-topic" >}}[by topic]
+|
+link:{{< ref "search" >}}[search]
