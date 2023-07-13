@@ -8,18 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/secure-shell-ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Use wildcards with `scp` to copy remote files</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/ssh/scp-wildcards/</link>
+      <title>SSH: Using wildcards with `scp` to copy remote files</title>
+      <link>https://www.andreaslongo.com/blog/scp-wildcards/</link>
       <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/ssh/scp-wildcards/</guid>
+      <guid>https://www.andreaslongo.com/blog/scp-wildcards/</guid>
       <description>Use quotes for the remote side of your command.
- $ scp &amp;#39;remote-host:path/source-file*&amp;#39; ./local-target source-file1.png 100% 10KB 180.1KB/s 00:00 source-file2.png 100% 17KB 282.7KB/s 00:00 source-file3.png 100% 12KB 274.4KB/s 00:00   With quotes, wildcards are expanded by the remote’s shell instead of your local shell.
- </description>
+Copying multiple files from remote to local: $ scp &amp;#39;remote-host:path/source-file*&amp;#39; ./local-target source-file1.png 100% 10KB 180.1KB/s 00:00 source-file2.png 100% 17KB 282.7KB/s 00:00 source-file3.png 100% 12KB 274.4KB/s 00:00 With quotes, wildcards are expanded by the remote shell instead of your local shell which cannot see the remote files.</description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p>Use quotes for the remote side of your command.</p>
 </div>
 <div class="listingblock">
+<div class="title">Copying multiple files from remote to local:</div>
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">$ scp &#39;remote-host:path/source-file*&#39; ./local-target
 source-file1.png  100%   10KB 180.1KB/s   00:00
@@ -28,7 +28,7 @@ source-file3.png  100%   12KB 274.4KB/s   00:00</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>With quotes, wildcards are expanded by the remote’s shell instead of your local shell.</p>
+<p>With quotes, wildcards are expanded by the remote shell instead of your local shell which cannot see the remote files.</p>
 </div>
 ]]></content:encoded>
     </item>

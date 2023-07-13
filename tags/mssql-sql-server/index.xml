@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MSSQL (SQL Server) on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/mssql-sql-server/</link>
+    <description>Recent content in MSSQL (SQL Server) on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/mssql-sql-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSSQL: Configure an alias for SQL connections</title>
+      <link>https://www.andreaslongo.com/blog/mssql-connection-alias/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/mssql-connection-alias/</guid>
+      <description>You can use the SQL Server Configuration Manager to configure an alias for connections to a MSSQL instance.
+But on some versions of Windows, the configuration manager is not available as a regular application. You might find it as a snap-in for the Microsoft Management Console (MMC).
+If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:
+# 64 bit version C:\Windows\System32\cliconfg.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can use the <em>SQL Server Configuration Manager</em> to configure an alias for connections to a MSSQL instance.</p>
+</div>
+<div class="paragraph">
+<p>But on some versions of Windows, the configuration manager is not available as a regular application.
+You might find it as a snap-in for the <em>Microsoft Management Console (MMC)</em>.</p>
+</div>
+<div class="paragraph">
+<p>If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># 64 bit version
+C:\Windows\System32\cliconfg.exe
+
+# 32 bit version
+C:\Windows\SysWOW64\cliconfg.exe</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

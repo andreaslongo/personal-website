@@ -14,11 +14,11 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/1-start/welcome/</guid>
       <description>Ich heiße dich herzliche Willkommen zu unserem ersten Kurs &amp;#34;Einstieg Datenbanken&amp;#34;.
- In diesem Kurs lernst du grundlegenden Konzepte kennen, die dir die Arbeit mit Datenbanken ermöglichen. Der Kurs soll dir ein solides Grundwissen vermitteln, das dir in deiner gesamten IT-Karriere nützlich sein wird.
- Am Ende des Kurses wirst du…​
-   verschiedene Modelle zur Speicherung von Daten kennen.
-  Datenbanken grundlegend administrieren und verwalten können.
-  Objekte einer Datenbank und Datensätze erstellen und bearbeiten können.</description>
+In diesem Kurs lernst du grundlegenden Konzepte kennen, die dir die Arbeit mit Datenbanken ermöglichen. Der Kurs soll dir ein solides Grundwissen vermitteln, das dir in deiner gesamten IT-Karriere nützlich sein wird.
+Am Ende des Kurses wirst du…​
+verschiedene Modelle zur Speicherung von Daten kennen.
+Datenbanken grundlegend administrieren und verwalten können.
+Objekte einer Datenbank und Datensätze erstellen und bearbeiten können.</description>
     </item>
     
     <item>
@@ -27,10 +27,11 @@
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/1-start/requirements/</guid>
-      <description>Für unsere Live-Schulung benötigst du…​   einen Internetzugang
-  Microsoft Teams mit Mikrofon, Headset oder Ähnlichem
-  und eine aktuelle Version des SQL Server Management Studios, fertig installiert auf deinem Computer
-     Bitte bereite alles einen Tag vor Beginn der Schulung vor Lade das SQL Server Management Studio herunter und installiere es auf deinem Computer. Dabei ist nichts weiter zu beachten. Die Setup Routine führt dich durch die Installation.</description>
+      <description>Für unsere Live-Schulung benötigst du…​ einen Internetzugang
+Microsoft Teams mit Mikrofon, Headset oder Ähnlichem
+und eine aktuelle Version des SQL Server Management Studios, fertig installiert auf deinem Computer
+Bitte bereite alles einen Tag vor Beginn der Schulung vor Lade das SQL Server Management Studio herunter und installiere es auf deinem Computer. Dabei ist nichts weiter zu beachten. Die Setup Routine führt dich durch die Installation.
+Testet bitte dein Mikrofon mit Microsoft Teams und startet einmal das Management Studio.</description>
     </item>
     
   </channel>

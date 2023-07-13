@@ -2,112 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/powershell-watch/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/ffmpeg/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/repairing-videos-ffmpeg/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/tags/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/blog/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/categories/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <loc>https://www.andreaslongo.com/topics/tools/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/command-line-interface-cli/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
+    <loc>https://www.andreaslongo.com/topics/</loc>
+    <lastmod>2023-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/categories/it-operations/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/microsoft-windows/</loc>
+    <loc>https://www.andreaslongo.com/topics/operating-systems/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/powershell/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/series/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/series/things-i-learned/</loc>
-    <lastmod>2022-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/</loc>
+    <loc>https://www.andreaslongo.com/blog/powershell-watch/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/windows/</loc>
     <lastmod>2022-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</loc>
-    <lastmod>2022-04-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/topics/databases/</loc>
     <lastmod>2022-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/sql-server-mssql/</loc>
+    <loc>https://www.andreaslongo.com/tags/mssql-sql-server/</loc>
     <lastmod>2022-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/topics/container/</loc>
+    <loc>https://www.andreaslongo.com/blog/mssql-connection-alias/</loc>
+    <lastmod>2022-04-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/topics/containerization/</loc>
     <lastmod>2022-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/container-virtualization/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/containerization/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/container/snapshot-running-container/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/categories/devops/</loc>
+    <loc>https://www.andreaslongo.com/blog/snapshot-running-container/</loc>
     <lastmod>2022-04-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/docker/</loc>
     <lastmod>2022-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/os-level-virtualization/</loc>
-    <lastmod>2022-04-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/podman/</loc>
     <lastmod>2022-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/topics/git/</loc>
+    <loc>https://www.andreaslongo.com/tags/git/</loc>
     <lastmod>2022-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/git/</loc>
+    <loc>https://www.andreaslongo.com/blog/gpg-sign-pushed-commit/</loc>
     <lastmod>2022-04-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/github/</loc>
     <lastmod>2022-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/git/gpg-sign-pushed-commit/</loc>
-    <lastmod>2022-04-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/asciidoc/</loc>
-    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/asciidoc/</loc>
     <lastmod>2022-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/asciidoctor/</loc>
+    <loc>https://www.andreaslongo.com/topics/documentation/</loc>
     <lastmod>2022-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/asciidoctor-diagram/</loc>
-    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/diagram/</loc>
-    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/docsy/</loc>
-    <lastmod>2022-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/asciidoc/diagram-hugo/</loc>
+    <loc>https://www.andreaslongo.com/blog/diagram-hugo/</loc>
     <lastmod>2022-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/hugo/</loc>
@@ -116,160 +80,97 @@
     <loc>https://www.andreaslongo.com/tags/plantuml/</loc>
     <lastmod>2022-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/openssh/</loc>
-    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/secure-copy-protocol-scp/</loc>
-    <lastmod>2021-12-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/secure-shell-ssh/</loc>
     <lastmod>2021-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/secure-shell-ssh/</loc>
     <lastmod>2021-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/ssh/scp-wildcards/</loc>
+    <loc>https://www.andreaslongo.com/blog/scp-wildcards/</loc>
     <lastmod>2021-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/git/rename-tag/</loc>
+    <loc>https://www.andreaslongo.com/blog/rename-tag/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/container/auto-update-container-images/</loc>
+    <loc>https://www.andreaslongo.com/blog/auto-update-container-images/</loc>
     <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/kubernetes/</loc>
     <lastmod>2021-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/git/delete-tag/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/unix/lvm-extend-logical-volume/</loc>
-    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/linux/</loc>
+    <loc>https://www.andreaslongo.com/blog/delete-tag/</loc>
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/logical-volume-manager-lvm/</loc>
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/topics/unix/</loc>
+    <loc>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</loc>
     <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/shell/</loc>
-    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/tags/unix/</loc>
-    <lastmod>2021-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/z-shell-zsh/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/unix/zsh-config-files/</loc>
+    <loc>https://www.andreaslongo.com/blog/zsh-config-files/</loc>
     <lastmod>2021-12-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/bash/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/command-line-interpreter-cli/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/cygwin/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/sudo/</loc>
+    <loc>https://www.andreaslongo.com/blog/cygwin-sudo-command/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</loc>
+    <loc>https://www.andreaslongo.com/blog/cygwin-change-default-home-dir/</loc>
+    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/vim/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/zsh/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/active-directory-ad/</loc>
+    <loc>https://www.andreaslongo.com/tags/active-directory/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/ad-managed-service-accounts/</loc>
+    <loc>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</loc>
     <lastmod>2021-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/managed-service-account-msa/</loc>
-    <lastmod>2021-02-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/find/</loc>
+    <loc>https://www.andreaslongo.com/blog/get-uptime/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/unix/find-files-sorted-by-time/</loc>
+    <loc>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/windows/get-uptime/</loc>
-    <lastmod>2021-02-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</loc>
-    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/data-type/</loc>
-    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/python/</loc>
+    <loc>https://www.andreaslongo.com/tags/data-types/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/python/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/categories/software-development/</loc>
+    <loc>https://www.andreaslongo.com/blog/convert-datetime-from-string/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/topics/vim/</loc>
+    <loc>https://www.andreaslongo.com/topics/software-development/</loc>
+    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/undo-branches/</loc>
     <lastmod>2021-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/vim/undo-branches/</loc>
-    <lastmod>2021-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/curl/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/hypertext-transfer-protocol-http/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/postman/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/representational-state-transfer-rest/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/rest-api/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/restful-api/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/web/rest-api-editor-plugins/</loc>
+    <loc>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/visual-studio-code-vscode/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/topics/web/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/web/</loc>
-    <lastmod>2021-02-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/tags/web-api/</loc>
+    <loc>https://www.andreaslongo.com/tags/web-apis/</loc>
     <lastmod>2021-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/apache-tomcat/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/digital-certificate/</loc>
+    <loc>https://www.andreaslongo.com/tags/digital-certificates/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/hypertext-transfer-protocol-secure-https/</loc>
@@ -278,30 +179,29 @@
     <loc>https://www.andreaslongo.com/tags/public-key-certificate/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/tags/secure-sockets-layer-ssl/</loc>
-    <lastmod>2021-01-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.andreaslongo.com/topics/security/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/transport-layer-security-tls/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</loc>
+    <loc>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.andreaslongo.com/topics/vagrant/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/tags/vagrant/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.andreaslongo.com/blog/archive/</loc>
+    <loc>https://www.andreaslongo.com/blog/import-vagrant-box/</loc>
+    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.andreaslongo.com/topics/virtualization/</loc>
+    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.andreaslongo.com/contact/</loc>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/by-date/</loc>
+  </url><url>
+    <loc>https://www.andreaslongo.com/blog/by-topic/</loc>
   </url><url>
     <loc>https://www.andreaslongo.com/search/</loc>
   </url><url>

@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Download and import a Vagrant box manually</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</link>
+      <title>Vagrant: Importing a box manually</title>
+      <link>https://www.andreaslongo.com/blog/import-vagrant-box/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/vagrant/import-vagrant-box/</guid>
+      <guid>https://www.andreaslongo.com/blog/import-vagrant-box/</guid>
       <description>To download or upgrade a Vagrant box, you can use the command vagrant box add and vagrant box update.
- Most of the time, you should be fine using these automated processes. But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
+Most of the time, you should be fine using these automated processes. But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p><strong>To download or upgrade a <a href="https://www.vagrantup.com/">Vagrant</a> box</strong>, you can use the command <code>vagrant box add</code> and <code>vagrant box update</code>.</p>
 </div>

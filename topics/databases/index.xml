@@ -8,26 +8,28 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/databases/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Configure an alias for SQL Server connections</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</link>
+      <title>MSSQL: Configure an alias for SQL connections</title>
+      <link>https://www.andreaslongo.com/blog/mssql-connection-alias/</link>
       <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/databases/mssql-connection-alias/</guid>
-      <description>You can use SQL Server Configuration Manager to configure an alias for connections to a Microsoft SQL Server instance.
- On some versions of Windows, SQL Server Configuration Manager does not appear as an application but as a snap-in for the Microsoft Management Console (MMC). Have a look there if you can’t find it.
- If the tool is indeed not present, you can use another GUI utility which is generally available on most Windows machines.</description>
+      <guid>https://www.andreaslongo.com/blog/mssql-connection-alias/</guid>
+      <description>You can use the SQL Server Configuration Manager to configure an alias for connections to a MSSQL instance.
+But on some versions of Windows, the configuration manager is not available as a regular application. You might find it as a snap-in for the Microsoft Management Console (MMC).
+If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:
+# 64 bit version C:\Windows\System32\cliconfg.</description>
       <content:encoded><![CDATA[<div class="paragraph">
-<p>You can use <strong>SQL Server Configuration Manager</strong> to configure an alias for connections to a Microsoft SQL Server instance.</p>
+<p>You can use the <em>SQL Server Configuration Manager</em> to configure an alias for connections to a MSSQL instance.</p>
 </div>
 <div class="paragraph">
-<p>On some versions of Windows, SQL Server Configuration Manager does not appear as an application but as a snap-in for the Microsoft Management Console (MMC). Have a look there if you can’t find it.</p>
+<p>But on some versions of Windows, the configuration manager is not available as a regular application.
+You might find it as a snap-in for the <em>Microsoft Management Console (MMC)</em>.</p>
 </div>
 <div class="paragraph">
-<p>If the tool is indeed not present, you can use another GUI utility which is generally available on most Windows machines.</p>
+<p>If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-powershell" data-lang="powershell"># 64 bit version
+<pre class="highlight"><code class="language-bash" data-lang="bash"># 64 bit version
 C:\Windows\System32\cliconfg.exe
 
 # 32 bit version

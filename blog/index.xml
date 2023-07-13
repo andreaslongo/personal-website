@@ -1,11 +1,1493 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Blog on Andreas Longo</title>
+    <title>Things I learned on Andreas Longo</title>
     <link>https://www.andreaslongo.com/blog/</link>
-    <description>Recent content in Blog on Andreas Longo</description>
+    <description>Recent content in Things I learned on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Repairing video files with FFmpeg</title>
+      <link>https://www.andreaslongo.com/blog/repairing-videos-ffmpeg/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/repairing-videos-ffmpeg/</guid>
+      <description>I often record a short screencast to document some process rather than taking a long series of screenshots. To me this is more effective to produce and most of the time also more convenient to consume later on. When I need some screenshots for written or printed documentation, I take them from the screencast after the fact.
+For recording, I use the GNOME builtin recorder. It is instantaneously ready to use and requires no fiddling with settings or file paths.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I often record a short <a href="https://en.wikipedia.org/wiki/Screencast">screencast</a> to document some process rather than taking a long series of screenshots.
+To me this is more effective to produce and most of the time also more convenient to consume later on.
+When I need some screenshots for written or printed documentation, I take them from the screencast after the fact.</p>
+</div>
+<div class="paragraph">
+<p>For recording, I use the <a href="https://help.gnome.org/users/gnome-help/stable/screen-shot-record.html.en">GNOME builtin recorder</a>.
+It is instantaneously ready to use and requires no fiddling with settings or file paths.
+It creates <a href="https://en.wikipedia.org/wiki/WebM">WebM</a> videos without audio.</p>
+</div>
+<div class="paragraph">
+<p>Sometimes the recorder crashes.
+I then only see the first recorded frame when viewing the resulting video and I also cannot skip to a later position in the video.
+The file size and the playback timeline however indicate that there must be more video data in the file.</p>
+</div>
+<div class="paragraph">
+<p>To be fair, crashes are quite rare and only happened to me when my PC went to sleep or locked the screen during an active recording - it was my fault.</p>
+</div>
+<div class="sect1">
+<h2 id="_fixing_videos">Fixing videos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I use <a href="https://en.wikipedia.org/wiki/FFmpeg">FFmpeg</a> in <a href="https://ffmpeg.org/ffmpeg.html#toc-Stream-copy">stream copy mode</a> for this which is very fast:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ffmpeg -i ./bad_video.webm -codec copy ./fixed_video.webm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can also run this in a <a href="https://github.com/linuxserver/docker-ffmpeg">container</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">podman/docker container run \
+    --interactive \
+    --pull=newer \
+    --rm \
+    --tty \
+    --volume &#34;${PWD}&#34;:/config:Z,rw \
+    --workdir /config \
+        linuxserver/ffmpeg:latest \
+            -i ./bad_video.webm \
+            -codec copy \
+            ./fixed_video.webm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same as above, but wrapped in a shell script for easy usage:</p>
+</div>
+<div class="listingblock">
+<div class="title">ffmpeg.sh</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/usr/bin/env bash
+
+podman container run \
+    --interactive \
+    --pull=newer \
+    --rm \
+    --tty \
+    --volume &#34;${PWD}&#34;:/config:Z,rw \
+    --workdir /config \
+        docker.io/linuxserver/ffmpeg:latest \
+            &#34;${@}&#34;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ffmpeg.sh -i ./bad_video.webm -codec copy ./fixed_video.webm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let me know if you have more tips and tricks for fixing videos or if you have other use cases for FFmpeg.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Unix-like `watch` and `tail` commands for PowerShell</title>
+      <link>https://www.andreaslongo.com/blog/powershell-watch/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/powershell-watch/</guid>
+      <description>There is no equivalent to the Unix watch command on Windows, but you can get close enough behavior.
+Watching commands with PowerShell # Similar to `watch &amp;lt;command&amp;gt;` PS&amp;gt; while ($true) {&amp;lt;your command&amp;gt;; sleep -Seconds 2} PS&amp;gt; while ($true) {(Get-Service -Name &amp;#39;Remote Desktop Services&amp;#39;).Status; sleep -Seconds 2} Running Running You can also follow log file output similar to the Unix tail command.
+Tailing logs with PowerShell: # Similar to `tail --follow &amp;lt;filename&amp;gt;` PS&amp;gt; Get-Content -Path &amp;lt;logfile&amp;gt; -Tail 10 –Wait PS&amp;gt; Get-Content -Path &amp;#39;C:\app.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>There is no equivalent to the Unix <a href="https://en.wikipedia.org/wiki/Watch_(command)"><code>watch</code></a> command on Windows, but you can get close enough behavior.</p>
+</div>
+<div class="listingblock">
+<div class="title">Watching commands with PowerShell</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Similar to `watch &lt;command&gt;`
+PS&gt; while ($true) {&lt;your command&gt;; sleep -Seconds 2}
+
+PS&gt; while ($true) {(Get-Service -Name &#39;Remote Desktop Services&#39;).Status; sleep -Seconds 2}
+Running
+Running</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also follow log file output similar to the Unix <a href="https://en.wikipedia.org/wiki/Tail_(Unix)"><code>tail</code></a> command.</p>
+</div>
+<div class="listingblock">
+<div class="title">Tailing logs with PowerShell:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Similar to `tail --follow &lt;filename&gt;`
+PS&gt; Get-Content -Path &lt;logfile&gt; -Tail 10 –Wait
+
+PS&gt; Get-Content -Path &#39;C:\app.log&#39; -Tail 10 –Wait</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>MSSQL: Configure an alias for SQL connections</title>
+      <link>https://www.andreaslongo.com/blog/mssql-connection-alias/</link>
+      <pubDate>Tue, 12 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/mssql-connection-alias/</guid>
+      <description>You can use the SQL Server Configuration Manager to configure an alias for connections to a MSSQL instance.
+But on some versions of Windows, the configuration manager is not available as a regular application. You might find it as a snap-in for the Microsoft Management Console (MMC).
+If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:
+# 64 bit version C:\Windows\System32\cliconfg.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can use the <em>SQL Server Configuration Manager</em> to configure an alias for connections to a MSSQL instance.</p>
+</div>
+<div class="paragraph">
+<p>But on some versions of Windows, the configuration manager is not available as a regular application.
+You might find it as a snap-in for the <em>Microsoft Management Console (MMC)</em>.</p>
+</div>
+<div class="paragraph">
+<p>If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># 64 bit version
+C:\Windows\System32\cliconfg.exe
+
+# 32 bit version
+C:\Windows\SysWOW64\cliconfg.exe</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Creating a new image from a running container</title>
+      <link>https://www.andreaslongo.com/blog/snapshot-running-container/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/snapshot-running-container/</guid>
+      <description> You can save the state of a running container as a new image. This is somewhat similar to &amp;#34;creating a snapshot&amp;#34; when working with virtual machines.
+If you use Docker, just replace podman with docker in the below commands.
+$ podman container commit &amp;lt;container name or id&amp;gt; &amp;lt;new-image:tag&amp;gt; $ podman container commit ansible ansible:2022-04-11 </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can save the state of a running container as a new image.
+This is somewhat similar to &#34;creating a snapshot&#34; when working with virtual machines.</p>
+</div>
+<div class="paragraph">
+<p>If you use Docker, just replace <code>podman</code> with <code>docker</code> in the below commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ podman container commit &lt;container name or id&gt; &lt;new-image:tag&gt;
+$ podman container commit ansible ansible:2022-04-11</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Git: Signing an already pushed commit</title>
+      <link>https://www.andreaslongo.com/blog/gpg-sign-pushed-commit/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/gpg-sign-pushed-commit/</guid>
+      <description>Given you have created a pull request (PR) with a single commit on GitHub. The commit is not GPG-signed. The maintainer asks you to sign the commit.
+If you are the only one working (committing) to this PR, you can force-push a signed commit.
+# Sign the latest commit on your local repository git commit --amend --no-edit --gpg-sign # Force push the commit to your remote repository (fork) git push --force-with-lease GitHub will automatically update your PR.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Given you have created a pull request (PR) with a single commit on GitHub.
+The commit is not GPG-signed.
+The maintainer asks you to sign the commit.</p>
+</div>
+<div class="paragraph">
+<p>If you are the only one working (committing) to this PR, you can force-push a signed commit.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Sign the latest commit on your local repository
+git commit --amend --no-edit --gpg-sign
+
+# Force push the commit to your remote repository (fork)
+git push --force-with-lease</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GitHub will automatically update your PR.</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="gpg-sign-pushed-commit.png" alt="gpg sign pushed commit"/>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Generating diagrams from AsciiDoc with Hugo</title>
+      <link>https://www.andreaslongo.com/blog/diagram-hugo/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/diagram-hugo/</guid>
+      <description>Asciidoctor, has good support for diagrams with the Diagram plugin.
+To make this work with Hugo, a static site generator, you need:
+a working asciidoctor-diagram plugin
+some settings in your Hugo site config
+Then run hugo --destination public to generate your site including all diagrams. Have a look at my example repository to get an idea of how this works.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/AsciiDoc">Asciidoctor</a>, has good support for diagrams with the <a href="https://docs.asciidoctor.org/diagram-extension/latest/">Diagram</a> plugin.</p>
+</div>
+<div class="paragraph">
+<p>To make this work with <a href="https://gohugo.io">Hugo</a>, a static site generator, you need:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a working <code>asciidoctor-diagram</code> plugin</p>
+</li>
+<li>
+<p>some settings in your <a href="https://github.com/andreaslongo/asciidoctor-diagram-hugo-docsy/blob/400041ffeee7a007f99a59d2c5a326e7e762b21e/config.yaml#L5-L10">Hugo site config</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Then run <code>hugo --destination public</code> to generate your site including all diagrams.
+Have a look at my <a href="https://github.com/andreaslongo/asciidoctor-diagram-hugo-docsy">example repository</a> to get an idea of how this works.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>SSH: Using wildcards with `scp` to copy remote files</title>
+      <link>https://www.andreaslongo.com/blog/scp-wildcards/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/scp-wildcards/</guid>
+      <description>Use quotes for the remote side of your command.
+Copying multiple files from remote to local: $ scp &amp;#39;remote-host:path/source-file*&amp;#39; ./local-target source-file1.png 100% 10KB 180.1KB/s 00:00 source-file2.png 100% 17KB 282.7KB/s 00:00 source-file3.png 100% 12KB 274.4KB/s 00:00 With quotes, wildcards are expanded by the remote shell instead of your local shell which cannot see the remote files.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Use quotes for the remote side of your command.</p>
+</div>
+<div class="listingblock">
+<div class="title">Copying multiple files from remote to local:</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ scp &#39;remote-host:path/source-file*&#39; ./local-target
+source-file1.png  100%   10KB 180.1KB/s   00:00
+source-file2.png  100%   17KB 282.7KB/s   00:00
+source-file3.png  100%   12KB 274.4KB/s   00:00</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With quotes, wildcards are expanded by the remote shell instead of your local shell which cannot see the remote files.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Git: Renaming tags</title>
+      <link>https://www.andreaslongo.com/blog/rename-tag/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/rename-tag/</guid>
+      <description>Be careful. Renaming tags might be difficult depending on your situation.
+There is no single step for renaming a tag. You must create a new tag with a new name and then delete the old tag.
+What you should know TLDR: When replacing tags, make sure that your new tag points to a commit object and not to an old tag object.
+Git has the following types of tags:</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Be careful.
+Renaming tags might be difficult depending on your situation.</p>
+</div>
+<div class="paragraph">
+<p>There is no single step for renaming a tag.
+You must create a new tag with a new name and then delete the old tag.</p>
+</div>
+<div class="sect1">
+<h2 id="_what_you_should_know">What you should know</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TLDR: When replacing tags, make sure that your new tag points to a commit object and not to an old tag object.</p>
+</div>
+<div class="paragraph">
+<p>Git has the following types of tags:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Annotated tag</p>
+</li>
+<li>
+<p>GPG-signed tag</p>
+</li>
+<li>
+<p>Lightweight tag</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An annotated tag is a Git object.
+A GPG-signed tag is an annotated tag and therefore also a Git object.
+Both can point to other Git objects e.g. commits, including other annotated tags.
+This can lead to chains of annotated tags which can break if you delete a tag in between.</p>
+</div>
+<div class="paragraph">
+<p>A lightweight tag is not a Git object.
+It is just a name or label for an object, usually a commit object.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_renaming_tags">Renaming tags</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_first_step">First step</h3>
+<div class="paragraph">
+<p>Review the commit logs and identify the tag you want to rename.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">git log --decorate --graph --oneline</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You want to know if the tag is lightweight or annotated.
+You also want to know if the tag has been pushed to other remote repositories.
+Others might rely on this tag if it is pushed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_renaming_an_annotated_tag_local">Renaming an annotated tag (local)</h3>
+<div class="paragraph">
+<p>If you have an annotated tag which is local only:
+Not yet pushed to a remote repository.</p>
+</div>
+<div class="listingblock">
+<div class="title">(optional) Preserving the date of the tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Get the date of the old tag
+git show --date=iso &lt;old&gt;
+git show --date=iso first-release
+
+# Set the date for the new tag via environment variable
+export GIT_COMMITTER_DATE=&#34;&lt;date&gt;&#34;
+export GIT_COMMITTER_DATE=&#34;2021-01-22 16:24:39 +0100&#34;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Renaming the tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Create a new tag
+git tag --annotate &lt;new&gt; &#39;&lt;old&gt;^{}&#39;
+git tag --annotate v1.0 &#39;first-release^{}&#39;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;
+git tag --delete first-release</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Renaming a GPG-signed tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Create a new tag
+git tag --sign &lt;new&gt; &#39;&lt;old&gt;^{}&#39;
+git tag --sign v1.0 &#39;first-release^{}&#39;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;
+git tag --delete first-release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>^{}</code> suffix tells Git to dereference the tag recursively until it finds an object which is not a tag.
+This ensures that your new tag does not point to another tag which you might also want to rename.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_renaming_a_lightweight_tag_local">Renaming a lightweight tag (local)</h3>
+<div class="paragraph">
+<p>If you have a lightweight tag which is local only:
+Not yet pushed to a remote repository.</p>
+</div>
+<div class="listingblock">
+<div class="title">Renaming the tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Create a new tag
+git tag &lt;new&gt; &lt;old&gt;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_steps_for_pushed_tags_remote">Additional steps for pushed tags (remote)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your tag has been pushed to a remote repository, follow the steps above first.
+Then continue here.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Push the newly created tag
+git push --tags &lt;new tag&gt;
+
+# Delete the old tag from the remote
+git push --delete &lt;remote&gt; &lt;old tag&gt;
+git push --delete origin first-release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other users will receive a &#34;renamed&#34; tag as new tag from your remote repository.
+Git will not delete old tags automatically.</p>
+</div>
+<div class="paragraph">
+<p>You should remove deleted tags from local repositories.</p>
+</div>
+<div class="listingblock">
+<div class="title">Deleting tags from local that no longer exist on the remote:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">git pull --prune --tags</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Auto updating container images</title>
+      <link>https://www.andreaslongo.com/blog/auto-update-container-images/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/auto-update-container-images/</guid>
+      <description> We can set the desired image pull policy during container startup.
+Podman/docker $ podman/docker container run --pull=always $ podman/docker container run --pull=newer Kubernetes spec: containers: - name: &amp;lt;name&amp;gt; imagePullPolicy: Always </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>We can set the desired image pull policy during container startup.</p>
+</div>
+<div class="listingblock">
+<div class="title">Podman/docker</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ podman/docker container run --pull=always
+$ podman/docker container run --pull=newer</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Kubernetes</div>
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">spec:
+  containers:
+    - name: &lt;name&gt;
+      imagePullPolicy: Always</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Git: Deleting remote tags</title>
+      <link>https://www.andreaslongo.com/blog/delete-tag/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/delete-tag/</guid>
+      <description> Removing a remote tag:
+$ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag&amp;gt; $ git push --delete origin v1.0 Removing multiple remote tags:
+$ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag-1&amp;gt; &amp;lt;tag-2&amp;gt; &amp;lt;...&amp;gt; $ git push --delete origin v1.0 </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Removing a remote tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Removing multiple remote tags:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag-1&gt; &lt;tag-2&gt; &lt;...&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LVM: Extending a logical volume</title>
+      <link>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</guid>
+      <description> Adding additional space to a LVM logical volume.
+$ sudo lvextend --resizefs --size &amp;lt;size&amp;gt; &amp;lt;group&amp;gt;/&amp;lt;volume&amp;gt; $ sudo lvextend --resizefs --size +2G centos/root Adding 100% of the available free space.
+$ sudo lvextend --resizefs --extents +100%FREE centos/root </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Adding additional space to a LVM logical volume.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ sudo lvextend --resizefs --size &lt;size&gt; &lt;group&gt;/&lt;volume&gt;
+$ sudo lvextend --resizefs --size +2G centos/root</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adding 100% of the available free space.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ sudo lvextend --resizefs --extents +100%FREE centos/root</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Zsh: Configuration files</title>
+      <link>https://www.andreaslongo.com/blog/zsh-config-files/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/zsh-config-files/</guid>
+      <description>Zsh config files and the order of sourcing during startup.
+1 ~/.zshenv always sourced
+2 ~/.zprofile sourced if login shell
+3 ~/.zshrc sourced if interactive shell
+4 ~/.zlogin sourced if login shell
+5 ~/.zlogout sourced when exiting shell</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Zsh config files and the order of sourcing during startup.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1 <code>~/.zshenv</code></dt>
+<dd>
+<p>always sourced</p>
+</dd>
+<dt class="hdlist1">2 <code>~/.zprofile</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">3 <code>~/.zshrc</code></dt>
+<dd>
+<p>sourced if interactive shell</p>
+</dd>
+<dt class="hdlist1">4 <code>~/.zlogin</code></dt>
+<dd>
+<p>sourced if login shell</p>
+</dd>
+<dt class="hdlist1">5 <code>~/.zlogout</code></dt>
+<dd>
+<p>sourced when exiting shell</p>
+</dd>
+</dl>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Cygwin: A `sudo` like command</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-sudo-command/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-sudo-command/</guid>
+      <description>You can run commands from Cygwin with elevated permissions.
+On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use the sudo command for this.
+To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for Zsh, but it should also work for other bash-like shells.
+~/.zshrc alias sudo=&amp;#39;cygstart --action=runas&amp;#39; Now you can run something like this to test the alias.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can run commands from <a href="https://cygwin.com">Cygwin</a> with elevated permissions.</p>
+</div>
+<div class="paragraph">
+<p>On Windows, you have something like <code>Run as different user</code> or <code>Run as administrator</code>.
+And on Linux, you probably use the <a href="https://www.sudo.ws"><code>sudo</code></a> command for this.</p>
+</div>
+<div class="paragraph">
+<p>To get similar functionality on Cygwin, you can add a new alias to your shell’s config file.
+The following is for <a href="https://www.zsh.org">Zsh</a>, but it should also work for other bash-like shells.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>~/.zshrc</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">alias sudo=&#39;cygstart --action=runas&#39;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can run something like this to test the alias.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ sudo touch sudo-test</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Windows will ask for your username and password.
+Then it will run the command in the context of the given user.</p>
+</div>
+<div class="paragraph">
+<p>That works, but the user experience is not great.</p>
+</div>
+<div class="paragraph">
+<p>Your command gets executed in a new Cygwin process which automatically exits when the command returns.
+Also, the user prompt is GUI based which interrupts your CLI workflow.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Cygwin: Change the default home directory</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-change-default-home-dir/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-change-default-home-dir/</guid>
+      <description>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
+For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in Windows notation to C:\Users\{user_name}\home.
+/etc/nsswitch.conf db_home: /%H/home You can change it to whatever you like.
+See the Cygwin documentation for more information. Look here below the /path section for more on supported wildcard characters.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can define the default home directory for all <a href="https://cygwin.com">Cygwin</a> users in the <code>nsswitch.conf</code> file.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following sets your default home directory to <code>/cygdrive/c/Users/{user_name}/home</code>, or in Windows notation to <code>C:\Users\{user_name}\home</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>/etc/nsswitch.conf</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">db_home: /%H/home</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can change it to whatever you like.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch-home">Cygwin documentation</a> for more information.
+Look <a href="https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch-passwd">here</a> below the <code>/path</code> section for more on supported wildcard characters.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Cygwin: Using the clipboard with Vim</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</guid>
+      <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
+.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>To use the Windows clipboard in <a href="https://www.vim.org/">Vim</a> on <a href="https://cygwin.com">Cygwin</a>, add the following to your Vim config file.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>.vimrc</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">set clipboard=unnamed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vim will now use the clipboard register <code>*</code> for yank, delete, change and put operations.
+The <code>*</code> register gets synced with the Windows clipboard automatically.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Active Directory: Managed service accounts</title>
+      <link>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</guid>
+      <description>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
+Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
+Pro Administration Automatic password changes. No manual password management.
+Availability No service downtime for password changes.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).</p>
+</div>
+<div class="paragraph">
+<p><strong>Managed Service Accounts (MSA)</strong> are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts.
+Also, with MSAs these tasks no longer disrupt a service (no downtime).</p>
+</div>
+<div class="dlist">
+<div class="title">Pro</div>
+<dl>
+<dt class="hdlist1">Administration</dt>
+<dd>
+<p>Automatic password changes. No manual password management.</p>
+</dd>
+<dt class="hdlist1">Availability</dt>
+<dd>
+<p>No service downtime for password changes.</p>
+</dd>
+<dt class="hdlist1">Security</dt>
+<dd>
+<p>Frequent password changes. User login to systems via MSA is not possible.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">Con</div>
+<dl>
+<dt class="hdlist1">Initial Setup</dt>
+<dd>
+<p>Initial setup and troubleshooting is more complex for MSAs than with basic user accounts.</p>
+</dd>
+</dl>
+</div>
+<div class="sect1">
+<h2 id="_types_of_managed_service_accounts">Types of managed service accounts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three types of managed service accounts.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Virtual Account</dt>
+<dd>
+<p>Local system account <strong>for local services</strong>. Access to network resources is only possible via computer identity.</p>
+</dd>
+<dt class="hdlist1">Managed Service Account (MSA)</dt>
+<dd>
+<p>Active Directory account <strong>for generic services</strong>.</p>
+</dd>
+<dt class="hdlist1">Group Managed Service Account (gMSA)</dt>
+<dd>
+<p>Active Directory account <strong>for cluster services</strong>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements">Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the PowerShell to work with managed service accounts.
+Install and import the following module on the system on which you want to use MSAs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-WindowsFeature RSAT-AD-PowerShell
+$ Import-Module ActiveDirectory</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-US/troubleshoot/windows-server/system-management-components/remote-server-administration-tools">Remote Server Administration Tools (RSAT) for Windows</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration">ActiveDirectory</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_managed_service_account_in_active_directory">Create a managed service account in Active Directory</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ New-ADServiceAccount &lt;account name&gt; -RestrictToSingleComputer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adserviceaccount">New-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_a_managed_service_account_on_a_system">Install a managed service account on a system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can use an MSA, you have to install it on the target system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can test the MSA from the system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Test-ADServiceAccount &lt;account name&gt;
+
+True</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, use the Services console <code>Services.msc</code> to configure a service to use the MSA.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Leave the password blank.</p>
+</li>
+<li>
+<p>Ensure that the account name ends with a dollar sign <code>$</code>.</p>
+</li>
+<li>
+<p>Start or restart the service.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/install-adserviceaccount">Install-ADServiceAccount</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/test-adserviceaccount">Test-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remove_a_managed_service_account">Remove a managed service account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You should remove an MSA from the system if it is no longer needed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Uninstall-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/uninstall-adserviceaccount">Uninstall-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reset_the_password_for_a_managed_service_account">Reset the password for a managed service account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Active Directory manages MSA passwords automatically.
+You don’t have to do anything.
+Should you still have to reset the password manually, you can do so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Reset-ADServiceAccountPassword &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/reset-adserviceaccountpassword">Reset-ADServiceAccountPassword</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_service_does_not_start_with_a_managed_service_account">A service does not start with a managed service account</h3>
+<div class="listingblock">
+<div class="title">Confirm that the MSA exists and is enabled in Active Directory.</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Get-ADServiceAccount &lt;account name&gt;
+
+DistinguishedName : CN=msa-sql01,CN=Managed Service Accounts,DC=example,DC=com
+Enabled           : True
+Name              : msa-sql01
+ObjectClass       : msDS-ManagedServiceAccount
+ObjectGUID        : 12345a13-12e3-1c23-b456-a123e123fd78
+SamAccountName    : msa-sql01$
+SID               : S-1-5-21-1234567890-1234567890-098765432-184195
+UserPrincipalName :</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Confirm that the account is installed on the system</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Confirm that the account has the <code>SeServiceLogonRight</code> permission</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ NTRights +r SeServiceLogonRight –u &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adserviceaccount">Get-ADServiceAccount</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/install-adserviceaccount">Install-ADServiceAccount</a>, <a href="https://ss64.com/nt/ntrights.html">NTRIGHTS.exe (Windows Server 2003 Resource Kit Tools)</a></p>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Getting the uptime from Windows</title>
+      <link>https://www.andreaslongo.com/blog/get-uptime/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/get-uptime/</guid>
+      <description>I was looking for a uptime like command for Windows.
+The uptime command on Linux: $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35 On Windows, there is the cmdlet Get-Uptime which is available for PowerShell version 6+.
+$ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I was looking for a <code>uptime</code> like command for Windows.</p>
+</div>
+<div class="listingblock">
+<div class="title">The <code>uptime</code> command on Linux:</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uptime
+12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
+
+$ uptime --pretty
+up 5 hours, 3 minutes
+
+$ uptime --since
+2021-02-17 07:50:35</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On Windows, there is the cmdlet <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime"><code>Get-Uptime</code></a> which is available for <a href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> version 6+.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ Get-Uptime -Since
+Monday, January 18, 2021 7:56:57 AM</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If <code>Get-Uptime</code> is not available, you can query the WMI with a CIM cmdlet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+
+LastBootUpTime
+--------------
+18.01.2021 07:56:41</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>LastBootUpTime</code> value may not be updated if you have <em>fast boot/startup</em> enabled for your system.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Searching for files and sort them by date</title>
+      <link>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</guid>
+      <description> Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
+$ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Recursively search for files by name with <code>find</code>.
+Then, sort the result by time, newest first with <code>ls -lt</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ find . -type f -name &#34;Makefile*&#34; -exec ls -lt {} +
+-rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile
+-rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile
+-rw------- 1 al al  963 Feb 16 15:45 ./personal-website/Makefile
+-rw------- 1 al al  254 Feb 15 17:07 ./cc-python/Makefile</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Python: Converting `datetime` and `string` types</title>
+      <link>https://www.andreaslongo.com/blog/convert-datetime-from-string/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/convert-datetime-from-string/</guid>
+      <description>Converting from datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
+&amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; dt = datetime(2009, 10, 1, 20, 36, 41) &amp;gt;&amp;gt;&amp;gt; dt.strftime(&amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) &amp;#39;01.10.2009 20:36:41&amp;#39; The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
+Converting from string to datetime Use the datetime.</description>
+      <content:encoded><![CDATA[<div class="sect1">
+<h2 id="_converting_from_datetime_to_string">Converting from <code>datetime</code> to <code>string</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>datetime.strftime()</code> method to convert a Python <code>datetime</code> object to a <code>string</code> of any format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; dt = datetime(2009, 10, 1, 20, 36, 41)
+&gt;&gt;&gt; dt.strftime(&#39;%d.%m.%Y %H:%M:%S&#39;)
+&#39;01.10.2009 20:36:41&#39;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The argument to <code>datetime.strftime()</code> is a <strong>format string</strong> build with <strong>format codes</strong>.
+See <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">strftime() and strptime() Format Codes</a> for a list of available format codes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_converting_from_string_to_datetime">Converting from <code>string</code> to <code>datetime</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <code>datetime.strptime()</code> method to parse a <code>string</code> of any format representing a date and time to a <code>datetime</code> object.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">&gt;&gt;&gt; from datetime import datetime
+
+&gt;&gt;&gt; timestamp = &#39;01.10.2009 20:36:41&#39;
+&gt;&gt;&gt; datetime.strptime(timestamp, &#39;%d.%m.%Y %H:%M:%S&#39;)
+datetime.datetime(2009, 10, 1, 20, 36, 41)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The second argument to <code>datetime.strptime()</code> is again a <strong>format string</strong> (see above).</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Vim: Undo branches</title>
+      <link>https://www.andreaslongo.com/blog/undo-branches/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/undo-branches/</guid>
+      <description>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+Moving through the undo tree Go to newer/older text state.
+g+ g- Go to older text state, 10 minutes before.
+:earlier 10m Go to newer text state, 5 minutes later.
+:later 5m Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>You can retrieve the state of your text as it was some time ago.
+This concept is called <strong>undo tree</strong> or <strong>undo branches</strong>.</p>
+</div>
+<div class="sect1">
+<h2 id="_moving_through_the_undo_tree">Moving through the undo tree</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to newer/older text state.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">g+
+g-</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go to older text state, 10 minutes before.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">:earlier 10m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Go to newer text state, 5 minutes later.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vim" data-lang="vim">:later 5m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using <code>g-</code> and <code>g+</code> will get you to all possible text states while repeating <code>u</code> and <code>CTRL-R</code> does not.</p>
+</div>
+<div class="paragraph">
+<p>See also <code>:help undo-branches</code>.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Editor plugins for working with web APIs</title>
+      <link>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/rest-api-editor-plugins/</guid>
+      <description>These two plugins might come in handy if you are a developer or consumer of web APIs (e.g. REST).
+They allow you to send requests to your API and receive responses without leaving your editor. You can quickly explore APIs while saving your calls along the way as simple text file for documentation and sharing. They might supplement or replace tools like curl or Postman in your workflow.
+This plugin is for Vim.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>These two plugins might come in handy if you are a developer or consumer of <a href="https://en.wikipedia.org/wiki/Web_API">web APIs</a> (e.g. REST).</p>
+</div>
+<div class="paragraph">
+<p>They allow you to send requests to your API and receive responses without leaving your editor.
+You can quickly explore APIs while saving your calls along the way as simple text file for documentation and sharing.
+They might supplement or replace tools like <a href="https://curl.se/">curl</a> or <a href="https://www.postman.com/">Postman</a> in your workflow.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/diepm/vim-rest-console">This plugin</a> is for <a href="https://www.vim.org/">Vim</a>.
+It is a wrapper around <code>curl</code>.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">This plugin</a> is for <a href="https://code.visualstudio.com/">Visual Studio Code</a>. It is similar to the Vim plugin.</p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_clean_and_easy_requests">Clean and easy requests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With both plugins, you write your API request as text block in your editor and sent it to your API endpoint on demand.
+The response then shows up in a new editor buffer/window.</p>
+</div>
+<div class="paragraph">
+<p>You can write multiple request blocks in the same file and send them separately on demand.</p>
+</div>
+<div class="paragraph">
+<p>Save the file for later reference and share it with others as an example.</p>
+</div>
+<div class="paragraph">
+<p>The syntax for the two plugins is slightly different.
+You cannot use a Vim request block directly with VS Code.
+But it is straightforward to adjust the request block to make it work.</p>
+</div>
+<div class="paragraph">
+<p><strong>To send requests</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Type in a request block.</p>
+</li>
+<li>
+<p>Place the cursor anywhere within the block.</p>
+</li>
+<li>
+<p>Hit the trigger key to send the request (default: <code>CTRL-J</code>).</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">Vim <code>./example.rest</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># vim: set filetype=rest
+
+# global curl options
+--silent
+--include
+--
+
+# GET
+https://reqres.in
+GET /api/users/2
+
+# POST
+https://reqres.in
+POST /api/users
+{
+    &#34;name&#34;: &#34;andreas&#34;,
+    &#34;job&#34;: &#34;consultant&#34;
+}
+
+# DELETE
+https://reqres.in
+DELETE /api/users/2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tip">Tip</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add query parameters like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://reqres.in
+GET /api/users?per_page=2&amp;page=4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or you can write the same request like this for better readability:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://reqres.in
+GET /api/users
+per_page=2
+page=4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If your query parameters are more complex, you may be required to enable the <a href="https://github.com/diepm/vim-rest-console#54-line-by-line-request-body">Line-by-line Request Body</a> option for the Vim plugin when your query does not work otherwise.</p>
+</div>
+<div class="listingblock">
+<div class="title">Complex query:</div>
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">https://localhost:8001
+GET /api/content/search
+limit=10
+cql=(type=page and space=IT and label=infrastructure)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Vim plugin option:</div>
+<div class="content">
+<pre class="highlight"><code class="language-plaintext" data-lang="plaintext">:let b:vrc_split_request_body = 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Using PKCS #12 certigicate files with Tomcat for TLS</title>
+      <link>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</guid>
+      <description>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded the Secure Sockets Layer (SSL) protocol.
+In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.
+Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml The file file.p12 contains the private key and the file server.xml contains the password for the certificate.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>How to use <a href="https://en.wikipedia.org/wiki/PKCS_12">PKCS #12</a> archives with <a href="https://tomcat.apache.org/">Apache Tomcat</a> for <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security (TLS)</a>.
+TLS superseded the Secure Sockets Layer (SSL) protocol.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.</p>
+</div>
+<div class="listingblock">
+<div class="title">Directory layout <code>../Tomcat/</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">../Tomcat/
+| certificates/
+| | file.p12
+| conf/
+| | server.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The file <code>file.p12</code> contains the private key and the file <code>server.xml</code> contains the password for the certificate.
+<strong>Make sure that only the Tomcat process can access them</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>The password for the certificate’s private key must match that for the PKCS #12 file</strong>.</p>
+</div>
+<div class="sect1">
+<h2 id="_tomcat_version_8_9_and_10">Tomcat version 8, 9 and 10</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title"><code>server.xml</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- TOMCAT TLS CONNECTOR --&gt;
+&lt;Connector
+    port=&#34;8443&#34;
+        protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34;
+        SSLEnabled=&#34;true&#34;
+        scheme=&#34;https&#34;
+	secure=&#34;true&#34;
+    &gt;
+    &lt;SSLHostConfig&gt;
+        certificateVerification=&#34;optional&#34;
+        &lt;Certificate
+            certificateKeystoreType=&#34;PKCS12&#34;
+            certificateKeystoreFile=&#34;certificates/&lt;file&gt;.p12&#34; <b class="conum">(1)</b>
+            certificateKeystorePassword=&#34;&lt;password&gt;&#34; <b class="conum">(2)</b>
+        /&gt;
+    &lt;/SSLHostConfig&gt;
+&lt;/Connector&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Adapt <code>certificateKeystoreFile</code> and</p>
+</li>
+<li>
+<p><code>certificateKeystorePassword</code> to your environment</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tomcat_version_7">Tomcat version 7</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We need a different config for Tomcat 7.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>server.xml</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!-- TOMCAT 7.x TLS CONNECTOR --&gt;
+&lt;Connector
+    port=&#34;8443&#34;
+        protocol=&#34;org.apache.coyote.http11.Http11NioProtocol&#34;
+        SSLEnabled=&#34;true&#34;
+        scheme=&#34;https&#34;
+        secure=&#34;true&#34;
+        clientAuth=&#34;false&#34;
+        keystoreType=&#34;PKCS12&#34;
+        keystoreFile=&#34;certificates/&lt;file&gt;.p12&#34; <b class="conum">(1)</b>
+        keystorePass=&#34;&lt;password&gt;&#34; <b class="conum">(2)</b>
+/&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Adapt <code>keystoreFile</code> and</p>
+</li>
+<li>
+<p><code>keystorePass</code> to your environment</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After restarting Tomcat, you can connect to TCP port 8443 via <a href="https://en.wikipedia.org/wiki/HTTPS">HTTP over TLS (HTTPS)</a>, for example.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Vagrant: Importing a box manually</title>
+      <link>https://www.andreaslongo.com/blog/import-vagrant-box/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/import-vagrant-box/</guid>
+      <description>To download or upgrade a Vagrant box, you can use the command vagrant box add and vagrant box update.
+Most of the time, you should be fine using these automated processes. But sometimes you need more control. Imagine you are working from home and you need to download several huge boxes. You also have video calls with your customers throughout the day, so your priority is to maintain high call quality.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p><strong>To download or upgrade a <a href="https://www.vagrantup.com/">Vagrant</a> box</strong>, you can use the command <code>vagrant box add</code> and <code>vagrant box update</code>.</p>
+</div>
+<div class="paragraph">
+<p>Most of the time, you should be fine using these automated processes.
+<strong>But sometimes you need more control.</strong>
+Imagine you are working from home and you need to download several huge boxes.
+You also have video calls with your customers throughout the day, so your priority is to maintain high call quality. To do that, you need to prevent Vagrant from eating up your entire internet bandwidth.</p>
+</div>
+<div class="sect1">
+<h2 id="_control_your_vagrant_download">Control your Vagrant download</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vagrant has no built-in option for controlling the download process, but fortunately, you can use the tool of your choice to download a box.</p>
+</div>
+<div class="paragraph">
+<p>You also want to integrate a box smoothly into your existing Vagrant environment so that commands like <code>vagrant box update</code> will work as intended.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, we will download and import the <a href="https://app.vagrantup.com/debian/boxes/contrib-buster64">Debian Buster v10.7.0</a> box for <a href="https://www.virtualbox.org">Virtualbox</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_to_download_a_box">To download a box</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Get the direct download link for a box.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box" class="bare">https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Download the box.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>I am using <code>curl</code> here with a download rate limit, but you can use any tool that works for you.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ curl --location --remote-name --limit-rate 500k --continue-at - https://app.vagrantup.com/debian/boxes/contrib-buster64/versions/10.7.0/providers/virtualbox.box</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_to_import_a_box">To import a box</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add the box to Vagrant.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Note the last argument, which is the local file you just downloaded.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ vagrant box add debian/contrib-buster64 ./virtualbox.box</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Rename the version directory of the box to the correct version.</p>
+<div class="openblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ cd ~/.vagrant.d/boxes/debian-VAGRANTSLASH-buster64/
+$ mv ./0 ./10.7.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Your directory structure should now look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">debian-VAGRANTSLASH-contrib-buster64/
+| 10.7.0/
+| | virtualbox/
+| | | Vagrantfile
+| | | box.ovf
+| | | box_update_check
+| | | contrib-buster.vmdk
+| | | master_id
+| | | metadata.json
+| metadata_url</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>If not exist, create a <code>metadata_url</code> file.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>This file should contain a link to the Vagrant box <strong>without the version part</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ echo -n &#34;https://app.vagrantup.com/debian/boxes/contrib-buster64&#34; &gt; ./metadata_url</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Verify by listing all installed boxes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ vagrant box list
+debian/contrib-buster64  (virtualbox, 10.7.0)</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You should see your new or updated box with the <strong>correct version number</strong> and,
+commands like <code>vagrant box update</code> should work as usual.</p>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>

@@ -8,15 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/cygwin/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A `sudo` like command for Cygwin</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</link>
+      <title>Cygwin: A `sudo` like command</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-sudo-command/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-sudo-command/</guid>
+      <guid>https://www.andreaslongo.com/blog/cygwin-sudo-command/</guid>
       <description>You can run commands from Cygwin with elevated permissions.
- On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use the sudo command for this.
- To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for Zsh, but it should also work for other bash-like shells.
- ~/.zshrc alias sudo=&amp;#39;cygstart --action=runas&amp;#39;   Now you can run something like this to test the alias.</description>
+On Windows, you have something like Run as different user or Run as administrator. And on Linux, you probably use the sudo command for this.
+To get similar functionality on Cygwin, you can add a new alias to your shell’s config file. The following is for Zsh, but it should also work for other bash-like shells.
+~/.zshrc alias sudo=&amp;#39;cygstart --action=runas&amp;#39; Now you can run something like this to test the alias.</description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p>You can run commands from <a href="https://cygwin.com">Cygwin</a> with elevated permissions.</p>
 </div>
@@ -57,16 +57,15 @@ Also, the user prompt is GUI based which interrupts your CLI workflow.</p>
     </item>
     
     <item>
-      <title>Change the default home directory for Cygwin users</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/</link>
+      <title>Cygwin: Change the default home directory</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-change-default-home-dir/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-change-default-home-dir/</guid>
+      <guid>https://www.andreaslongo.com/blog/cygwin-change-default-home-dir/</guid>
       <description>You can define the default home directory for all Cygwin users in the nsswitch.conf file.
- For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in Windows notation to C:\Users\{user_name}\home.
- /etc/nsswitch.conf db_home: /%H/home   You can change it to whatever you like.
- See the Cygwin documentation for more information. Look here below the /path section for more on supported wildcard characters.
- </description>
+For example, the following sets your default home directory to /cygdrive/c/Users/{user_name}/home, or in Windows notation to C:\Users\{user_name}\home.
+/etc/nsswitch.conf db_home: /%H/home You can change it to whatever you like.
+See the Cygwin documentation for more information. Look here below the /path section for more on supported wildcard characters.</description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p>You can define the default home directory for all <a href="https://cygwin.com">Cygwin</a> users in the <code>nsswitch.conf</code> file.</p>
 </div>
@@ -90,14 +89,13 @@ Look <a href="https://cygwin.com/cygwin-ug-net/ntsec.html#ntsec-mapping-nsswitch
     </item>
     
     <item>
-      <title>Use the clipboard in Vim on Cygwin</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</link>
+      <title>Cygwin: Using the clipboard with Vim</title>
+      <link>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/windows/cygwin-vim-clipboard/</guid>
+      <guid>https://www.andreaslongo.com/blog/cygwin-vim-clipboard/</guid>
       <description>To use the Windows clipboard in Vim on Cygwin, add the following to your Vim config file.
- .vimrc set clipboard=unnamed   Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.
- </description>
+.vimrc set clipboard=unnamed Vim will now use the clipboard register * for yank, delete, change and put operations. The * register gets synced with the Windows clipboard automatically.</description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p>To use the Windows clipboard in <a href="https://www.vim.org/">Vim</a> on <a href="https://cygwin.com">Cygwin</a>, add the following to your Vim config file.</p>
 </div>

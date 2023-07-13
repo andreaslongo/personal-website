@@ -8,14 +8,14 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/public-key-certificate/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Use PKCS #12 archives with Apache Tomcat for TLS/SSL</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</link>
+      <title>Using PKCS #12 certigicate files with Tomcat for TLS</title>
+      <link>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/security/use-pkcs12-with-tomcat/</guid>
+      <guid>https://www.andreaslongo.com/blog/use-pkcs12-with-tomcat/</guid>
       <description>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded the Secure Sockets Layer (SSL) protocol.
- In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.
- Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml   The file file.p12 contains the private key and the file server.xml contains the password for the certificate.</description>
+In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.
+Directory layout ../Tomcat/ ../Tomcat/ | certificates/ | | file.p12 | conf/ | | server.xml The file file.p12 contains the private key and the file server.xml contains the password for the certificate.</description>
       <content:encoded><![CDATA[<div class="paragraph">
 <p>How to use <a href="https://en.wikipedia.org/wiki/PKCS_12">PKCS #12</a> archives with <a href="https://tomcat.apache.org/">Apache Tomcat</a> for <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security (TLS)</a>.
 TLS superseded the Secure Sockets Layer (SSL) protocol.</p>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Documentation on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/topics/documentation/</link>
+    <description>Recent content in Documentation on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating diagrams from AsciiDoc with Hugo</title>
+      <link>https://www.andreaslongo.com/blog/diagram-hugo/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/diagram-hugo/</guid>
+      <description>Asciidoctor, has good support for diagrams with the Diagram plugin.
+To make this work with Hugo, a static site generator, you need:
+a working asciidoctor-diagram plugin
+some settings in your Hugo site config
+Then run hugo --destination public to generate your site including all diagrams. Have a look at my example repository to get an idea of how this works.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/AsciiDoc">Asciidoctor</a>, has good support for diagrams with the <a href="https://docs.asciidoctor.org/diagram-extension/latest/">Diagram</a> plugin.</p>
+</div>
+<div class="paragraph">
+<p>To make this work with <a href="https://gohugo.io">Hugo</a>, a static site generator, you need:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a working <code>asciidoctor-diagram</code> plugin</p>
+</li>
+<li>
+<p>some settings in your <a href="https://github.com/andreaslongo/asciidoctor-diagram-hugo-docsy/blob/400041ffeee7a007f99a59d2c5a326e7e762b21e/config.yaml#L5-L10">Hugo site config</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Then run <code>hugo --destination public</code> to generate your site including all diagrams.
+Have a look at my <a href="https://github.com/andreaslongo/asciidoctor-diagram-hugo-docsy">example repository</a> to get an idea of how this works.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

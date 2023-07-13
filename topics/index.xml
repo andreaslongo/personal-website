@@ -6,13 +6,23 @@
     <description>Recent content in Topics on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microsoft Windows</title>
-      <link>https://www.andreaslongo.com/topics/microsoft-windows/</link>
+      <title>Tools</title>
+      <link>https://www.andreaslongo.com/topics/tools/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/topics/tools/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Operating Systems</title>
+      <link>https://www.andreaslongo.com/topics/operating-systems/</link>
       <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/microsoft-windows/</guid>
+      <guid>https://www.andreaslongo.com/topics/operating-systems/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -28,81 +38,31 @@
     </item>
     
     <item>
-      <title>Container</title>
-      <link>https://www.andreaslongo.com/topics/container/</link>
+      <title>Containerization</title>
+      <link>https://www.andreaslongo.com/topics/containerization/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/container/</guid>
+      <guid>https://www.andreaslongo.com/topics/containerization/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Git</title>
-      <link>https://www.andreaslongo.com/topics/git/</link>
-      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/topics/git/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>AsciiDoc</title>
-      <link>https://www.andreaslongo.com/topics/asciidoc/</link>
+      <title>Documentation</title>
+      <link>https://www.andreaslongo.com/topics/documentation/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/asciidoc/</guid>
+      <guid>https://www.andreaslongo.com/topics/documentation/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
-      <title>Secure Shell (SSH)</title>
-      <link>https://www.andreaslongo.com/topics/secure-shell-ssh/</link>
-      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/topics/secure-shell-ssh/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Unix</title>
-      <link>https://www.andreaslongo.com/topics/unix/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/topics/unix/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.andreaslongo.com/topics/python/</link>
+      <title>Software Development</title>
+      <link>https://www.andreaslongo.com/topics/software-development/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/python/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://www.andreaslongo.com/topics/vim/</link>
-      <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/topics/vim/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://www.andreaslongo.com/topics/web/</link>
-      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.andreaslongo.com/topics/web/</guid>
+      <guid>https://www.andreaslongo.com/topics/software-development/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -118,11 +78,11 @@
     </item>
     
     <item>
-      <title>Vagrant</title>
-      <link>https://www.andreaslongo.com/topics/vagrant/</link>
+      <title>Virtualization</title>
+      <link>https://www.andreaslongo.com/topics/virtualization/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/topics/vagrant/</guid>
+      <guid>https://www.andreaslongo.com/topics/virtualization/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>

@@ -8,16 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/logical-volume-manager-lvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Extend a LVM logical volume</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/unix/lvm-extend-logical-volume/</link>
+      <title>LVM: Extending a logical volume</title>
+      <link>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/unix/lvm-extend-logical-volume/</guid>
-      <description>Add space to a LVM logical volume.
- $ sudo lvextend --resizefs --size &amp;lt;size&amp;gt; &amp;lt;group&amp;gt;/&amp;lt;volume&amp;gt; $ sudo lvextend --resizefs --size +2G centos/root   Add 100% of the available free space.
- $ sudo lvextend --resizefs --extents +100%FREE centos/root   </description>
+      <guid>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</guid>
+      <description> Adding additional space to a LVM logical volume.
+$ sudo lvextend --resizefs --size &amp;lt;size&amp;gt; &amp;lt;group&amp;gt;/&amp;lt;volume&amp;gt; $ sudo lvextend --resizefs --size +2G centos/root Adding 100% of the available free space.
+$ sudo lvextend --resizefs --extents +100%FREE centos/root </description>
       <content:encoded><![CDATA[<div class="paragraph">
-<p>Add space to a LVM logical volume.</p>
+<p>Adding additional space to a LVM logical volume.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -26,7 +26,7 @@ $ sudo lvextend --resizefs --size +2G centos/root</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Add 100% of the available free space.</p>
+<p>Adding 100% of the available free space.</p>
 </div>
 <div class="listingblock">
 <div class="content">

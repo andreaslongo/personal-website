@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Operating Systems on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/topics/operating-systems/</link>
+    <description>Recent content in Operating Systems on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/operating-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unix-like `watch` and `tail` commands for PowerShell</title>
+      <link>https://www.andreaslongo.com/blog/powershell-watch/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/powershell-watch/</guid>
+      <description>There is no equivalent to the Unix watch command on Windows, but you can get close enough behavior.
+Watching commands with PowerShell # Similar to `watch &amp;lt;command&amp;gt;` PS&amp;gt; while ($true) {&amp;lt;your command&amp;gt;; sleep -Seconds 2} PS&amp;gt; while ($true) {(Get-Service -Name &amp;#39;Remote Desktop Services&amp;#39;).Status; sleep -Seconds 2} Running Running You can also follow log file output similar to the Unix tail command.
+Tailing logs with PowerShell: # Similar to `tail --follow &amp;lt;filename&amp;gt;` PS&amp;gt; Get-Content -Path &amp;lt;logfile&amp;gt; -Tail 10 –Wait PS&amp;gt; Get-Content -Path &amp;#39;C:\app.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>There is no equivalent to the Unix <a href="https://en.wikipedia.org/wiki/Watch_(command)"><code>watch</code></a> command on Windows, but you can get close enough behavior.</p>
+</div>
+<div class="listingblock">
+<div class="title">Watching commands with PowerShell</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Similar to `watch &lt;command&gt;`
+PS&gt; while ($true) {&lt;your command&gt;; sleep -Seconds 2}
+
+PS&gt; while ($true) {(Get-Service -Name &#39;Remote Desktop Services&#39;).Status; sleep -Seconds 2}
+Running
+Running</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also follow log file output similar to the Unix <a href="https://en.wikipedia.org/wiki/Tail_(Unix)"><code>tail</code></a> command.</p>
+</div>
+<div class="listingblock">
+<div class="title">Tailing logs with PowerShell:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Similar to `tail --follow &lt;filename&gt;`
+PS&gt; Get-Content -Path &lt;logfile&gt; -Tail 10 –Wait
+
+PS&gt; Get-Content -Path &#39;C:\app.log&#39; -Tail 10 –Wait</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LVM: Extending a logical volume</title>
+      <link>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</guid>
+      <description> Adding additional space to a LVM logical volume.
+$ sudo lvextend --resizefs --size &amp;lt;size&amp;gt; &amp;lt;group&amp;gt;/&amp;lt;volume&amp;gt; $ sudo lvextend --resizefs --size +2G centos/root Adding 100% of the available free space.
+$ sudo lvextend --resizefs --extents +100%FREE centos/root </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Adding additional space to a LVM logical volume.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ sudo lvextend --resizefs --size &lt;size&gt; &lt;group&gt;/&lt;volume&gt;
+$ sudo lvextend --resizefs --size +2G centos/root</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adding 100% of the available free space.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ sudo lvextend --resizefs --extents +100%FREE centos/root</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Active Directory: Managed service accounts</title>
+      <link>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</guid>
+      <description>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
+Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
+Pro Administration Automatic password changes. No manual password management.
+Availability No service downtime for password changes.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).</p>
+</div>
+<div class="paragraph">
+<p><strong>Managed Service Accounts (MSA)</strong> are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts.
+Also, with MSAs these tasks no longer disrupt a service (no downtime).</p>
+</div>
+<div class="dlist">
+<div class="title">Pro</div>
+<dl>
+<dt class="hdlist1">Administration</dt>
+<dd>
+<p>Automatic password changes. No manual password management.</p>
+</dd>
+<dt class="hdlist1">Availability</dt>
+<dd>
+<p>No service downtime for password changes.</p>
+</dd>
+<dt class="hdlist1">Security</dt>
+<dd>
+<p>Frequent password changes. User login to systems via MSA is not possible.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">Con</div>
+<dl>
+<dt class="hdlist1">Initial Setup</dt>
+<dd>
+<p>Initial setup and troubleshooting is more complex for MSAs than with basic user accounts.</p>
+</dd>
+</dl>
+</div>
+<div class="sect1">
+<h2 id="_types_of_managed_service_accounts">Types of managed service accounts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three types of managed service accounts.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Virtual Account</dt>
+<dd>
+<p>Local system account <strong>for local services</strong>. Access to network resources is only possible via computer identity.</p>
+</dd>
+<dt class="hdlist1">Managed Service Account (MSA)</dt>
+<dd>
+<p>Active Directory account <strong>for generic services</strong>.</p>
+</dd>
+<dt class="hdlist1">Group Managed Service Account (gMSA)</dt>
+<dd>
+<p>Active Directory account <strong>for cluster services</strong>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_requirements">Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the PowerShell to work with managed service accounts.
+Install and import the following module on the system on which you want to use MSAs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-WindowsFeature RSAT-AD-PowerShell
+$ Import-Module ActiveDirectory</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-US/troubleshoot/windows-server/system-management-components/remote-server-administration-tools">Remote Server Administration Tools (RSAT) for Windows</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration">ActiveDirectory</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_managed_service_account_in_active_directory">Create a managed service account in Active Directory</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ New-ADServiceAccount &lt;account name&gt; -RestrictToSingleComputer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/new-adserviceaccount">New-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_a_managed_service_account_on_a_system">Install a managed service account on a system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can use an MSA, you have to install it on the target system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can test the MSA from the system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Test-ADServiceAccount &lt;account name&gt;
+
+True</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, use the Services console <code>Services.msc</code> to configure a service to use the MSA.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Leave the password blank.</p>
+</li>
+<li>
+<p>Ensure that the account name ends with a dollar sign <code>$</code>.</p>
+</li>
+<li>
+<p>Start or restart the service.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/install-adserviceaccount">Install-ADServiceAccount</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/activedirectory/test-adserviceaccount">Test-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remove_a_managed_service_account">Remove a managed service account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You should remove an MSA from the system if it is no longer needed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Uninstall-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/uninstall-adserviceaccount">Uninstall-ADServiceAccount</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reset_the_password_for_a_managed_service_account">Reset the password for a managed service account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Active Directory manages MSA passwords automatically.
+You don’t have to do anything.
+Should you still have to reset the password manually, you can do so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Reset-ADServiceAccountPassword &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/reset-adserviceaccountpassword">Reset-ADServiceAccountPassword</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting">Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_service_does_not_start_with_a_managed_service_account">A service does not start with a managed service account</h3>
+<div class="listingblock">
+<div class="title">Confirm that the MSA exists and is enabled in Active Directory.</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Get-ADServiceAccount &lt;account name&gt;
+
+DistinguishedName : CN=msa-sql01,CN=Managed Service Accounts,DC=example,DC=com
+Enabled           : True
+Name              : msa-sql01
+ObjectClass       : msDS-ManagedServiceAccount
+ObjectGUID        : 12345a13-12e3-1c23-b456-a123e123fd78
+SamAccountName    : msa-sql01$
+SID               : S-1-5-21-1234567890-1234567890-098765432-184195
+UserPrincipalName :</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Confirm that the account is installed on the system</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ Install-ADServiceAccount &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Confirm that the account has the <code>SeServiceLogonRight</code> permission</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">$ NTRights +r SeServiceLogonRight –u &lt;account name&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docs: <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adserviceaccount">Get-ADServiceAccount</a>, <a href="https://docs.microsoft.com/en-us/powershell/module/addsadministration/install-adserviceaccount">Install-ADServiceAccount</a>, <a href="https://ss64.com/nt/ntrights.html">NTRIGHTS.exe (Windows Server 2003 Resource Kit Tools)</a></p>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Getting the uptime from Windows</title>
+      <link>https://www.andreaslongo.com/blog/get-uptime/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/get-uptime/</guid>
+      <description>I was looking for a uptime like command for Windows.
+The uptime command on Linux: $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35 On Windows, there is the cmdlet Get-Uptime which is available for PowerShell version 6+.
+$ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I was looking for a <code>uptime</code> like command for Windows.</p>
+</div>
+<div class="listingblock">
+<div class="title">The <code>uptime</code> command on Linux:</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ uptime
+12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
+
+$ uptime --pretty
+up 5 hours, 3 minutes
+
+$ uptime --since
+2021-02-17 07:50:35</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On Windows, there is the cmdlet <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime"><code>Get-Uptime</code></a> which is available for <a href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a> version 6+.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ Get-Uptime -Since
+Monday, January 18, 2021 7:56:57 AM</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If <code>Get-Uptime</code> is not available, you can query the WMI with a CIM cmdlet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+
+LastBootUpTime
+--------------
+18.01.2021 07:56:41</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>LastBootUpTime</code> value may not be updated if you have <em>fast boot/startup</em> enabled for your system.</p>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Searching for files and sort them by date</title>
+      <link>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</guid>
+      <description> Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
+$ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Recursively search for files by name with <code>find</code>.
+Then, sort the result by time, newest first with <code>ls -lt</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ find . -type f -name &#34;Makefile*&#34; -exec ls -lt {} +
+-rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile
+-rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile
+-rw------- 1 al al  963 Feb 16 15:45 ./personal-website/Makefile
+-rw------- 1 al al  254 Feb 15 17:07 ./cc-python/Makefile</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

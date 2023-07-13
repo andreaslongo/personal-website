@@ -14,9 +14,9 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/transactions/</guid>
       <description>In diesem Abschnitt beschäftigen wir uns mit SQL-Befehlen zum bearbeiten von Datensätzen. Diese Befehle basieren auf sogenannten Transaktionen.
- Was sind Transaktionen? Zum Beispiel ist das Hinzufügen neuer Datensätze eine Transaktion.
- Eine Transaktion kann entweder erfolgreich sein (alles OK) oder fehlschlagen. Schlägt eine Transaktion fehl, dann macht das Datenbanksystem alle Änderungen innerhalb dieser Transaktion rückgängig. Das ist ein Sicherheitsmechanismus des Datenbanksystems um Probleme innerhalb einzelner Datensätze zu vermeiden.
-   Eine erfolgreiche Transaktion Stelle dir zum Beispiel vor, du möchtest einen neuen Kunden in deiner Tabelle Kunden erfassen.</description>
+Was sind Transaktionen? Zum Beispiel ist das Hinzufügen neuer Datensätze eine Transaktion.
+Eine Transaktion kann entweder erfolgreich sein (alles OK) oder fehlschlagen. Schlägt eine Transaktion fehl, dann macht das Datenbanksystem alle Änderungen innerhalb dieser Transaktion rückgängig. Das ist ein Sicherheitsmechanismus des Datenbanksystems um Probleme innerhalb einzelner Datensätze zu vermeiden.
+Eine erfolgreiche Transaktion Stelle dir zum Beispiel vor, du möchtest einen neuen Kunden in deiner Tabelle Kunden erfassen.</description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/select/</guid>
       <description>Mit SELECT kannst du Datensätze aus einer Tabelle abfragen.
- Der Hauptgrund, warum wir Daten in einer Datenbank speichern ist, dass wir hinterher schnell und einfach Daten daraus abfragen können.
- Wir möchten verschiedene Datensätze kombinieren um spezielle Fragen zu beantworten wie zum Beispiel &amp;#34;Wie viele rote Pullover wurden im letzten Jahr an Kunden aus Salzburg verkauft?&amp;#34;. Du kannst deine Abfragen auf vielfältige und flexible weisen filtern um genau die Daten zu bekommen, die du benötigst.</description>
+Der Hauptgrund, warum wir Daten in einer Datenbank speichern ist, dass wir hinterher schnell und einfach Daten daraus abfragen können.
+Wir möchten verschiedene Datensätze kombinieren um spezielle Fragen zu beantworten wie zum Beispiel &amp;#34;Wie viele rote Pullover wurden im letzten Jahr an Kunden aus Salzburg verkauft?&amp;#34;. Du kannst deine Abfragen auf vielfältige und flexible weisen filtern um genau die Daten zu bekommen, die du benötigst.</description>
     </item>
     
     <item>
@@ -37,10 +37,10 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/insert/</guid>
       <description>Mit INSERT kannst du neue Datensätze in eine Tabelle eintragen.
- Datensätze eintragen Füge einen neuen Datensatz in die Tabelle Mitarbeiter ein.
- USE [MeineNeueDatenbank]; INSERT INTO Mitarbeiter VALUES (&amp;#39;Martin&amp;#39;, &amp;#39;Hofer&amp;#39;, &amp;#39;IT Support&amp;#39;, &amp;#39;mhofer@example.com&amp;#39;) ;   Du kannst nun den neuen Eintrag in deiner Tabelle sehen.
- Nutze SELECT um dir alle Einträge anzuzeigen.
-   Datensätzen gezielt eintragen Im letzten Beispiel hast du die Werte (Values) für deinen neuen Datensatz nach der Position der Spalten in deiner Tabelle eingetragen.</description>
+Datensätze eintragen Füge einen neuen Datensatz in die Tabelle Mitarbeiter ein.
+USE [MeineNeueDatenbank]; INSERT INTO Mitarbeiter VALUES (&amp;#39;Martin&amp;#39;, &amp;#39;Hofer&amp;#39;, &amp;#39;IT Support&amp;#39;, &amp;#39;mhofer@example.com&amp;#39;) ; Du kannst nun den neuen Eintrag in deiner Tabelle sehen.
+Nutze SELECT um dir alle Einträge anzuzeigen.
+Datensätzen gezielt eintragen Im letzten Beispiel hast du die Werte (Values) für deinen neuen Datensatz nach der Position der Spalten in deiner Tabelle eingetragen.</description>
     </item>
     
     <item>
@@ -50,10 +50,10 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/update/</guid>
       <description>Mit UPDATE kannst du Datensätze in einer Tabelle ändern.
- Einen Datensatz ändern Wir möchten nun einen Datensatz in der Tabelle Mitarbeiter ändern.
- Öffne ein neues Query.
- Ändere nun die Email Adresse von Martin Hofer von mhofer@example.com auf itsupport@example.com
- USE [MeineNeueDatenbank]; UPDATE Mitarbeiter SET Email = &amp;#39;itsupport@example.com&amp;#39; WHERE Email = &amp;#39;mhofer@example.com&amp;#39;;   Beachte die WHERE Klausel. Ohne diesen Filter würdest du alle Email Adressen in deiner Tabelle auf itsupport@example.</description>
+Einen Datensatz ändern Wir möchten nun einen Datensatz in der Tabelle Mitarbeiter ändern.
+Öffne ein neues Query.
+Ändere nun die Email Adresse von Martin Hofer von mhofer@example.com auf itsupport@example.com
+USE [MeineNeueDatenbank]; UPDATE Mitarbeiter SET Email = &amp;#39;itsupport@example.com&amp;#39; WHERE Email = &amp;#39;mhofer@example.com&amp;#39;; Beachte die WHERE Klausel. Ohne diesen Filter würdest du alle Email Adressen in deiner Tabelle auf itsupport@example.com ändern. Mit WHERE legst du den genauen Datensatz fest, den du ändern möchtest.</description>
     </item>
     
     <item>
@@ -63,9 +63,9 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/delete/</guid>
       <description>Mit DELETE kannst du Datensätze aus einer Tabelle löschen.
- Du hast bereits den Befehl TRUNCATE kennengelernt, mit dem du alle Datensätze aus einer Tabelle entfernen kannst.
- Mit dem DELETE Befehl kannst du einzelne Datensätze aus einer Tabelle löschen. Der Unterschied zwischen dem DELETE und dem TRUNCATE Befehl ist, dass du mit DELETE den WHERE Filter nutzen kannst um genau zu bestimmen, welche Datensätze gelöscht werden sollen.
- Datensätze löschen Öffne ein neues Query.</description>
+Du hast bereits den Befehl TRUNCATE kennengelernt, mit dem du alle Datensätze aus einer Tabelle entfernen kannst.
+Mit dem DELETE Befehl kannst du einzelne Datensätze aus einer Tabelle löschen. Der Unterschied zwischen dem DELETE und dem TRUNCATE Befehl ist, dass du mit DELETE den WHERE Filter nutzen kannst um genau zu bestimmen, welche Datensätze gelöscht werden sollen.
+Datensätze löschen Öffne ein neues Query.</description>
     </item>
     
     <item>
@@ -75,10 +75,10 @@
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/merge/</guid>
       <description>Mit MERGE kannst du zwei Tabellen miteinander vergleichen und die Unterschiede in den Datensätzen entweder ergänzen, löschen oder überschreiben.
- Der MERGE Befehl ist etwas komplizierter als die übrigen Befehle, die du bisher kennengelernt hast.
- Änderungsdaten erstellen Öffne ein neues Query.
- Erstelle eine neue Tabelle KundenUpdates.
- USE [MeineNeueDatenbank]; CREATE TABLE KundenUpdates ( KundenID int NOT NULL, Vorname nvarchar(50), Nachname nvarchar(50), Telefonnummer nchar(30), Adresse nvarchar(255), Stadt nvarchar(50), Bundesland nchar(50), Postleitzahl nchar(4) );   Füge der Tabelle einige Datensätzen als Beispiele hinzu.</description>
+Der MERGE Befehl ist etwas komplizierter als die übrigen Befehle, die du bisher kennengelernt hast.
+Änderungsdaten erstellen Öffne ein neues Query.
+Erstelle eine neue Tabelle KundenUpdates.
+USE [MeineNeueDatenbank]; CREATE TABLE KundenUpdates ( KundenID int NOT NULL, Vorname nvarchar(50), Nachname nvarchar(50), Telefonnummer nchar(30), Adresse nvarchar(255), Stadt nvarchar(50), Bundesland nchar(50), Postleitzahl nchar(4) ); Füge der Tabelle einige Datensätzen als Beispiele hinzu.</description>
     </item>
     
     <item>
@@ -87,9 +87,9 @@
       <pubDate>Mon, 08 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/training/database-fundamentals/5-more-sql/challenge/</guid>
-      <description>Nutze SQL Anweisungen für die Arbeit mit Datensätzen Nutze für die folgenden Aufgaben nur SQL-Befehle.
- Öffne ein neues Query und kopiere die Aufgaben in den Editor. Wenn du fertig bist, speichere deine Lösung.
- -- Füge drei neue Datensätze in die Tabelle deiner Datenbank aus der ersten Aufgabe ein. -- Lösche einen der neuen Datensätze. -- Frage einige Daten mit dem `SELECT` Befehl ab.     </description>
+      <description> Nutze SQL Anweisungen für die Arbeit mit Datensätzen Nutze für die folgenden Aufgaben nur SQL-Befehle.
+Öffne ein neues Query und kopiere die Aufgaben in den Editor. Wenn du fertig bist, speichere deine Lösung.
+-- Füge drei neue Datensätze in die Tabelle deiner Datenbank aus der ersten Aufgabe ein. -- Lösche einen der neuen Datensätze. -- Frage einige Daten mit dem `SELECT` Befehl ab. </description>
     </item>
     
     <item>

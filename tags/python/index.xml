@@ -8,16 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Convert `datetime` from and to `string` in Python</title>
-      <link>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</link>
+      <title>Python: Converting `datetime` and `string` types</title>
+      <link>https://www.andreaslongo.com/blog/convert-datetime-from-string/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/things-i-learned/python/convert-datetime-from-string/</guid>
-      <description>Datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
- &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; dt = datetime(2009, 10, 1, 20, 36, 41) &amp;gt;&amp;gt;&amp;gt; dt.strftime(&amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) &amp;#39;01.10.2009 20:36:41&amp;#39;   The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
-   String to datetime Use the datetime.</description>
+      <guid>https://www.andreaslongo.com/blog/convert-datetime-from-string/</guid>
+      <description>Converting from datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
+&amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; dt = datetime(2009, 10, 1, 20, 36, 41) &amp;gt;&amp;gt;&amp;gt; dt.strftime(&amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) &amp;#39;01.10.2009 20:36:41&amp;#39; The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
+Converting from string to datetime Use the datetime.</description>
       <content:encoded><![CDATA[<div class="sect1">
-<h2 id="_datetime_to_string">Datetime to string</h2>
+<h2 id="_converting_from_datetime_to_string">Converting from <code>datetime</code> to <code>string</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Use the <code>datetime.strftime()</code> method to convert a Python <code>datetime</code> object to a <code>string</code> of any format.</p>
@@ -38,7 +38,7 @@ See <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strpti
 </div>
 </div>
 <div class="sect1">
-<h2 id="_string_to_datetime">String to datetime</h2>
+<h2 id="_converting_from_string_to_datetime">Converting from <code>string</code> to <code>datetime</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Use the <code>datetime.strptime()</code> method to parse a <code>string</code> of any format representing a date and time to a <code>datetime</code> object.</p>

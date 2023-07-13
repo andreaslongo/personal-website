@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>FFmpeg on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/ffmpeg/</link>
+    <description>Recent content in FFmpeg on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Repairing video files with FFmpeg</title>
+      <link>https://www.andreaslongo.com/blog/repairing-videos-ffmpeg/</link>
+      <pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/repairing-videos-ffmpeg/</guid>
+      <description>I often record a short screencast to document some process rather than taking a long series of screenshots. To me this is more effective to produce and most of the time also more convenient to consume later on. When I need some screenshots for written or printed documentation, I take them from the screencast after the fact.
+For recording, I use the GNOME builtin recorder. It is instantaneously ready to use and requires no fiddling with settings or file paths.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I often record a short <a href="https://en.wikipedia.org/wiki/Screencast">screencast</a> to document some process rather than taking a long series of screenshots.
+To me this is more effective to produce and most of the time also more convenient to consume later on.
+When I need some screenshots for written or printed documentation, I take them from the screencast after the fact.</p>
+</div>
+<div class="paragraph">
+<p>For recording, I use the <a href="https://help.gnome.org/users/gnome-help/stable/screen-shot-record.html.en">GNOME builtin recorder</a>.
+It is instantaneously ready to use and requires no fiddling with settings or file paths.
+It creates <a href="https://en.wikipedia.org/wiki/WebM">WebM</a> videos without audio.</p>
+</div>
+<div class="paragraph">
+<p>Sometimes the recorder crashes.
+I then only see the first recorded frame when viewing the resulting video and I also cannot skip to a later position in the video.
+The file size and the playback timeline however indicate that there must be more video data in the file.</p>
+</div>
+<div class="paragraph">
+<p>To be fair, crashes are quite rare and only happened to me when my PC went to sleep or locked the screen during an active recording - it was my fault.</p>
+</div>
+<div class="sect1">
+<h2 id="_fixing_videos">Fixing videos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I use <a href="https://en.wikipedia.org/wiki/FFmpeg">FFmpeg</a> in <a href="https://ffmpeg.org/ffmpeg.html#toc-Stream-copy">stream copy mode</a> for this which is very fast:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ffmpeg -i ./bad_video.webm -codec copy ./fixed_video.webm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can also run this in a <a href="https://github.com/linuxserver/docker-ffmpeg">container</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">podman/docker container run \
+    --interactive \
+    --pull=newer \
+    --rm \
+    --tty \
+    --volume &#34;${PWD}&#34;:/config:Z,rw \
+    --workdir /config \
+        linuxserver/ffmpeg:latest \
+            -i ./bad_video.webm \
+            -codec copy \
+            ./fixed_video.webm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same as above, but wrapped in a shell script for easy usage:</p>
+</div>
+<div class="listingblock">
+<div class="title">ffmpeg.sh</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/usr/bin/env bash
+
+podman container run \
+    --interactive \
+    --pull=newer \
+    --rm \
+    --tty \
+    --volume &#34;${PWD}&#34;:/config:Z,rw \
+    --workdir /config \
+        docker.io/linuxserver/ffmpeg:latest \
+            &#34;${@}&#34;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">ffmpeg.sh -i ./bad_video.webm -codec copy ./fixed_video.webm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let me know if you have more tips and tricks for fixing videos or if you have other use cases for FFmpeg.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
