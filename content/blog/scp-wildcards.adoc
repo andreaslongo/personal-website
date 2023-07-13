@@ -1,0 +1,26 @@
+---
+title: "SSH: Using wildcards with `scp` to copy remote files"
+date: 2021-12-15
+
+topics:
+  - Tools
+
+tags:
+  - Secure Shell (SSH)
+  - Secure copy protocol (SCP)
+---
+
+:source-language: shell
+
+
+Use quotes for the remote side of your command.
+
+.Copying multiple files from remote to local:
+----
+$ scp 'remote-host:path/source-file*' ./local-target
+source-file1.png  100%   10KB 180.1KB/s   00:00
+source-file2.png  100%   17KB 282.7KB/s   00:00
+source-file3.png  100%   12KB 274.4KB/s   00:00
+----
+
+With quotes, wildcards are expanded by the remote shell instead of your local shell which cannot see the remote files.

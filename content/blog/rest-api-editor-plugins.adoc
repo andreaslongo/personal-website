@@ -1,0 +1,113 @@
+---
+title: Editor plugins for working with web APIs
+date: 2021-02-11
+
+topics:
+  - Tools
+
+tags:
+  - Web APIs
+  - Vim
+  - Visual Studio Code (vscode)
+---
+
+:source-language: plaintext
+
+:url_curl: https://curl.se/[curl]
+:url_postman: https://www.postman.com/[Postman]
+:url_postman_client: https://www.postman.com/product/api-client/
+:url_vim: https://www.vim.org/[Vim]
+:url_vim_rest_plugin: https://github.com/diepm/vim-rest-console
+:url_vscode: https://code.visualstudio.com/[Visual Studio Code]
+:url_vscode_rest_plugin: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+
+These two plugins might come in handy if you are a developer or consumer of https://en.wikipedia.org/wiki/Web_API[web APIs] (e.g. REST).
+
+They allow you to send requests to your API and receive responses without leaving your editor.
+You can quickly explore APIs while saving your calls along the way as simple text file for documentation and sharing.
+They might supplement or replace tools like {url_curl} or {url_postman} in your workflow.
+
+- {url_vim_rest_plugin}[This plugin] is for {url_vim}.
+It is a wrapper around `curl`.
+- {url_vscode_rest_plugin}[This plugin] is for {url_vscode}. It is similar to the Vim plugin.
+
+
+== Clean and easy requests
+
+With both plugins, you write your API request as text block in your editor and sent it to your API endpoint on demand.
+The response then shows up in a new editor buffer/window.
+
+You can write multiple request blocks in the same file and send them separately on demand.
+
+Save the file for later reference and share it with others as an example.
+
+The syntax for the two plugins is slightly different.
+You cannot use a Vim request block directly with VS Code.
+But it is straightforward to adjust the request block to make it work.
+
+*To send requests*
+
+. Type in a request block.
+. Place the cursor anywhere within the block.
+. Hit the trigger key to send the request (default: `CTRL-J`).
+
+.Vim `./example.rest`
+[source, sh]
+----
+# vim: set filetype=rest
+
+# global curl options
+--silent
+--include
+--
+
+# GET
+https://reqres.in
+GET /api/users/2
+
+# POST
+https://reqres.in
+POST /api/users
+{
+    "name": "andreas",
+    "job": "consultant"
+}
+
+# DELETE
+https://reqres.in
+DELETE /api/users/2
+----
+
+== Tip
+
+You can add query parameters like so:
+
+----
+https://reqres.in
+GET /api/users?per_page=2&page=4
+----
+
+Or you can write the same request like this for better readability:
+
+----
+https://reqres.in
+GET /api/users
+per_page=2
+page=4
+----
+
+If your query parameters are more complex, you may be required to enable the https://github.com/diepm/vim-rest-console#54-line-by-line-request-body[Line-by-line Request Body] option for the Vim plugin when your query does not work otherwise.
+
+.Complex query:
+----
+https://localhost:8001
+GET /api/content/search
+limit=10
+cql=(type=page and space=IT and label=infrastructure)
+----
+
+.Vim plugin option:
+----
+:let b:vrc_split_request_body = 1
+----

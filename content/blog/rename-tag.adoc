@@ -1,0 +1,130 @@
+---
+title: "Git: Renaming tags"
+date: 2021-12-12
+
+topics:
+  - Tools
+
+tags:
+  - Git
+---
+
+:source-language: bash
+
+
+Be careful.
+Renaming tags might be difficult depending on your situation.
+
+There is no single step for renaming a tag.
+You must create a new tag with a new name and then delete the old tag.
+
+== What you should know
+
+TLDR: When replacing tags, make sure that your new tag points to a commit object and not to an old tag object.
+
+Git has the following types of tags:
+
+- Annotated tag
+- GPG-signed tag
+- Lightweight tag
+
+An annotated tag is a Git object.
+A GPG-signed tag is an annotated tag and therefore also a Git object.
+Both can point to other Git objects e.g. commits, including other annotated tags.
+This can lead to chains of annotated tags which can break if you delete a tag in between.
+
+A lightweight tag is not a Git object.
+It is just a name or label for an object, usually a commit object.
+
+== Renaming tags
+
+=== First step
+
+Review the commit logs and identify the tag you want to rename.
+
+----
+git log --decorate --graph --oneline
+----
+
+You want to know if the tag is lightweight or annotated.
+You also want to know if the tag has been pushed to other remote repositories.
+Others might rely on this tag if it is pushed.
+
+=== Renaming an annotated tag (local)
+
+If you have an annotated tag which is local only:
+Not yet pushed to a remote repository.
+
+.(optional) Preserving the date of the tag:
+----
+# Get the date of the old tag
+git show --date=iso <old>
+git show --date=iso first-release
+
+# Set the date for the new tag via environment variable
+export GIT_COMMITTER_DATE="<date>"
+export GIT_COMMITTER_DATE="2021-01-22 16:24:39 +0100"
+----
+
+.Renaming the tag:
+----
+# Create a new tag
+git tag --annotate <new> '<old>^{}'
+git tag --annotate v1.0 'first-release^{}'
+
+# Delete the old tag
+git tag --delete <old>
+git tag --delete first-release
+----
+
+.Renaming a GPG-signed tag:
+----
+# Create a new tag
+git tag --sign <new> '<old>^{}'
+git tag --sign v1.0 'first-release^{}'
+
+# Delete the old tag
+git tag --delete <old>
+git tag --delete first-release
+----
+
+The `^{}` suffix tells Git to dereference the tag recursively until it finds an object which is not a tag.
+This ensures that your new tag does not point to another tag which you might also want to rename.
+
+=== Renaming a lightweight tag (local)
+
+If you have a lightweight tag which is local only:
+Not yet pushed to a remote repository.
+
+.Renaming the tag:
+----
+# Create a new tag
+git tag <new> <old>
+
+# Delete the old tag
+git tag --delete <old>
+----
+
+== Additional steps for pushed tags (remote)
+
+If your tag has been pushed to a remote repository, follow the steps above first.
+Then continue here.
+
+----
+# Push the newly created tag
+git push --tags <new tag>
+
+# Delete the old tag from the remote
+git push --delete <remote> <old tag>
+git push --delete origin first-release
+----
+
+Other users will receive a "renamed" tag as new tag from your remote repository.
+Git will not delete old tags automatically.
+
+You should remove deleted tags from local repositories.
+
+.Deleting tags from local that no longer exist on the remote:
+----
+git pull --prune --tags
+----

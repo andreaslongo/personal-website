@@ -1,0 +1,77 @@
+---
+title: Repairing video files with FFmpeg
+date: 2023-07-13
+
+topics:
+  - Tools
+
+tags:
+  - FFmpeg
+---
+
+I often record a short https://en.wikipedia.org/wiki/Screencast[screencast] to document some process rather than taking a long series of screenshots.
+To me this is more effective to produce and most of the time also more convenient to consume later on.
+When I need some screenshots for written or printed documentation, I take them from the screencast after the fact.
+
+For recording, I use the https://help.gnome.org/users/gnome-help/stable/screen-shot-record.html.en[GNOME builtin recorder].
+It is instantaneously ready to use and requires no fiddling with settings or file paths.
+It creates https://en.wikipedia.org/wiki/WebM[WebM] videos without audio.
+
+Sometimes the recorder crashes.
+I then only see the first recorded frame when viewing the resulting video and I also cannot skip to a later position in the video.
+The file size and the playback timeline however indicate that there must be more video data in the file.
+
+To be fair, crashes are quite rare and only happened to me when my PC went to sleep or locked the screen during an active recording - it was my fault.
+
+== Fixing videos
+
+I use https://en.wikipedia.org/wiki/FFmpeg[FFmpeg] in https://ffmpeg.org/ffmpeg.html#toc-Stream-copy[stream copy mode] for this which is very fast:
+
+[source, bash]
+----
+ffmpeg -i ./bad_video.webm -codec copy ./fixed_video.webm
+----
+
+We can also run this in a https://github.com/linuxserver/docker-ffmpeg[container]:
+
+[source, bash]
+----
+podman/docker container run \
+    --interactive \
+    --pull=newer \
+    --rm \
+    --tty \
+    --volume "${PWD}":/config:Z,rw \
+    --workdir /config \
+        linuxserver/ffmpeg:latest \
+            -i ./bad_video.webm \
+            -codec copy \
+            ./fixed_video.webm
+----
+
+The same as above, but wrapped in a shell script for easy usage:
+
+[source, bash]
+.ffmpeg.sh
+----
+#!/usr/bin/env bash
+
+podman container run \
+    --interactive \
+    --pull=newer \
+    --rm \
+    --tty \
+    --volume "${PWD}":/config:Z,rw \
+    --workdir /config \
+        docker.io/linuxserver/ffmpeg:latest \
+            "${@}"
+----
+
+Use it like this:
+
+[source, bash]
+----
+ffmpeg.sh -i ./bad_video.webm -codec copy ./fixed_video.webm
+----
+
+Let me know if you have more tips and tricks for fixing videos or if you have other use cases for FFmpeg.

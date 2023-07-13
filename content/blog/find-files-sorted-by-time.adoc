@@ -1,0 +1,24 @@
+---
+title: Searching for files and sort them by date
+date: 2021-02-17
+
+topics:
+  - Operating Systems
+
+tags:
+  - Unix
+---
+
+:source-language: shell
+
+
+Recursively search for files by name with `find`.
+Then, sort the result by time, newest first with `ls -lt`.
+
+----
+$ find . -type f -name "Makefile*" -exec ls -lt {} +
+-rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile
+-rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile
+-rw------- 1 al al  963 Feb 16 15:45 ./personal-website/Makefile
+-rw------- 1 al al  254 Feb 15 17:07 ./cc-python/Makefile
+----

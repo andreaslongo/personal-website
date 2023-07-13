@@ -1,0 +1,32 @@
+---
+title: Auto updating container images
+date: 2021-12-10
+
+topics:
+  - Containerization
+
+tags:
+  - Podman
+  - Docker
+  - Kubernetes
+---
+
+:source-language: shell
+
+We can set the desired image pull policy during container startup.
+
+.Podman/docker
+----
+$ podman/docker container run --pull=always
+$ podman/docker container run --pull=newer
+----
+
+
+[source, yaml]
+.Kubernetes
+----
+spec:
+  containers:
+    - name: <name>
+      imagePullPolicy: Always
+----

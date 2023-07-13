@@ -1,0 +1,28 @@
+---
+title: "Git: Deleting remote tags"
+date: 2021-12-05
+
+topics:
+  - Tools
+
+tags:
+  - Git
+---
+
+:source-language: shell
+
+
+Removing a remote tag:
+
+----
+$ git push --delete <remote> <tag>
+$ git push --delete origin v1.0
+----
+
+
+Removing multiple remote tags:
+
+----
+$ git push --delete <remote> <tag-1> <tag-2> <...>
+$ git push --delete origin v1.0
+----

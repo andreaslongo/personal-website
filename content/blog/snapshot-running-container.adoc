@@ -1,0 +1,23 @@
+---
+title: Creating a new image from a running container
+date: 2022-04-11
+
+topics:
+  - Containerization
+
+tags:
+  - Podman
+  - Docker
+---
+
+:source-language: shell
+
+You can save the state of a running container as a new image.
+This is somewhat similar to "creating a snapshot" when working with virtual machines.
+
+If you use Docker, just replace `podman` with `docker` in the below commands.
+
+----
+$ podman container commit <container name or id> <new-image:tag>
+$ podman container commit ansible ansible:2022-04-11
+----

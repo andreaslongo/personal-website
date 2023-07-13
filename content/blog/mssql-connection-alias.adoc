@@ -1,0 +1,28 @@
+---
+title: "MSSQL: Configure an alias for SQL connections"
+date: 2022-04-12
+
+topics:
+  - Databases
+
+tags:
+  - MSSQL (SQL Server)
+  - Windows
+---
+
+:source-language: bash
+
+You can use the _SQL Server Configuration Manager_ to configure an alias for connections to a MSSQL instance.
+
+But on some versions of Windows, the configuration manager is not available as a regular application.
+You might find it as a snap-in for the _Microsoft Management Console (MMC)_.
+
+If the configuration manager is generally not available on your system, you can instead use this tools to set an alias:
+
+----
+# 64 bit version
+C:\Windows\System32\cliconfg.exe
+
+# 32 bit version
+C:\Windows\SysWOW64\cliconfg.exe
+----

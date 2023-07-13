@@ -1,0 +1,22 @@
+---
+title: "Zsh: Configuration files"
+date: 2021-12-04
+
+topics:
+  - Tools
+
+tags:
+  - Unix
+  - Z shell (Zsh)
+---
+
+:source-language: plaintext
+
+
+Zsh config files and the order of sourcing during startup.
+
+1 `~/.zshenv`:: always sourced
+2 `~/.zprofile`:: sourced if login shell
+3 `~/.zshrc`:: sourced if interactive shell
+4 `~/.zlogin`:: sourced if login shell
+5 `~/.zlogout`:: sourced when exiting shell

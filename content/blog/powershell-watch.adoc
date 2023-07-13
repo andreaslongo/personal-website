@@ -1,0 +1,36 @@
+---
+title: Unix-like `watch` and `tail` commands for PowerShell
+date: 2022-04-13
+
+topics:
+  - Operating Systems
+
+tags:
+  - Windows
+  - PowerShell
+---
+
+:source-language: bash
+
+
+There is no equivalent to the Unix https://en.wikipedia.org/wiki/Watch_(command)[`watch`] command on Windows, but you can get close enough behavior.
+
+.Watching commands with PowerShell
+----
+# Similar to `watch <command>`
+PS> while ($true) {<your command>; sleep -Seconds 2}
+
+PS> while ($true) {(Get-Service -Name 'Remote Desktop Services').Status; sleep -Seconds 2}
+Running
+Running
+----
+
+You can also follow log file output similar to the Unix https://en.wikipedia.org/wiki/Tail_(Unix)[`tail`] command.
+
+.Tailing logs with PowerShell:
+----
+# Similar to `tail --follow <filename>`
+PS> Get-Content -Path <logfile> -Tail 10 –Wait
+
+PS> Get-Content -Path 'C:\app.log' -Tail 10 –Wait
+----

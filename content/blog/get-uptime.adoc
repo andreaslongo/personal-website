@@ -1,0 +1,52 @@
+---
+title: Getting the uptime from Windows
+date: 2021-02-17
+
+topics:
+  - Operating Systems
+
+tags:
+  - Windows
+  - PowerShell
+---
+
+:url_get_uptime: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-uptime
+:url_powershell: https://docs.microsoft.com/en-us/powershell/
+:url_procps: https://gitlab.com/procps-ng/procps
+
+
+I was looking for a `uptime` like command for Windows.
+
+.The `uptime` command on Linux:
+[source, shell]
+----
+$ uptime
+12:53:36 up  5:03,  1 user,  load average: 0.83, 0.61, 0.36
+
+$ uptime --pretty
+up 5 hours, 3 minutes
+
+$ uptime --since
+2021-02-17 07:50:35
+----
+
+On Windows, there is the cmdlet {url_get_uptime}[`Get-Uptime`] which is available for {url_powershell}[PowerShell] version 6+.
+
+[source, shell]
+----
+$ Get-Uptime -Since
+Monday, January 18, 2021 7:56:57 AM
+----
+
+If `Get-Uptime` is not available, you can query the WMI with a CIM cmdlet.
+
+[source, shell]
+----
+$ Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object LastBootUpTime
+
+LastBootUpTime
+--------------
+18.01.2021 07:56:41
+----
+
+The `LastBootUpTime` value may not be updated if you have _fast boot/startup_ enabled for your system.

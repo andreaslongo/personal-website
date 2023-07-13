@@ -1,0 +1,23 @@
+---
+title: Generating diagrams from AsciiDoc with Hugo
+date: 2022-01-28
+
+topics:
+  - Documentation
+
+tags:
+  - AsciiDoc
+  - PlantUML
+  - Hugo
+---
+
+
+https://en.wikipedia.org/wiki/AsciiDoc[Asciidoctor], has good support for diagrams with the https://docs.asciidoctor.org/diagram-extension/latest/[Diagram] plugin.
+
+To make this work with https://gohugo.io[Hugo], a static site generator, you need:
+
+- a working `asciidoctor-diagram` plugin
+- some settings in your https://github.com/andreaslongo/asciidoctor-diagram-hugo-docsy/blob/400041ffeee7a007f99a59d2c5a326e7e762b21e/config.yaml#L5-L10[Hugo site config]
+
+Then run `hugo --destination public` to generate your site including all diagrams.
+Have a look at my https://github.com/andreaslongo/asciidoctor-diagram-hugo-docsy[example repository] to get an idea of how this works.

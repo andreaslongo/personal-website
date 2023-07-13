@@ -1,0 +1,27 @@
+---
+title: "LVM: Extending a logical volume"
+date: 2021-12-05
+
+topics:
+  - Operating Systems
+
+tags:
+  - Unix
+  - Logical Volume Manager (LVM)
+---
+
+:source-language: shell
+
+
+Adding additional space to a LVM logical volume.
+
+----
+$ sudo lvextend --resizefs --size <size> <group>/<volume>
+$ sudo lvextend --resizefs --size +2G centos/root
+----
+
+Adding 100% of the available free space.
+
+----
+$ sudo lvextend --resizefs --extents +100%FREE centos/root
+----

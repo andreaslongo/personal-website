@@ -94,8 +94,6 @@ languages:
           url: contact
 
 taxonomies:
-  category: categories
-  series: series
   tag: tags
   topic: topics
 
