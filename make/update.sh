@@ -1,5 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
+# Template version: 2022.12.04
+# see: http://redsymbol.net/articles/unofficial-bash-strict-mode
+
+# Default shell settings
 set -o errexit  # -e: Exit when a command fails
 set -o nounset  # -u: Treat unset variables as an error
 set -o pipefail #   : The return value of a pipeline is the value of the last command that failed
@@ -9,7 +13,20 @@ set -o pipefail #   : The return value of a pipeline is the value of the last co
 # set -o verbose  # -v: Print shell input lines as they are read
 # set -o xtrace   # -x: Print commands before execution
 
+# Default variables
+readonly local IFS=$'\n\t'  # Split on newlines and tabs (but not on spaces)
+readonly local script_name=$(basename "${0}")
+readonly local script_dir=$( cd "$( dirname "${BASH_SOURCE[0]:-${(%):-%x}}" )" && pwd )  # https://stackoverflow.com/q/9901210
 
-# update_dependencies
-pre-commit autoupdate --freeze
-git submodule update --remote
+
+###############################################################################
+# Update components
+###############################################################################
+
+main() {
+    pre-commit autoupdate --freeze
+    git submodule update --remote --recursive
+}
+
+
+main "${@}"
