@@ -3,7 +3,7 @@ title: "Git: Deleting remote tags"
 date: 2021-12-05
 
 topics:
-  - Tools
+  - Software Development
 
 tags:
   - Git

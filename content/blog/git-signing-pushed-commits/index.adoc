@@ -3,7 +3,7 @@ title: "Git: Signing an already pushed commit"
 date: 2022-04-09
 
 topics:
-  - Tools
+  - Software Development
 
 tags:
   - Git

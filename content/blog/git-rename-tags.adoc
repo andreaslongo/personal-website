@@ -3,7 +3,7 @@ title: "Git: Renaming tags"
 date: 2021-12-12
 
 topics:
-  - Tools
+  - Software Development
 
 tags:
   - Git
