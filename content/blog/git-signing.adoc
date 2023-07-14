@@ -1,0 +1,18 @@
+---
+draft: true
+title: 'Git: Signing objects with GPG'
+
+topic:
+  - Software Development
+
+tags:
+  - Git
+  - GnuPG (GPG)
+---
+
+Git can cryptographically sign tags and commits with GPG.
+
+If you sign tags, it should not be necessary to also sign individual commits.
+NOTE: Statement from Linus Torvalds in mailing list
+
+You can add the GPG key to your Github account to mark your signed objects (commits and tags) as _Verified_.

@@ -1,0 +1,52 @@
+---
+draft: true
+title: 'Git: Working with GPG signing keys'
+
+topic:
+  - Software Development
+
+tags:
+  - Git
+  - GnuPG (GPG)
+---
+
+.Generating a new keypair
+----
+$ gpg --version
+gpg (GnuPG) 2.4.0
+# --snip--
+
+$ gpg --full-generate-key
+# Follow the instructions at the prompt
+# GPG has sensible defaults, so you can just use the default settings.
+----
+
+.Listing GPG keys for which we have both a public and private key
+----
+$ gpg --list-secret-keys --keyid-format=long
+/var/home/al/.gnupg/pubring.kbx
+-------------------------------
+sec   ed25519/Z25YHNDXH34LE4SP 2023-07-13 [SC] [expires: 2024-07-12]
+      YZAWXTYH27HDZT7EYHNS9P522F9866AB9E60B967
+uid                 [ultimate] Andreas Longo (Git signing key) <git@andreaslongo.com>
+ssb   cv25519/CQTC7PJ34QUA5XDX 2023-07-13 [E] [expires: 2024-07-12]
+
+# We can use the short ID of the signing key for `.gitconfig` and exporting.
+# Z25YHNDXH34LE4SP
+
+
+----
+
+.Exporting a key for Github
+----
+$ gpg --armor --export Z25YHNDXH34LE4SP
+# Prints the GPG key ID, in ASCII armor format
+
+# Copy the output and insert it in Github:
+# Your Account > Settings > SSH and GPG keys > New GPG key
+----
+
+.Extending an expired key
+----
+TODO
+----

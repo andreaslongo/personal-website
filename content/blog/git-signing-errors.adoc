@@ -1,0 +1,39 @@
+---
+draft: true
+title: 'Git: Fixing GPG signing errors'
+
+topic:
+  - Software Development
+
+tags:
+  - Git
+  - GnuPG (GPG)
+---
+
+I use GPG to sign my Git tags.
+
+This is a list of various errors I encountered and possible solutions.
+
+[source, bash]
+----
+# Error:
+$ git tag --sign --message 'Release 2023.07.13' 2023.07.13
+# --snip--
+gpg: signing failed: No pinentry
+error: unable to sign the tag
+
+# Solution:
+dnf install pinentry
+----
+
+[source, bash]
+----
+# Error:
+$ git tag --sign --message 'Release 2023.07.13' 2023.07.13
+# --snip--
+gpg: signing failed: Inappropriate ioctl for device
+error: unable to sign the tag
+
+# Solution:
+export GPG_TTY=$(tty)
+----
