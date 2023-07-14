@@ -1,0 +1,28 @@
+---
+draft: true
+title: 'SSH: Handling SSH keys'
+
+topic:
+  - Security
+
+tags:
+  - Secure Shell (SSH)
+---
+
+Generating SSH keys
+
+----
+TODO
+----
+
+Changing the passphrase of a private key
+
+----
+ssh-keygen -p -f <private key file>
+----
+
+Generating a new public key from an existing private key
+
+----
+ssh-keygen -y -f <private keyfile> > <new public key file>
+----
