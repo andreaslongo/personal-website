@@ -33,10 +33,10 @@ The <code>*</code> register gets synced with the Windows clipboard automatically
     
     <item>
       <title>Vim: Undo branches</title>
-      <link>https://www.andreaslongo.com/blog/undo-branches/</link>
+      <link>https://www.andreaslongo.com/blog/vim-undo-branches/</link>
       <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/undo-branches/</guid>
+      <guid>https://www.andreaslongo.com/blog/vim-undo-branches/</guid>
       <description>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
 Moving through the undo tree Go to newer/older text state.
 g+ g- Go to older text state, 10 minutes before.

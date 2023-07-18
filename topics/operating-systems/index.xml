@@ -47,10 +47,10 @@ PS&gt; Get-Content -Path &#39;C:\app.log&#39; -Tail 10 –Wait</code></pre>
     
     <item>
       <title>LVM: Extending a logical volume</title>
-      <link>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</link>
+      <link>https://www.andreaslongo.com/blog/unix-lvm-extend-logical-volume/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</guid>
+      <guid>https://www.andreaslongo.com/blog/unix-lvm-extend-logical-volume/</guid>
       <description> Adding additional space to a LVM logical volume.
 $ sudo lvextend --resizefs --size &amp;lt;size&amp;gt; &amp;lt;group&amp;gt;/&amp;lt;volume&amp;gt; $ sudo lvextend --resizefs --size +2G centos/root Adding 100% of the available free space.
 $ sudo lvextend --resizefs --extents +100%FREE centos/root </description>
@@ -76,10 +76,10 @@ $ sudo lvextend --resizefs --size +2G centos/root</code></pre>
     
     <item>
       <title>Active Directory: Managed service accounts</title>
-      <link>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</link>
+      <link>https://www.andreaslongo.com/blog/windows-ad-managed-service-accounts/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</guid>
+      <guid>https://www.andreaslongo.com/blog/windows-ad-managed-service-accounts/</guid>
       <description>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
 Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
 Pro Administration Automatic password changes. No manual password management.
@@ -291,10 +291,10 @@ UserPrincipalName :</code></pre>
     
     <item>
       <title>Getting the uptime from Windows</title>
-      <link>https://www.andreaslongo.com/blog/get-uptime/</link>
+      <link>https://www.andreaslongo.com/blog/windows-get-uptime/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/get-uptime/</guid>
+      <guid>https://www.andreaslongo.com/blog/windows-get-uptime/</guid>
       <description>I was looking for a uptime like command for Windows.
 The uptime command on Linux: $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35 On Windows, there is the cmdlet Get-Uptime which is available for PowerShell version 6+.
 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>
@@ -343,10 +343,10 @@ LastBootUpTime
     
     <item>
       <title>Searching for files and sort them by date</title>
-      <link>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</link>
+      <link>https://www.andreaslongo.com/blog/unix-find-files-sorted-by-time/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/find-files-sorted-by-time/</guid>
+      <guid>https://www.andreaslongo.com/blog/unix-find-files-sorted-by-time/</guid>
       <description> Recursively search for files by name with find. Then, sort the result by time, newest first with ls -lt.
 $ find . -type f -name &amp;#34;Makefile*&amp;#34; -exec ls -lt {} + -rw------- 1 al al 1916 Feb 17 12:44 ./cc-python/{{cookiecutter.project_repository}}/Makefile -rw------- 1 al al 1862 Feb 17 12:41 ./data-api/Makefile -rw------- 1 al al 963 Feb 16 15:45 ./personal-website/Makefile -rw------- 1 al al 254 Feb 15 17:07 ./cc-python/Makefile </description>
       <content:encoded><![CDATA[<div class="paragraph">

@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/asciidoc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generating diagrams from AsciiDoc with Hugo</title>
-      <link>https://www.andreaslongo.com/blog/diagram-hugo/</link>
+      <link>https://www.andreaslongo.com/blog/asciidoc-diagram-hugo/</link>
       <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/diagram-hugo/</guid>
+      <guid>https://www.andreaslongo.com/blog/asciidoc-diagram-hugo/</guid>
       <description>Asciidoctor, has good support for diagrams with the Diagram plugin.
 To make this work with Hugo, a static site generator, you need:
 a working asciidoctor-diagram plugin

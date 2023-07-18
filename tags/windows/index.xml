@@ -184,10 +184,10 @@ The <code>*</code> register gets synced with the Windows clipboard automatically
     
     <item>
       <title>Active Directory: Managed service accounts</title>
-      <link>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</link>
+      <link>https://www.andreaslongo.com/blog/windows-ad-managed-service-accounts/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/ad-managed-service-accounts/</guid>
+      <guid>https://www.andreaslongo.com/blog/windows-ad-managed-service-accounts/</guid>
       <description>Traditionally, system administrators use Active Directory (AD) basic user accounts with limited permissions to run a service (Service Account).
 Managed Service Accounts (MSA) are special accounts to eliminate the need for administrators to manually manage the credentials, passwords, and SPNs of traditional service accounts. Also, with MSAs these tasks no longer disrupt a service (no downtime).
 Pro Administration Automatic password changes. No manual password management.
@@ -399,10 +399,10 @@ UserPrincipalName :</code></pre>
     
     <item>
       <title>Getting the uptime from Windows</title>
-      <link>https://www.andreaslongo.com/blog/get-uptime/</link>
+      <link>https://www.andreaslongo.com/blog/windows-get-uptime/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/get-uptime/</guid>
+      <guid>https://www.andreaslongo.com/blog/windows-get-uptime/</guid>
       <description>I was looking for a uptime like command for Windows.
 The uptime command on Linux: $ uptime 12:53:36 up 5:03, 1 user, load average: 0.83, 0.61, 0.36 $ uptime --pretty up 5 hours, 3 minutes $ uptime --since 2021-02-17 07:50:35 On Windows, there is the cmdlet Get-Uptime which is available for PowerShell version 6+.
 $ Get-Uptime -Since Monday, January 18, 2021 7:56:57 AM If Get-Uptime is not available, you can query the WMI with a CIM cmdlet.</description>

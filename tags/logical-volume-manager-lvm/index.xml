@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/logical-volume-manager-lvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LVM: Extending a logical volume</title>
-      <link>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</link>
+      <link>https://www.andreaslongo.com/blog/unix-lvm-extend-logical-volume/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/lvm-extend-logical-volume/</guid>
+      <guid>https://www.andreaslongo.com/blog/unix-lvm-extend-logical-volume/</guid>
       <description> Adding additional space to a LVM logical volume.
 $ sudo lvextend --resizefs --size &amp;lt;size&amp;gt; &amp;lt;group&amp;gt;/&amp;lt;volume&amp;gt; $ sudo lvextend --resizefs --size +2G centos/root Adding 100% of the available free space.
 $ sudo lvextend --resizefs --extents +100%FREE centos/root </description>

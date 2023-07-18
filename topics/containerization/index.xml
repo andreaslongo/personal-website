@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/containerization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating a new image from a running container</title>
-      <link>https://www.andreaslongo.com/blog/snapshot-running-container/</link>
+      <link>https://www.andreaslongo.com/blog/container-snapshot-image/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/snapshot-running-container/</guid>
+      <guid>https://www.andreaslongo.com/blog/container-snapshot-image/</guid>
       <description> You can save the state of a running container as a new image. This is somewhat similar to &amp;#34;creating a snapshot&amp;#34; when working with virtual machines.
 If you use Docker, just replace podman with docker in the below commands.
 $ podman container commit &amp;lt;container name or id&amp;gt; &amp;lt;new-image:tag&amp;gt; $ podman container commit ansible ansible:2022-04-11 </description>
@@ -34,10 +34,10 @@ $ podman container commit ansible ansible:2022-04-11</code></pre>
     
     <item>
       <title>Auto updating container images</title>
-      <link>https://www.andreaslongo.com/blog/auto-update-container-images/</link>
+      <link>https://www.andreaslongo.com/blog/container-auto-update-images/</link>
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/auto-update-container-images/</guid>
+      <guid>https://www.andreaslongo.com/blog/container-auto-update-images/</guid>
       <description> We can set the desired image pull policy during container startup.
 Podman/docker $ podman/docker container run --pull=always $ podman/docker container run --pull=newer Kubernetes spec: containers: - name: &amp;lt;name&amp;gt; imagePullPolicy: Always </description>
       <content:encoded><![CDATA[<div class="paragraph">

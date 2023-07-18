@@ -4,7 +4,11 @@
 |
 <a href=https://www.andreaslongo.com/blog/by-topic/>by topic</a>
 |
-<a href=https://www.andreaslongo.com/search/>search</a></p></div></div><article class=post-entry><header class=entry-header><h2>Editor plugins for working with web APIs</h2></header><div class=entry-content><p>These two plugins might come in handy if you are a developer or consumer of web APIs (e.g. REST).
+<a href=https://www.andreaslongo.com/search/>search</a></p></div></div><article class=post-entry><header class=entry-header><h2>Vim: Undo branches</h2></header><div class=entry-content><p>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+Moving through the undo tree Go to newer/older text state.
+g+ g- Go to older text state, 10 minutes before.
+:earlier 10m Go to newer text state, 5 minutes later.
+:later 5m Using g- and g+ will get you to all possible text states while repeating u and CTRL-R does not....</p></div><footer class=entry-footer><span title='2021-02-14 00:00:00 +0000 UTC'>February 14, 2021</span></footer><a class=entry-link aria-label="post link to Vim: Undo branches" href=https://www.andreaslongo.com/blog/vim-undo-branches/></a></article><article class=post-entry><header class=entry-header><h2>Editor plugins for working with web APIs</h2></header><div class=entry-content><p>These two plugins might come in handy if you are a developer or consumer of web APIs (e.g. REST).
 They allow you to send requests to your API and receive responses without leaving your editor. You can quickly explore APIs while saving your calls along the way as simple text file for documentation and sharing. They might supplement or replace tools like curl or Postman in your workflow.
 This plugin is for Vim....</p></div><footer class=entry-footer><span title='2021-02-11 00:00:00 +0000 UTC'>February 11, 2021</span></footer><a class=entry-link aria-label="post link to Editor plugins for working with web APIs" href=https://www.andreaslongo.com/blog/rest-api-editor-plugins/></a></article><article class=post-entry><header class=entry-header><h2>Using PKCS #12 certigicate files with Tomcat for TLS</h2></header><div class=entry-content><p>How to use PKCS #12 archives with Apache Tomcat for Transport Layer Security (TLS). TLS superseded the Secure Sockets Layer (SSL) protocol.
 In the following example, we create a Tomcat TLS connector and use a PKCS #12 file as keystore.

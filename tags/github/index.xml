@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git: Signing an already pushed commit</title>
-      <link>https://www.andreaslongo.com/blog/gpg-sign-pushed-commit/</link>
+      <link>https://www.andreaslongo.com/blog/git-signing-pushed-commits/</link>
       <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/gpg-sign-pushed-commit/</guid>
+      <guid>https://www.andreaslongo.com/blog/git-signing-pushed-commits/</guid>
       <description>Given you have created a pull request (PR) with a single commit on GitHub. The commit is not GPG-signed. The maintainer asks you to sign the commit.
 If you are the only one working (committing) to this PR, you can force-push a signed commit.
 # Sign the latest commit on your local repository git commit --amend --no-edit --gpg-sign # Force push the commit to your remote repository (fork) git push --force-with-lease GitHub will automatically update your PR.</description>

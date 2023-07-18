@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GnuPG (GPG) on Andreas Longo</title>
+    <link>https://www.andreaslongo.com/tags/gnupg-gpg/</link>
+    <description>Recent content in GnuPG (GPG) on Andreas Longo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/gnupg-gpg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git: Fixing GPG signing errors</title>
+      <link>https://www.andreaslongo.com/blog/git-signing-errors/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/git-signing-errors/</guid>
+      <description>I use GPG to sign Git tags.
+This is a list of signing errors I encountered and possible solutions.
+# Error: $ git tag --sign --message &amp;#39;Release 2023.07.13&amp;#39; 2023.07.13 # --snip-- gpg: signing failed: No pinentry error: unable to sign the tag # Problem: # This can happen in a container if GPG cannot find a tool to ask the user for a passphrase. # https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html # Solution: dnf install pinentry # Error: $ git tag --sign --message &amp;#39;Release 2023.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>I use <a href="https://en.wikipedia.org/wiki/GNU_Privacy_Guard">GPG</a> to sign <a href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">Git tags</a>.</p>
+</div>
+<div class="paragraph">
+<p>This is a list of signing errors I encountered and possible solutions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Error:
+$ git tag --sign --message &#39;Release 2023.07.13&#39; 2023.07.13
+# --snip--
+gpg: signing failed: No pinentry
+error: unable to sign the tag
+
+# Problem:
+# This can happen in a container if GPG cannot find a tool to ask the user for a passphrase.
+# https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
+
+# Solution:
+dnf install pinentry</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Error:
+$ git tag --sign --message &#39;Release 2023.07.13&#39; 2023.07.13
+# --snip--
+gpg: signing failed: Inappropriate ioctl for device
+error: unable to sign the tag
+
+# Problem:
+# Missing environment variable for the gpg-agent.
+# https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
+
+# Solution:
+export GPG_TTY=$(tty)</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,13 +6,252 @@
     <description>Recent content in Software Development on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git: Signing an already pushed commit</title>
+      <link>https://www.andreaslongo.com/blog/git-signing-pushed-commits/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/git-signing-pushed-commits/</guid>
+      <description>Given you have created a pull request (PR) with a single commit on GitHub. The commit is not GPG-signed. The maintainer asks you to sign the commit.
+If you are the only one working (committing) to this PR, you can force-push a signed commit.
+# Sign the latest commit on your local repository git commit --amend --no-edit --gpg-sign # Force push the commit to your remote repository (fork) git push --force-with-lease GitHub will automatically update your PR.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Given you have created a pull request (PR) with a single commit on GitHub.
+The commit is not GPG-signed.
+The maintainer asks you to sign the commit.</p>
+</div>
+<div class="paragraph">
+<p>If you are the only one working (committing) to this PR, you can force-push a signed commit.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh"># Sign the latest commit on your local repository
+git commit --amend --no-edit --gpg-sign
+
+# Force push the commit to your remote repository (fork)
+git push --force-with-lease</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GitHub will automatically update your PR.</p>
+</div>
+<div class="imageblock thumb">
+<div class="content">
+<img src="gpg-sign-pushed-commit.png" alt="gpg sign pushed commit"/>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Git: Renaming tags</title>
+      <link>https://www.andreaslongo.com/blog/git-rename-tags/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/git-rename-tags/</guid>
+      <description>Be careful. Renaming tags might be difficult depending on your situation.
+There is no single step for renaming a tag. You must create a new tag with a new name and then delete the old tag.
+What you should know TLDR: When replacing tags, make sure that your new tag points to a commit object and not to an old tag object.
+Git has the following types of tags:</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Be careful.
+Renaming tags might be difficult depending on your situation.</p>
+</div>
+<div class="paragraph">
+<p>There is no single step for renaming a tag.
+You must create a new tag with a new name and then delete the old tag.</p>
+</div>
+<div class="sect1">
+<h2 id="_what_you_should_know">What you should know</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TLDR: When replacing tags, make sure that your new tag points to a commit object and not to an old tag object.</p>
+</div>
+<div class="paragraph">
+<p>Git has the following types of tags:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Annotated tag</p>
+</li>
+<li>
+<p>GPG-signed tag</p>
+</li>
+<li>
+<p>Lightweight tag</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An annotated tag is a Git object.
+A GPG-signed tag is an annotated tag and therefore also a Git object.
+Both can point to other Git objects e.g. commits, including other annotated tags.
+This can lead to chains of annotated tags which can break if you delete a tag in between.</p>
+</div>
+<div class="paragraph">
+<p>A lightweight tag is not a Git object.
+It is just a name or label for an object, usually a commit object.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_renaming_tags">Renaming tags</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_first_step">First step</h3>
+<div class="paragraph">
+<p>Review the commit logs and identify the tag you want to rename.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">git log --decorate --graph --oneline</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You want to know if the tag is lightweight or annotated.
+You also want to know if the tag has been pushed to other remote repositories.
+Others might rely on this tag if it is pushed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_renaming_an_annotated_tag_local">Renaming an annotated tag (local)</h3>
+<div class="paragraph">
+<p>If you have an annotated tag which is local only:
+Not yet pushed to a remote repository.</p>
+</div>
+<div class="listingblock">
+<div class="title">(optional) Preserving the date of the tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Get the date of the old tag
+git show --date=iso &lt;old&gt;
+git show --date=iso first-release
+
+# Set the date for the new tag via environment variable
+export GIT_COMMITTER_DATE=&#34;&lt;date&gt;&#34;
+export GIT_COMMITTER_DATE=&#34;2021-01-22 16:24:39 +0100&#34;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Renaming the tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Create a new tag
+git tag --annotate &lt;new&gt; &#39;&lt;old&gt;^{}&#39;
+git tag --annotate v1.0 &#39;first-release^{}&#39;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;
+git tag --delete first-release</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Renaming a GPG-signed tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Create a new tag
+git tag --sign &lt;new&gt; &#39;&lt;old&gt;^{}&#39;
+git tag --sign v1.0 &#39;first-release^{}&#39;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;
+git tag --delete first-release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>^{}</code> suffix tells Git to dereference the tag recursively until it finds an object which is not a tag.
+This ensures that your new tag does not point to another tag which you might also want to rename.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_renaming_a_lightweight_tag_local">Renaming a lightweight tag (local)</h3>
+<div class="paragraph">
+<p>If you have a lightweight tag which is local only:
+Not yet pushed to a remote repository.</p>
+</div>
+<div class="listingblock">
+<div class="title">Renaming the tag:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Create a new tag
+git tag &lt;new&gt; &lt;old&gt;
+
+# Delete the old tag
+git tag --delete &lt;old&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_steps_for_pushed_tags_remote">Additional steps for pushed tags (remote)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your tag has been pushed to a remote repository, follow the steps above first.
+Then continue here.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"># Push the newly created tag
+git push --tags &lt;new tag&gt;
+
+# Delete the old tag from the remote
+git push --delete &lt;remote&gt; &lt;old tag&gt;
+git push --delete origin first-release</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other users will receive a &#34;renamed&#34; tag as new tag from your remote repository.
+Git will not delete old tags automatically.</p>
+</div>
+<div class="paragraph">
+<p>You should remove deleted tags from local repositories.</p>
+</div>
+<div class="listingblock">
+<div class="title">Deleting tags from local that no longer exist on the remote:</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">git pull --prune --tags</code></pre>
+</div>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Git: Deleting remote tags</title>
+      <link>https://www.andreaslongo.com/blog/git-delete-tags/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/git-delete-tags/</guid>
+      <description> Removing a remote tag:
+$ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag&amp;gt; $ git push --delete origin v1.0 Removing multiple remote tags:
+$ git push --delete &amp;lt;remote&amp;gt; &amp;lt;tag-1&amp;gt; &amp;lt;tag-2&amp;gt; &amp;lt;...&amp;gt; $ git push --delete origin v1.0 </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Removing a remote tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Removing multiple remote tags:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">$ git push --delete &lt;remote&gt; &lt;tag-1&gt; &lt;tag-2&gt; &lt;...&gt;
+$ git push --delete origin v1.0</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Python: Converting `datetime` and `string` types</title>
-      <link>https://www.andreaslongo.com/blog/convert-datetime-from-string/</link>
+      <link>https://www.andreaslongo.com/blog/python-convert-datetime-from-string/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/convert-datetime-from-string/</guid>
+      <guid>https://www.andreaslongo.com/blog/python-convert-datetime-from-string/</guid>
       <description>Converting from datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
 &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; dt = datetime(2009, 10, 1, 20, 36, 41) &amp;gt;&amp;gt;&amp;gt; dt.strftime(&amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) &amp;#39;01.10.2009 20:36:41&amp;#39; The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
 Converting from string to datetime Use the datetime.</description>

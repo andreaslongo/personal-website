@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 16 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/tags/data-types/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python: Converting `datetime` and `string` types</title>
-      <link>https://www.andreaslongo.com/blog/convert-datetime-from-string/</link>
+      <link>https://www.andreaslongo.com/blog/python-convert-datetime-from-string/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://www.andreaslongo.com/blog/convert-datetime-from-string/</guid>
+      <guid>https://www.andreaslongo.com/blog/python-convert-datetime-from-string/</guid>
       <description>Converting from datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
 &amp;gt;&amp;gt;&amp;gt; from datetime import datetime &amp;gt;&amp;gt;&amp;gt; dt = datetime(2009, 10, 1, 20, 36, 41) &amp;gt;&amp;gt;&amp;gt; dt.strftime(&amp;#39;%d.%m.%Y %H:%M:%S&amp;#39;) &amp;#39;01.10.2009 20:36:41&amp;#39; The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
 Converting from string to datetime Use the datetime.</description>
