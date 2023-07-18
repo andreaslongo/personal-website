@@ -1,6 +1,6 @@
 ---
-draft: true
 title: 'Git: Fixing GPG signing errors'
+date: 2023-07-18
 
 topic:
   - Software Development
@@ -10,9 +10,9 @@ tags:
   - GnuPG (GPG)
 ---
 
-I use GPG to sign my Git tags.
+I use https://en.wikipedia.org/wiki/GNU_Privacy_Guard[GPG] to sign https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work[Git tags].
 
-This is a list of various errors I encountered and possible solutions.
+This is a list of signing errors I encountered and possible solutions.
 
 [source, bash]
 ----
@@ -21,6 +21,10 @@ $ git tag --sign --message 'Release 2023.07.13' 2023.07.13
 # --snip--
 gpg: signing failed: No pinentry
 error: unable to sign the tag
+
+# Problem:
+# This can happen in a container if GPG cannot find a tool to ask the user for a passphrase.
+# https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
 
 # Solution:
 dnf install pinentry
@@ -33,6 +37,10 @@ $ git tag --sign --message 'Release 2023.07.13' 2023.07.13
 # --snip--
 gpg: signing failed: Inappropriate ioctl for device
 error: unable to sign the tag
+
+# Problem:
+# Missing environment variable for the gpg-agent.
+# https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
 
 # Solution:
 export GPG_TTY=$(tty)
