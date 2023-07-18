@@ -2,7 +2,7 @@
 draft: true
 title: 'Git: Working with GPG signing keys'
 
-topic:
+topics:
   - Software Development
 
 tags:

@@ -2,7 +2,7 @@
 title: 'Git: Fixing GPG signing errors'
 date: 2023-07-18
 
-topic:
+topics:
   - Software Development
 
 tags:
