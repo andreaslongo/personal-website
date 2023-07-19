@@ -4,7 +4,9 @@
 |
 <a href=https://www.andreaslongo.com/blog/by-topic/>by topic</a>
 |
-<a href=https://www.andreaslongo.com/search/>search</a></p></div></div><article class=post-entry><header class=entry-header><h2>Vim: Undo branches</h2></header><div class=entry-content><p>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
+<a href=https://www.andreaslongo.com/search/>search</a></p></div></div><article class=post-entry><header class=entry-header><h2>Python: Converting `datetime` and `string` types</h2></header><div class=entry-content><p>Converting from datetime to string Use the datetime.strftime() method to convert a Python datetime object to a string of any format.
+>>> from datetime import datetime >>> dt = datetime(2009, 10, 1, 20, 36, 41) >>> dt.strftime('%d.%m.%Y %H:%M:%S') '01.10.2009 20:36:41' The argument to datetime.strftime() is a format string build with format codes. See strftime() and strptime() Format Codes for a list of available format codes.
+Converting from string to datetime Use the datetime....</p></div><footer class=entry-footer><span title='2021-02-16 00:00:00 +0000 UTC'>February 16, 2021</span></footer><a class=entry-link aria-label="post link to Python: Converting `datetime` and `string` types" href=https://www.andreaslongo.com/blog/python-convert-datetime-from-string/></a></article><article class=post-entry><header class=entry-header><h2>Vim: Undo branches</h2></header><div class=entry-content><p>You can retrieve the state of your text as it was some time ago. This concept is called undo tree or undo branches.
 Moving through the undo tree Go to newer/older text state.
 g+ g- Go to older text state, 10 minutes before.
 :earlier 10m Go to newer text state, 5 minutes later.

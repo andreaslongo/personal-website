@@ -6,7 +6,101 @@
     <description>Recent content on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows: Publishing a remote terminal app</title>
+      <link>https://www.andreaslongo.com/blog/windows-publish-rdp-app/</link>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/windows-publish-rdp-app/</guid>
+      <description>When I work with centrally hosted applications on Windows, I often provide such programs as RemoteApp for a good user experience.
+A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.
+Publishing a remote app For publishing remote apps, I use a variation of the following command.</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>When I work with centrally hosted applications on Windows, I often provide such programs as <a href="https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp">RemoteApp</a> for a good user experience.</p>
+</div>
+<div class="paragraph">
+<p>A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.</p>
+</div>
+<div class="sect1">
+<h2 id="_publishing_a_remote_app">Publishing a remote app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For publishing remote apps, I use a variation of the following command.
+This is not only faster than working with the <em>Server Manager</em> GUI, but you also have more control over the resulting app with additional options that are not available via GUI.</p>
+</div>
+<div class="listingblock">
+<div class="title">Run <em>PowerShell</em> as admin:</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell"># Change the arguments below.
+$arguments = @{
+    Alias = &#39;remote-app-01&#39;
+    CollectionName = &#39;remote-apps&#39;
+    CommandLineSetting = &#39;DoNotAllow&#39;
+    DisplayName = &#39;Remote App 1&#39;
+    FilePath = &#39;D:\bin\app.exe&#39;
+    FolderName = &#39;Business applications&#39;
+    ShowInWebAccess = $true
+}
+
+New-RDRemoteApp @arguments</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Reference: <a href="https://learn.microsoft.com/en-us/powershell/module/remotedesktop/new-rdremoteapp">New-RDRemoteApp</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_downloading_a_remote_app">Downloading a remote app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you need a <code>.rdp</code> file to distribute the app:</p>
+</div>
+<div class="paragraph">
+<p>On the RDS host</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <em>Internet Information Services (IIS) Manager</em>.</p>
+</li>
+<li>
+<p>Navigate to <em>Sites &gt; Default Web Site &gt; RDWeb</em>.</p>
+</li>
+<li>
+<p>In the <em>Actions</em> menu on the right side, click on <em>Browse Application</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This should open the RDS web page with the <em>Edge</em> browser.
+Note that you cannot download RDP apps with <em>Internet Explorer</em>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you get a certificate warning, accept it and continue.</p>
+</li>
+<li>
+<p>Login with your account.</p>
+<div class="paragraph">
+<p>Note that your account needs access to the <em>Collection</em>, otherwise the web page will be blank.</p>
+</div>
+</li>
+<li>
+<p>Find the RDP app and click on it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This should start the download.</p>
+</div>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Git: Fixing GPG signing errors</title>
       <link>https://www.andreaslongo.com/blog/git-signing-errors/</link>
