@@ -1,0 +1,60 @@
+---
+title: 'Windows: Publishing a remote terminal app'
+date: 2023-07-19
+
+topics:
+  - Operating Systems
+
+tags:
+  - Windows
+  - Remote Desktop Services (RDS)
+---
+
+When I work with centrally hosted applications on Windows, I often provide such programs as https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp[RemoteApp] for a good user experience.
+
+A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.
+
+== Publishing a remote app
+
+For publishing remote apps, I use a variation of the following command.
+This is not only faster than working with the _Server Manager_ GUI, but you also have more control over the resulting app with additional options that are not available via GUI.
+
+[source, powershell]
+.Run _PowerShell_ as admin:
+----
+# Change the arguments below.
+$arguments = @{
+    Alias = 'remote-app-01'
+    CollectionName = 'remote-apps'
+    CommandLineSetting = 'DoNotAllow'
+    DisplayName = 'Remote App 1'
+    FilePath = 'D:\bin\app.exe'
+    FolderName = 'Business applications'
+    ShowInWebAccess = $true
+}
+
+New-RDRemoteApp @arguments
+----
+
+Reference: https://learn.microsoft.com/en-us/powershell/module/remotedesktop/new-rdremoteapp[New-RDRemoteApp]
+
+== Downloading a remote app
+
+If you need a `.rdp` file to distribute the app:
+
+On the RDS host
+
+. Open the _Internet Information Services (IIS) Manager_.
+. Navigate to _Sites > Default Web Site > RDWeb_.
+. In the _Actions_ menu on the right side, click on _Browse Application_.
+
+This should open the RDS web page with the _Edge_ browser.
+Note that you cannot download RDP apps with _Internet Explorer_.
+
+. If you get a certificate warning, accept it and continue.
+. Login with your account.
++
+Note that your account needs access to the _Collection_, otherwise the web page will be blank.
+. Find the RDP app and click on it.
+
+This should start the download.
