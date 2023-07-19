@@ -10,7 +10,7 @@ tags:
   - Remote Desktop Services (RDS)
 ---
 
-When I work with centrally hosted applications on Windows, I often provide such programs as https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp[RemoteApp] for a good user experience.
+When working with centrally hosted applications on Windows, I often provide such programs as https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp[RemoteApp] for a good user experience.
 
 A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.
 
