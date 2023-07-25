@@ -6,18 +6,91 @@
     <description>Recent content on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows: Testing network connections</title>
+      <link>https://www.andreaslongo.com/blog/windows-testing-network-connections/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/windows-testing-network-connections/</guid>
+      <description>Verifying that one system can connect to another system via network is a common task for managing applications. A business application that is not interconnected to some other entity is hard to find.
+This is a quick way to test some basic network connections on Windows without much dependencies. All you need is PowerShell and .NET which should already be included on most Windows hosts.
+You create a custom TcpListener (which is an instance of a .</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>Verifying that one system can connect to another system via network is a common task for managing applications.
+A business application that is not interconnected to some other entity is hard to find.</p>
+</div>
+<div class="paragraph">
+<p>This is a quick way to test some basic network connections on Windows without much dependencies.
+All you need is <em>PowerShell</em> and <em>.NET</em> which should already be included on most Windows hosts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You create a custom <code>TcpListener</code> (which is an instance of a .NET class) to open up a port for TCP/IP connections.</p>
+</li>
+<li>
+<p>Then, you connect to this port from a remote system to verify the connection at a basic level.</p>
+</li>
+<li>
+<p>Reference: <a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcplistener" class="bare">https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcplistener</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Create and start a custom listener (e.g. the server):</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS server&gt; $listener = [System.Net.Sockets.TcpListener]2383
+PS server&gt; $listener.Start()
+
+# Verify that ports are opened
+PS server&gt; Get-NetTCPConnection -State Listen -LocalPort 2383
+
+LocalAddress                        LocalPort RemoteAddress                       RemotePort State       AppliedSetting OwningProcess
+------------                        --------- -------------                       ---------- -----       -------------- -------------
+0.0.0.0                             2383      0.0.0.0                             0          Listen                     840</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Test the connection from a remote system (e.g. the client):</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS client&gt; Test-NetConnection &lt;server&gt; -Port 2383
+
+ComputerName     : server
+RemoteAddress    : 10.0.0.2
+RemotePort       : 2383
+InterfaceAlias   : 10.0.0.100
+SourceAddress    : 10.0.0.100
+TcpTestSucceeded : True</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Stop the listener when you are done:</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS server&gt; $listener.Stop()
+
+# Verify that ports are closed
+PS server&gt; Get-NetTCPConnection -State Listen -LocalPort 2383
+Get-NetTCPConnection : No matching MSFT_NetTCPConnection objects found by CIM query for instances of the ROOT/StandardCimv2/MSFT_NetTCPConnection class on
+the  CIM server: SELECT * FROM MSFT_NetTCPConnection  WHERE ((LocalPort = 2383)) AND ((State = 2)). Verify query parameters and retry.
+    + CategoryInfo          : ObjectNotFound: (MSFT_NetTCPConnection:String) [Get-NetTCPConnection], CimJobException
+    + FullyQualifiedErrorId : CmdletizationQuery_NotFound,Get-NetTCPConnection</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Windows: Publishing a remote terminal app</title>
       <link>https://www.andreaslongo.com/blog/windows-publish-rdp-app/</link>
       <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/windows-publish-rdp-app/</guid>
-      <description>When I work with centrally hosted applications on Windows, I often provide such programs as RemoteApp for a good user experience.
+      <description>When working with centrally hosted applications on Windows, I often provide such programs as RemoteApp for a good user experience.
 A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.
 Publishing a remote app For publishing remote apps, I use a variation of the following command.</description>
       <content:encoded><![CDATA[<div class="paragraph">
-<p>When I work with centrally hosted applications on Windows, I often provide such programs as <a href="https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp">RemoteApp</a> for a good user experience.</p>
+<p>When working with centrally hosted applications on Windows, I often provide such programs as <a href="https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp">RemoteApp</a> for a good user experience.</p>
 </div>
 <div class="paragraph">
 <p>A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.</p>

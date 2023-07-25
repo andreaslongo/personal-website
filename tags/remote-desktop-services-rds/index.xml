@@ -13,11 +13,11 @@
       <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.andreaslongo.com/blog/windows-publish-rdp-app/</guid>
-      <description>When I work with centrally hosted applications on Windows, I often provide such programs as RemoteApp for a good user experience.
+      <description>When working with centrally hosted applications on Windows, I often provide such programs as RemoteApp for a good user experience.
 A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.
 Publishing a remote app For publishing remote apps, I use a variation of the following command.</description>
       <content:encoded><![CDATA[<div class="paragraph">
-<p>When I work with centrally hosted applications on Windows, I often provide such programs as <a href="https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp">RemoteApp</a> for a good user experience.</p>
+<p>When working with centrally hosted applications on Windows, I often provide such programs as <a href="https://en.wikipedia.org/wiki/Remote_Desktop_Services#RemoteApp">RemoteApp</a> for a good user experience.</p>
 </div>
 <div class="paragraph">
 <p>A remote app runs remotely on a terminal server, but the look and feel for a user is more like a locally installed app on a client computer - e.g. the app has its own resizable window and its own taskbar entry.</p>
