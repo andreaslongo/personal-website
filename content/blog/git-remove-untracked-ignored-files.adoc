@@ -1,0 +1,22 @@
+---
+draft: true
+title: 'Git: Removing untracked and gitignored files and directories from the working tree'
+
+topics:
+  - Software Development
+
+tags:
+  - Git
+---
+
+[source, bash]
+----
+$ git clean -x --dry-run */ .*/
+Would remove .nox/
+Would remove .pytest_cache/
+Would remove .ruff_cache/
+Would remove __pycache__/
+Would remove dist/
+Would remove src/hello_world/__pycache__/
+Would remove tests/__pycache__/
+----
