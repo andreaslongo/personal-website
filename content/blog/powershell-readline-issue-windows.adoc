@@ -1,0 +1,26 @@
+---
+title: PowerShell: Fixing input issues
+date: 2023-07-31
+
+topics:
+  - Operating Systems
+
+tags:
+  - Windows
+  - PowerShell
+---
+
+When you start PowerShell and you are not able to enter any commands (copy-and-paste might still work), chances are your https://github.com/PowerShell/PSReadLine[PSReadLine] module is outdated.
+
+.Fix: Update PSReadLine module
+[source, powershell]
+----
+Get-Module PSReadLine
+Version 2.0.0
+
+# Open cmd.exe as admin and run:
+powershell -noprofile -command "Install-Module PSReadLine -Force"
+
+Get-Module PSReadLine
+Version 2.2.6
+----
