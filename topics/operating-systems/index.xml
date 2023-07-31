@@ -6,7 +6,34 @@
     <description>Recent content in Operating Systems on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/operating-systems/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/operating-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerShell: Fixing terminal input issues</title>
+      <link>https://www.andreaslongo.com/blog/powershell-readline-issue-windows/</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/powershell-readline-issue-windows/</guid>
+      <description> When you start PowerShell and you are not able to enter any commands (copy/paste might still work), chances are your PSReadLine module is outdated.
+Fix: Update PSReadLine module Get-Module PSReadLine Version 2.0.0 # Open cmd.exe as admin and run: powershell -noprofile -command &amp;#34;Install-Module PSReadLine -Force&amp;#34; Get-Module PSReadLine Version 2.2.6 </description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p>When you start PowerShell and you are not able to enter any commands (copy/paste might still work), chances are your <a href="https://github.com/PowerShell/PSReadLine">PSReadLine</a> module is outdated.</p>
+</div>
+<div class="listingblock">
+<div class="title">Fix: Update PSReadLine module</div>
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">Get-Module PSReadLine
+Version 2.0.0
+
+# Open cmd.exe as admin and run:
+powershell -noprofile -command &#34;Install-Module PSReadLine -Force&#34;
+
+Get-Module PSReadLine
+Version 2.2.6</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Windows: Testing network connections</title>
       <link>https://www.andreaslongo.com/blog/windows-testing-network-connections/</link>
