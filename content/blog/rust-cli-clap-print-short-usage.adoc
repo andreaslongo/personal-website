@@ -1,0 +1,51 @@
+---
+title: "Rust: Printing a short CLI usage message with clap"
+date: 2023-08-28
+
+topics:
+  - Software Development
+
+tags:
+  - Rust
+  - Command-line interfaces (CLI)
+---
+
+https://github.com/clap-rs/clap[Clap] can print a short usage message rather than the full help text.
+
+[source, toml]
+.File: Cargo.toml
+----
+[package]
+edition = "2021"
+# --snip--
+
+[dependencies]
+clap = { version = "4.4.0", features = ["derive"] }
+----
+
+[source, rust]
+.File: src/main.rs
+----
+use clap::CommandFactory;
+use clap::Parser;
+
+#[derive(Parser)]
+struct Cli {
+    /// First arg
+    arg1: String,
+    /// Second arg
+    arg2: Vec<String>,
+}
+
+fn main() {
+    let mut cmd = Cli::command();
+    println!("{}", cmd.render_usage());
+}
+----
+
+[source, bash]
+.Result
+----
+al@linux ~ $ ./clap_test
+Usage: clap_test <ARG1> [ARG2]...
+----
