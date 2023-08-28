@@ -6,7 +6,59 @@
     <description>Recent content in Software Development on Andreas Longo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.andreaslongo.com/topics/software-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust: Printing a short CLI usage message with clap</title>
+      <link>https://www.andreaslongo.com/blog/rust-cli-clap-print-short-usage/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andreaslongo.com/blog/rust-cli-clap-print-short-usage/</guid>
+      <description>Clap can print a short usage message rather than the full help text.
+File: Cargo.toml [package] edition = &amp;#34;2021&amp;#34; # --snip-- [dependencies] clap = { version = &amp;#34;4.4.0&amp;#34;, features = [&amp;#34;derive&amp;#34;] } File: src/main.rs use clap::CommandFactory; use clap::Parser; #[derive(Parser)] struct Cli { /// First arg arg1: String, /// Second arg arg2: Vec&amp;lt;String&amp;gt;, } fn main() { let mut cmd = Cli::command(); println!(&amp;#34;{}&amp;#34;, cmd.render_usage()); } Result al@linux ~ $ ./clap_test Usage: clap_test &amp;lt;ARG1&amp;gt; [ARG2].</description>
+      <content:encoded><![CDATA[<div class="paragraph">
+<p><a href="https://github.com/clap-rs/clap">Clap</a> can print a short usage message rather than the full help text.</p>
+</div>
+<div class="listingblock">
+<div class="title">File: Cargo.toml</div>
+<div class="content">
+<pre class="highlight"><code class="language-toml" data-lang="toml">[package]
+edition = &#34;2021&#34;
+# --snip--
+
+[dependencies]
+clap = { version = &#34;4.4.0&#34;, features = [&#34;derive&#34;] }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">File: src/main.rs</div>
+<div class="content">
+<pre class="highlight"><code class="language-rust" data-lang="rust">use clap::CommandFactory;
+use clap::Parser;
+
+#[derive(Parser)]
+struct Cli {
+    /// First arg
+    arg1: String,
+    /// Second arg
+    arg2: Vec&lt;String&gt;,
+}
+
+fn main() {
+    let mut cmd = Cli::command();
+    println!(&#34;{}&#34;, cmd.render_usage());
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Result</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">al@linux ~ $ ./clap_test
+Usage: clap_test &lt;ARG1&gt; [ARG2]...</code></pre>
+</div>
+</div>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Git: Fixing GPG signing errors</title>
       <link>https://www.andreaslongo.com/blog/git-signing-errors/</link>
